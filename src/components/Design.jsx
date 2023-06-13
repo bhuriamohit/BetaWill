@@ -51,7 +51,7 @@ function Design() {
               },
             },
             color: {
-              value: ["#ff4b5c", "#8aff85", "#00d2d5", "#ffab40"],
+              value: ["#ffab40"],
             },
             shape: {
               type: "circle",

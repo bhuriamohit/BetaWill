@@ -31,12 +31,14 @@ const Navbar = () => {
 
   // Function to toggle the popup
   const togglePopup = () => {
+    setissignupPopupOpen(false);
     setPopupOpen(!isPopupOpen);
   };
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
   useEffect(() => {
+    
     // Retrieve the username from localStorage
     const storedUsername = localStorage.getItem('username');
     console.log(storedUsername)
@@ -93,6 +95,85 @@ const Navbar = () => {
     setusername(null);
   };
 
+
+
+
+
+
+
+  /* Sign Up section */
+  const[issignupPopupOpen,setissignupPopupOpen]=useState(false);
+  const [registerForm, setRegisterForm] = useState({
+    fullName: '',
+    email: '',
+    mobileNumber: '',
+    dob: '',
+    password: '',
+    confirmPassword: '',
+    gender: '',
+    country: '',
+    state: '',
+    pincode: '',
+    course: ''
+  });
+  const signupTogglePopup = () => {
+    setPopupOpen(false);
+    setissignupPopupOpen(!issignupPopupOpen);
+    setRegisterForm({
+      fullName: '',
+      email: '',
+      mobileNumber: '',
+      dob: '',
+      password: '',
+      confirmPassword: '',
+      gender: '',
+      country: '',
+      state: '',
+      pincode: '',
+      course: ''
+    });
+  };
+  const handleSignup = () => {
+    // Perform validation and other necessary checks
+  
+    // Access the form values from the state variable
+    const {
+      fullName,
+      email,
+      mobileNumber,
+      dob,
+      password,
+      confirmPassword,
+      gender,
+      country,
+      state,
+      pincode,
+      course
+    } = registerForm;
+  
+    // Pass the form values to your signup function or API call
+    const formData = {
+      fullName,
+      email,
+      mobileNumber,
+      dob,
+      password,
+      confirmPassword,
+      gender,
+      country,
+      state,
+      pincode,
+      course
+    };
+  
+    // Perform further processing or API call with the form data
+    console.log(formData);
+  };
+    
+
+
+
+
   return (
     <div>
 
@@ -107,10 +188,10 @@ const Navbar = () => {
           </div>
           {/* Mobile menu */}
           <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
-            <button className="login-button" >
+            <button className="login-button" onClick={togglePopup}>
               Login
             </button>
-            <button className="register-button" >
+            <button className="register-button" onClick={signupTogglePopup}>
               Register
             </button>
             <button className="menu-button" onClick={toggleMobileMenu}>
@@ -174,7 +255,7 @@ const Navbar = () => {
             username == null ?
               <div className="auth-buttons">
                 <button className="register-button" onClick={togglePopup}>Login</button>
-                <button className="register-button" >Register</button>
+                <button className="register-button" onClick={signupTogglePopup}>Register</button>
               </div> :
               <div >
                 <h2>{username}</h2>
@@ -192,18 +273,77 @@ const Navbar = () => {
 
         {/* Popup */}
         {isPopupOpen && (
-          <div className="popup">
+          <div className="popup2">
+            <button className="close-button" onClick={togglePopup}>X</button>
             <div className="popup-content">
-              <label>Email:</label>
+              <label className='label'>Email or phone number:</label>
               <input type="text" value={email} onChange={handleEmailChange} />
             </div>
             <div>
-              <label>Password:</label>
+              <label className='label'>Password:</label>
               <input type="password" value={password} onChange={handlePasswordChange} />
             </div>
-            <button onClick={handleLogin} className='login'>Login</button>
+            <button onClick={handleLogin} className='submit'>Login</button>
           </div>
+          
         )}
+        {issignupPopupOpen && (
+ <div className="popup">
+  <button className="close-button" onClick={togglePopup}>X</button>
+  {/* Form fields */}
+  <div className="popup-content">
+    <div className="form-field-pair">
+      <label className="label">Full Name:</label>
+      <input type="text" value={registerForm.fullName} onChange={(e) => setRegisterForm({ ...registerForm, fullName: e.target.value })} />
+    </div>
+    <div className="form-field-pair">
+      <label className="label">Email:</label>
+      <input type="text" value={registerForm.email} onChange={(e) => setRegisterForm({ ...registerForm, email: e.target.value })} />
+    </div>
+    <div className="form-field-pair">
+      <label className="label">Mobile Number:</label>
+      <input type="text" value={registerForm.mobileNumber} onChange={(e) => setRegisterForm({ ...registerForm, mobileNumber: e.target.value })} />
+    </div>
+    <div className="form-field-pair">
+      <label className="label">Password:</label>
+      <input type="text" value={registerForm.password} onChange={(e) => setRegisterForm({ ...registerForm, password: e.target.value })} />
+    </div>
+    <div className="form-field-pair">
+      <label className="label">Confirm Password:</label>
+      <input type="text" value={registerForm.confirmPassword} onChange={(e) => setRegisterForm({ ...registerForm, confirmPassword: e.target.value })} />
+    </div>
+    <div className="form-field-pair">
+      <label className="label">Date of Birth:</label>
+      <input type="text" value={registerForm.dob} onChange={(e) => setRegisterForm({ ...registerForm, dob: e.target.value })} />
+    </div>
+    <div className="form-field-pair">
+      <label className="label">Gender:</label>
+      <input type="text" value={registerForm.gender} onChange={(e) => setRegisterForm({ ...registerForm, gender: e.target.value })} />
+    </div>
+    <div className="form-field-pair">
+      <label className="label">Country:</label>
+      <input type="text" value={registerForm.country} onChange={(e) => setRegisterForm({ ...registerForm, country: e.target.value })} />
+    </div>
+    <div className="form-field-pair">
+      <label className="label">State:</label>
+      <input type="text" value={registerForm.state} onChange={(e) => setRegisterForm({ ...registerForm, state: e.target.value })} />
+    </div>
+    <div className="form-field-pair">
+      <label className="label">Pincode:</label>
+      <input type="text" value={registerForm.pincode} onChange={(e) => setRegisterForm({ ...registerForm, pincode: e.target.value })} />
+    </div>
+    <div className="form-field-pair">
+      <label className="label">Course:</label>
+      <input type="text" value={registerForm.course} onChange={(e) => setRegisterForm({ ...registerForm, course: e.target.value })} />
+    </div>
+  </div>
+
+  {/* Button */}
+  <button onClick={handleSignup} className="submit">Register</button>
+</div>
+
+)}
+
       </div>
     </div>
 
