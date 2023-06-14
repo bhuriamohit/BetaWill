@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../logo.jpeg';
 import Userinfo from './UserInfo/UserInfo';
 import {Router,Routes,Route} from"react-router-dom"
+import countries from './CountryNames.js';
 
 const Navbar = () => {
 
@@ -345,7 +346,7 @@ const Navbar = () => {
           </div>
           <div>
             <label className='label'>Password:</label>
-            <input type="password" value={password} onChange={handlePasswordChange} />
+            <input type="password" value={password} onChange={handlePasswordChange}  required/>
           </div>
           <button onClick={handleLogin} className='submit'>Login</button>
         </div>
@@ -378,20 +379,42 @@ const Navbar = () => {
     </div>
     <div className="form-field-pair">
       <label className="label">Date of Birth:</label>
-      <input type="text" value={registerForm.dob} onChange={(e) => setRegisterForm({ ...registerForm, dob: e.target.value })} />
+      <input type="date" value={registerForm.dob} onChange={(e) => setRegisterForm({ ...registerForm, dob: e.target.value })} />
     </div>
     <div className="form-field-pair">
-      <label className="label">Gender:</label>
-      <input type="text" value={registerForm.gender} onChange={(e) => setRegisterForm({ ...registerForm, gender: e.target.value })} />
-    </div>
-    <div className="form-field-pair">
-      <label className="label">Country:</label>
-      <input type="text" value={registerForm.country} onChange={(e) => setRegisterForm({ ...registerForm, country: e.target.value })} />
-    </div>
-    <div className="form-field-pair">
-      <label className="label">State:</label>
-      <input type="text" value={registerForm.state} onChange={(e) => setRegisterForm({ ...registerForm, state: e.target.value })} />
-    </div>
+  <label className="label">Gender:</label>
+  <input type="text" list="genderOptions" name="gender" value={registerForm.gender}  onChange={(e) => setRegisterForm({ ...registerForm, gender: e.target.value })} required />
+  <datalist id="genderOptions">
+    <option value="Male" />
+    <option value="Female" />
+    <option value="Other" />
+  </datalist>
+</div>
+<div className="form-field-pair">
+  <label className="label">Country:</label>
+  <input type="text" list="countryOptions" name="country" value={registerForm.country}  onChange={(e) => setRegisterForm({ ...registerForm, country: e.target.value })} required />
+  <datalist id="countryOptions">
+    {countries.slice(0, 100).map((country, index) => (
+      <option key={index} value={country} />
+    ))}
+  </datalist>
+</div>
+<div className="form-field-pair">
+  <label className="label">State:</label>
+  <select style={{ 
+    border: '1px solid gray',
+    borderRadius: '4px',
+    padding: '8px',
+    width: '100%'
+  }} value={registerForm.state} onChange={(e) => setRegisterForm({ ...registerForm, state: e.target.value })}>
+    <option value="">Select State</option>
+    <option value="Andhra Pradesh">Andhra Pradesh</option>
+    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+    <option value="Assam">Assam</option>
+    <option value="Bihar">Bihar</option>
+    {/* Add more options for other states */}
+  </select>
+</div>
     <div className="form-field-pair">
       <label className="label">Pincode:</label>
       <input type="text" value={registerForm.pincode} onChange={(e) => setRegisterForm({ ...registerForm, pincode: e.target.value })} />
