@@ -342,24 +342,53 @@ input[type="text"] {
   margin-left: 5px;
 }
 .buttonu {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+
+
+padding: 6px;
+border-radius:30px ;
   font-size: 16px;
   color: #fff;
-  background-color: #007bff;
+  font-family: 'Chilanka';
+  background-color:#ff0000;
   cursor: pointer;
-  margin-right: 10px;
+  margin-bottom: 10px;
+  display: flex;
+
+  
+  
+  
+  
+ 
+  
 }
 
 .buttonu:hover {
-  background-color: #0056b3;
+
+  
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  transform: scale(1.1);
+  /* Add any other styles for hover state */
 }
 
-.logout-button {
-  background-color: #dc3545;
+
+
+
+.buttonu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logoutbuttonu {
+  background-color: transparent;
+  border: none;
+  color: white;
+  border-bottom: 1px solid #f2f2f2;
+  transform: scale(1);
+  transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-.logout-button:hover {
-  background-color: #a51d2a;
+.logoutbuttonu:hover {
+ 
+  border-color: red;
+  transform: scale(1.05);
 }

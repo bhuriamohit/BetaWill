@@ -4,8 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../logo.jpeg';
 import Userinfo from './UserInfo/UserInfo';
 import {Router,Routes,Route} from"react-router-dom"
-import countries from './CountryNames.js'
-
+import countries from './CountryNames.js';
 
 const Navbar = () => {
 
@@ -53,6 +52,11 @@ const Navbar = () => {
   };
   useEffect(() => {
     // Retrieve the username from localStorage
+    WebFont.load({
+      google: {
+        families: ['Droid Sans', 'Chilanka']
+      }
+    });
     const storedUsername = localStorage.getItem('username');
     const storedemail=localStorage.getItem('useremail')
     console.log(storedUsername)
@@ -60,6 +64,8 @@ const Navbar = () => {
     if (storedUsername) {
       setusername(storedUsername);
     }
+
+
   }, []);
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
@@ -243,6 +249,7 @@ const Navbar = () => {
 
 
 
+
   return (
     <div>
 
@@ -326,9 +333,9 @@ const Navbar = () => {
                 <button className="register-button" onClick={togglePopup}>Login</button>
                 <button className="register-button" onClick={signupTogglePopup}>Register</button>
               </div> :
-           <div>
+           <div className='buttonu-container'>
            <button class="buttonu" onClick={userinfo}>{username}</button>
-           <button class="buttonu logout-button" onClick={handleLogout}>Logout</button>
+           <button class="logoutbuttonu" onClick={handleLogout}>Logout</button>
          </div>
          
           }
