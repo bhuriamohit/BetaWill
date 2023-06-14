@@ -115,7 +115,8 @@ const Navbar = () => {
   const handleLogout = () => {
     // Clear the username from localStorage
     localStorage.removeItem('username');
-    localStorage.removeItem('useremail')
+    localStorage.removeItem('useremail');
+    navigate('/userinfo',{state:null})
     // Update the state
     setusername(null);
     setuseremail(null)

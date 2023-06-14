@@ -27,7 +27,6 @@ const Userinfo=()=>
     {
         if(location.state==null)
         {
-            alert("please login first")
             navigate('/')
             
         }
