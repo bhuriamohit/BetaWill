@@ -5,6 +5,7 @@ import logo from '../logo.jpeg';
 import Userinfo from './UserInfo/UserInfo';
 import {Router,Routes,Route} from"react-router-dom"
 import countries from './CountryNames.js';
+import WebFont from 'webfontloader';
 
 const Navbar = () => {
 
