@@ -38,7 +38,7 @@ function Design() {
           },
           background: {
             color: {
-              value: "#022135",
+              value: "#000000",
             },
           },
           fpsLimit: 60,
@@ -51,7 +51,7 @@ function Design() {
               },
             },
             color: {
-              value: ["#ffab40"],
+              value: ["#ff4b5c", "#8aff85", "#00d2d5", "#ffab40"],
             },
             shape: {
               type: "circle",

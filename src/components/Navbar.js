@@ -1,12 +1,17 @@
-import React, { useState ,useEffect} from 'react';
+import React, { useState ,useEffect } from 'react';
 import './Navbar.css'; // Import the CSS file for styling
 import { useNavigate } from 'react-router-dom';
 import logo from '../logo.jpeg';
+import Userinfo from './UserInfo/UserInfo';
+import {Router,Routes,Route} from"react-router-dom"
 
 const Navbar = () => {
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [username, setusername] = useState(null)
+  const [useremail,setuseremail]=useState(null)
+
+  
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -31,17 +36,23 @@ const Navbar = () => {
 
   // Function to toggle the popup
   const togglePopup = () => {
-    setissignupPopupOpen(false);
     setPopupOpen(!isPopupOpen);
+    if(issignupPopupOpen==true)
+    {
+      setPopupOpen(false)
+    }
+    setissignupPopupOpen(false);
+    
   };
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
   useEffect(() => {
-    
     // Retrieve the username from localStorage
     const storedUsername = localStorage.getItem('username');
+    const storedemail=localStorage.getItem('useremail')
     console.log(storedUsername)
+    setuseremail(storedemail)
     if (storedUsername) {
       setusername(storedUsername);
     }
@@ -67,8 +78,11 @@ const Navbar = () => {
           .then((fres) => {
             console.log(fres)
             if (fres.presence == true && fres.password == true) {
+              console.log(fres)
+              setuseremail(fres.email)
               setusername(fres.username);
               localStorage.setItem('username', fres.username);
+              localStorage.setItem('useremail', fres.email);
               setPopupOpen(!isPopupOpen);
               return;
             }
@@ -90,7 +104,7 @@ const Navbar = () => {
   const handleLogout = () => {
     // Clear the username from localStorage
     localStorage.removeItem('username');
-
+    
     // Update the state
     setusername(null);
   };
@@ -136,7 +150,6 @@ const Navbar = () => {
   const handleSignup = () => {
     // Perform validation and other necessary checks
   
-    // Access the form values from the state variable
     const {
       fullName,
       email,
@@ -150,7 +163,12 @@ const Navbar = () => {
       pincode,
       course
     } = registerForm;
-  
+    
+    if(password!=confirmPassword)
+    {
+      alert("Both Password doesn;t match , please Enter same password in both fields")
+      return ;
+    }
     // Pass the form values to your signup function or API call
     const formData = {
       fullName,
@@ -158,18 +176,64 @@ const Navbar = () => {
       mobileNumber,
       dob,
       password,
-      confirmPassword,
       gender,
       country,
       state,
       pincode,
       course
     };
+
+
   
     // Perform further processing or API call with the form data
     console.log(formData);
+
+    fetch('http://localhost:8080/students/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+      .then((response) => {
+        response.json()
+          .then((fres) => {
+            if(fres.status=="present")
+            {
+              alert("User already present\nPlease Login to continue :)");
+            }
+            else
+            {
+              alert("User signed up successfully now you can login :)\n")
+            }
+            setissignupPopupOpen(false)
+            setPopupOpen(true)
+            
+          })
+      })
+      .catch((error) => {
+        console.log('Error submitting signup form:', error);
+      });
   };
-    
+  
+
+
+  /*User Info Section */
+  const navigate=useNavigate();
+  const userinfo=()=>
+  {
+    navigate('/userinfo', { state: { useremail: useremail} });
+      console.log(useremail);
+  }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -258,7 +322,7 @@ const Navbar = () => {
                 <button className="register-button" onClick={signupTogglePopup}>Register</button>
               </div> :
               <div >
-                <h2>{username}</h2>
+                <button onClick={userinfo}>{username}</button>
                 <button onClick={handleLogout} >Logout</button>
               </div>
           }
@@ -274,21 +338,21 @@ const Navbar = () => {
         {/* Popup */}
         {isPopupOpen && (
           <div className="popup2">
-            <button className="close-button" onClick={togglePopup}>X</button>
-            <div className="popup-content">
-              <label className='label'>Email or phone number:</label>
-              <input type="text" value={email} onChange={handleEmailChange} />
-            </div>
-            <div>
-              <label className='label'>Password:</label>
-              <input type="password" value={password} onChange={handlePasswordChange} />
-            </div>
-            <button onClick={handleLogin} className='submit'>Login</button>
+          <button className="close-button" onClick={togglePopup}>X</button>
+          <div className="popup-content">
+            <label className='label'>Email or phone number:</label>
+            <input type="text" value={email} onChange={handleEmailChange} />
           </div>
+          <div>
+            <label className='label'>Password:</label>
+            <input type="password" value={password} onChange={handlePasswordChange} />
+          </div>
+          <button onClick={handleLogin} className='submit'>Login</button>
+        </div>
           
         )}
         {issignupPopupOpen && (
- <div className="popup">
+  <div className="popup">
   <button className="close-button" onClick={togglePopup}>X</button>
   {/* Form fields */}
   <div className="popup-content">
@@ -338,13 +402,15 @@ const Navbar = () => {
     </div>
   </div>
 
-  {/* Button */}
-  <button onClick={handleSignup} className="submit">Register</button>
-</div>
-
+    {/* Other form fields */}
+    
+    {/* Button */}
+    <button onClick={handleSignup} className="register-button">Register</button>
+  </div>
 )}
 
       </div>
+      
     </div>
 
   );

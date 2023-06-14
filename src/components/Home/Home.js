@@ -6,6 +6,7 @@ import MostAffordable from "./MostAffordable";
 import VideoBackground from "./VideoBackground";
 import './Home.css'
 import Home_head from "./Home_head";
+import Gap from "../../Gap";
 
 const Home=()=>
 {
@@ -16,7 +17,17 @@ const Home=()=>
         
         <section id="home" className="section">
             <Home_head/>
+            <Gap/>
+            <Gap/>
+            <Gap/>
             <WhyUs/>
+            <Gap/>
+            <Gap/>
+            <Gap/>
+            <MostAffordable/>
+            <Gap/>
+            <Gap/>
+            <Gap/>
             
         </section>
     )

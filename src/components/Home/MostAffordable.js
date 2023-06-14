@@ -4,29 +4,15 @@ import './MostAffordable.css'
 const MostAffordable=()=>
 {
     return(
-        <div>
-            
-        <div className="container">
-      <div className="box1">Box 1</div>
-      <div className="box2">
-        <div className="row">
-          <div className="box">Box 1</div>
-          <div className="box">Box 2</div>
-          <div className="box">Box 3</div>
+       <div className="mostaffcontainer">
+        <div className="mostaffheading">
+          <h1 className="mostafftophead">The Most Affordable learning Platform</h1>
+          <p className="mostaffpara">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?</p>
         </div>
-        <div className="row">
-          <div className="box">Box 4</div>
-          <div className="box">Box 5</div>
-          <div className="box">Box 6</div>
+        <div className="mostafflogo">
+          
         </div>
-        <div className="row">
-          <div className="box">Box 7</div>
-          <div className="box">Box 8</div>
-          <div className="box">Box 9</div>
-        </div>
-      </div>
-    </div>
-        </div>
+       </div>
     )
 }
 
