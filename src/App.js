@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch,Routes ,Route} from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import Emailsender from './components/emailsender.js';
 
 import Home from './components/Home/Home.js';
 import Signup from './components/Logins/Signup';
@@ -31,6 +32,8 @@ const App = () => {
           <Route exact path='/userinfo' element={<Userinfo/>}/>
         </Routes>
       </Router>
+
+      
 
     
       
