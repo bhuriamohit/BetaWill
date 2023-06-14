@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch,Routes ,Route} from 'react-router-dom';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 import Home from './components/Home/Home.js';
@@ -14,6 +14,7 @@ import VideoUploader from './components/VideoPlayer/VideoUploader.js';
 
 import Userinfo from './components/UserInfo/UserInfo.js';
 const App = () => {
+
   return (
     <div>
       <Router>
@@ -28,7 +29,7 @@ const App = () => {
 
             </div>
             
-          }/>
+          }/> 
           <Route exact path='/userinfo' element={<Userinfo/>}/>
         </Routes>
       </Router>

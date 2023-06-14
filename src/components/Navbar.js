@@ -9,6 +9,8 @@ import WebFont from 'webfontloader';
 
 const Navbar = () => {
 
+
+
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [username, setusername] = useState(null)
   const [useremail,setuseremail]=useState(null)
@@ -113,9 +115,10 @@ const Navbar = () => {
   const handleLogout = () => {
     // Clear the username from localStorage
     localStorage.removeItem('username');
-    
+    localStorage.removeItem('useremail')
     // Update the state
     setusername(null);
+    setuseremail(null)
   };
 
 
@@ -231,7 +234,7 @@ const Navbar = () => {
   const navigate=useNavigate();
   const userinfo=()=>
   {
-    navigate('/userinfo', { state: { useremail: useremail} });
+      navigate('/userinfo', { state: { useremail: useremail} });
       console.log(useremail);
   }
 
