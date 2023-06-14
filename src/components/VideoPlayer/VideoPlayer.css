@@ -1,0 +1,50 @@
+.mainbox{
+    width: auto;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+}
+.video-player-container {
+    background-color: black;
+    position: fixed;
+    width: 100%; /* Two-thirds of the screen width */
+    /* height: 50%; */
+    padding-bottom: 50.25%; 
+    margin: 0 auto;
+    overflow: hidden;
+    
+  }
+  
+  .react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .fullscreen-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+
+  @media (max-width:563px) {
+
+    .lecture-list
+    {
+        width: 0%;
+    }
+    .video-player-container
+    {
+        width: 100%;
+    }
+    
+  }
