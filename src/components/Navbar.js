@@ -322,10 +322,11 @@ const Navbar = () => {
                 <button className="register-button" onClick={togglePopup}>Login</button>
                 <button className="register-button" onClick={signupTogglePopup}>Register</button>
               </div> :
-              <div >
-                <button onClick={userinfo}>{username}</button>
-                <button onClick={handleLogout} >Logout</button>
-              </div>
+           <div>
+           <button class="buttonu" onClick={userinfo}>{username}</button>
+           <button class="buttonu logout-button" onClick={handleLogout}>Logout</button>
+         </div>
+         
           }
         </nav>
       </div>

@@ -325,3 +325,41 @@ input[type="text"] {
 .close-button:hover {
   color: #ff0000;
 }
+.username {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 20px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.username img {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+.buttonu {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.buttonu:hover {
+  background-color: #0056b3;
+}
+
+.logout-button {
+  background-color: #dc3545;
+}
+
+.logout-button:hover {
+  background-color: #a51d2a;
+}
