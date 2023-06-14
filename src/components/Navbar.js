@@ -4,9 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../logo.jpeg';
 import Userinfo from './UserInfo/UserInfo';
 import {Router,Routes,Route} from"react-router-dom"
-import countries from './CountryNames.js';
+import countries from './CountryNames.js'
+
 
 const Navbar = () => {
+
+
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [username, setusername] = useState(null)
@@ -105,9 +108,10 @@ const Navbar = () => {
   const handleLogout = () => {
     // Clear the username from localStorage
     localStorage.removeItem('username');
-    
+    localStorage.removeItem('useremail')
     // Update the state
     setusername(null);
+    setuseremail(null)
   };
 
 
@@ -223,7 +227,7 @@ const Navbar = () => {
   const navigate=useNavigate();
   const userinfo=()=>
   {
-    navigate('/userinfo', { state: { useremail: useremail} });
+      navigate('/userinfo', { state: { useremail: useremail} });
       console.log(useremail);
   }
 
