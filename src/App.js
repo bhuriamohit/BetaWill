@@ -34,7 +34,7 @@ const App = () => {
         </Routes>
       </Router> */}
 
-      <VideoUploader/>
+      <VideoPlayer/>
 
       
 
