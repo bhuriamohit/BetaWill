@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <div>
-      {/* <Router>
+      <Router>
         <Routes>
           <Route exact path="/" element={
 
@@ -32,9 +32,9 @@ const App = () => {
           }/> 
           <Route exact path='/userinfo' element={<Userinfo/>}/>
         </Routes>
-      </Router> */}
+      </Router>
 
-      <VideoUploader/>
+    
 
       
 
