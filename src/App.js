@@ -16,7 +16,7 @@ import Userinfo from './components/UserInfo/UserInfo.js';
 const App = () => {
 
   return (
-    <div>
+    <div> 
       <Router>
         <Routes>
           <Route exact path="/" element={
@@ -34,6 +34,10 @@ const App = () => {
         </Routes>
       </Router>
 
+<<<<<<< HEAD
+=======
+      {/* <VideoUploader/> */}
+>>>>>>> f2bee976ede758d765e68501c276a816364b2b42
 
       
 

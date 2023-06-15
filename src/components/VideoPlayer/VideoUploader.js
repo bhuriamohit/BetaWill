@@ -153,6 +153,8 @@ const CourseForm = () => {
         Uploadavideo(lectureFiles[i],formData,i+1);
     }
 
+    
+
 
 
   };
@@ -220,7 +222,9 @@ const CourseForm = () => {
         <button type="submit" className="submit-button">
           Submit
         </button>
+        
       )}
+      {uploadProgress > 0 && <p>Upload progress: {uploadProgress}%</p>}
     </form>
   );
 };
