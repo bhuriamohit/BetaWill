@@ -32,9 +32,9 @@ const App = () => {
           }/> 
           <Route exact path='/userinfo' element={<Userinfo/>}/>
         </Routes>
-      </Router>
+      </Router> */}
 
-      {/* <VideoPlayer/> */}
+      <VideoPlayer/>
 
       
 
