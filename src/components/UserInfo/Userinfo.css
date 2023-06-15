@@ -1,0 +1,61 @@
+/* Userinfo.css */
+
+.gbody {
+    background-color: #d7b3b3;
+    zoom: 85%;
+  }
+.container {
+    display: center;
+    
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #20a9b3;
+    border-radius: 10px;
+    box-shadow: 0 20px 14px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 8vh;
+    color: #ff0000;
+    margin-bottom: 20px;
+    max-width: 40vh;
+    text-align: center;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3vh;
+    font-weight: bolder;
+    color: #032e59;
+    margin-bottom: 2px;
+    margin-left: 3vh;
+  }
+  
+  .value {
+    font-family: 'Roboto', sans-serif;
+    font-size: 4vh;
+    color: #ffffff;
+    margin-left: 3vh;
+    position: relative;
+  }
+  
+  .value::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff;
+  }
+  

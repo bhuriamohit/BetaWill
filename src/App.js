@@ -34,11 +34,6 @@ const App = () => {
         </Routes>
       </Router>
 
-<<<<<<< HEAD
-    
-=======
-      <VideoPlayer/>
->>>>>>> d108898cbe627ebd742de8d3e186c877bcaafebe
 
       
 
