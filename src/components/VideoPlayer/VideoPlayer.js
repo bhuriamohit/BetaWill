@@ -3,7 +3,7 @@ import { initializeApp } from 'firebase/app';
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 import ReactPlayer from 'react-player';
 import './VideoPlayer.css'
-
+import Gap from '../../Gap';
 const firebaseConfig = {
     apiKey: "AIzaSyClCN3-iXsY3sR_t_p723eXdz-fZr1WV-g",
     authDomain: "friend-website-45257.firebaseapp.com",
@@ -18,11 +18,27 @@ const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
 
 const VideoPlayer = () => {
+  const [topic,settopic]=useState('Google');
   const [videoUrl, setVideoUrl] = useState('');
   const [isFullScreen, setIsFullScreen] = useState(false);
+  const [currentlecture,setcurrentlecture]=useState('Lecture1')
+  const [lectureCount, setLectureCount] = useState(10);
+  const [descriptionarr,setdescriptionarr]=useState([]);
 
-  useEffect(() => {
-    const videoRef = ref(storage, '/videos/bhuria.mp4');
+  useEffect(() =>  {
+
+      const s="http://localhost:8080/Lecturesrecord/"+topic;
+      fetch(s).then(async (resp)=>
+      {
+        let fres=await resp.json();
+        setLectureCount(fres.number)
+        setdescriptionarr(fres.description)
+        
+      }
+      )
+
+
+    const videoRef = ref(storage, '/Letures/'+topic+'/'+currentlecture+'.mp4');
 
     // Replace 'YOUR_TOKEN_HERE' with the actual token provided by Firebase
     const token = '53cf5819-b785-4989-8727-e62a6b993c42';
@@ -66,6 +82,24 @@ const VideoPlayer = () => {
     setIsFullScreen(!isFullScreen);
   };
 
+  const changeLecture=(tolecture)=>
+  {
+    const videoRef = ref(storage, '/Letures/'+topic+'/'+tolecture+'.mp4');
+
+    // Replace 'YOUR_TOKEN_HERE' with the actual token provided by Firebase
+    const token = '53cf5819-b785-4989-8727-e62a6b993c42';
+
+    getDownloadURL(videoRef, {
+      'Authorization': `Bearer ${token}`
+    })
+      .then((url) => {
+        setVideoUrl(url);
+      })
+      .catch((error) => {
+        console.error('Error getting video URL:', error);
+      });
+  }
+  const lectureList = Array.from({ length: lectureCount }, (_, index) => `Lecture${index + 1}`);
   return (
     <div className='mainbox'>
 
@@ -87,15 +121,20 @@ const VideoPlayer = () => {
         <p>Loading video...</p>
       )}
     </div>
-    <h2>List List</h2>
-    <h2>List List</h2>
-    <h2>List List</h2>
-    <h2>List List</h2>
-    <h2>List List</h2>
-    <h2>List List</h2>
-    <h2>List List</h2>
-    <h2>List List</h2>
-    <h2>List List</h2>
+    
+    <Gap/>
+    <Gap/>
+    <Gap/>
+    <Gap/>
+    <Gap/>
+    <Gap/>
+    <div className='list-container'>
+        {lectureList.map((lecture,index) => (
+          <div className='videolist' key={lecture} onClick={() => changeLecture(lecture)}>
+            <h2>{`${lecture}: ${descriptionarr[index]}`}</h2>
+          </div>
+        ))}
+    </div>
     </div>
   );
 };

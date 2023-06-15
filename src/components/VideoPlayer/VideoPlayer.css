@@ -1,18 +1,19 @@
-.mainbox{
-    width: auto;
-    height: 30vh;
+.mainbox {
     display: flex;
     flex-direction: column;
-}
-.video-player-container {
-    background-color: black;
+    height: 100vh;
+    justify-content: space-around;
+  }
+  
+  .video-player-container {
     position: fixed;
-    width: 100%; /* Two-thirds of the screen width */
-    /* height: 50%; */
-    padding-bottom: 50.25%; 
-    margin: 0 auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: black;
     overflow: hidden;
-    
+    margin-bottom: 50%;
   }
   
   .react-player {
@@ -23,28 +24,19 @@
     height: 100%;
   }
   
-  .fullscreen-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 1;
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
+  .list-container {
+    border: 2px solid red;
+    width: auto;
+    height: 50%;
+    overflow: auto;
+    padding: 20px;
   }
   
-
-  @media (max-width:563px) {
-
-    .lecture-list
-    {
-        width: 0%;
-    }
-    .video-player-container
-    {
-        width: 100%;
-    }
-    
-  }
+.videolist
+{
+    height: 10vh;
+    width: auto;
+    border: 2px solid black;
+    margin: 1vh;
+}
+  
