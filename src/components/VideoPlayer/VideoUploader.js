@@ -19,48 +19,12 @@ const storage = getStorage(app);
 
 // const VideoUploader = () => {
 //   const [selectedFile, setSelectedFile] = useState(null);
-//   const [uploadProgress, setUploadProgress] = useState(0);
-//   const [uploadError, setUploadError] = useState(null);
-//   const [downloadURL, setDownloadURL] = useState(null);
-
+  
 //   const handleFileChange = (event) => {
 //     setSelectedFile(event.target.files[0]);
 //   };
 
-//   const handleUpload = async () => {
-//     if (selectedFile) {
-//       const storageRef = ref(storage, 'videos/' + selectedFile.name);
-
-//       try {
-//         setUploadProgress(0);
-//         setUploadError(null);
-
-//         const uploadTask = uploadBytesResumable(storageRef, selectedFile);
-
-//         uploadTask.on(
-//           'state_changed',
-//           (snapshot) => {
-//             const progress = Math.round(
-//               (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-//             );
-//             setUploadProgress(progress);
-//           },
-//           (error) => {
-//             setUploadError(error.message);
-//           },
-//           async () => {
-//             console.log('Video uploaded successfully!');
-//             setUploadProgress(100);
-//             const url = await getDownloadURL(uploadTask.snapshot.ref);
-//             setDownloadURL(url);
-//           }
-//         );
-//       } catch (error) {
-//         console.error('Error uploading video:', error);
-//         setUploadError(error.message);
-//       }
-//     }
-//   };
+  
 
 //   return (
 //     <div>
@@ -90,6 +54,9 @@ const storage = getStorage(app);
 
 
 const CourseForm = () => {
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [uploadError, setUploadError] = useState(null);
+  const [downloadURL, setDownloadURL] = useState(null);
   const [courseName, setCourseName] = useState('');
   const [numOfLectures, setNumOfLectures] = useState(0);
   const [lectureDescriptions, setLectureDescriptions] = useState([]);
@@ -123,15 +90,71 @@ const CourseForm = () => {
     // Perform upload video function with the form data
     uploadVideo();
   };
+  const Uploadavideo = async (selectedFile,data,index) => {
+    if (selectedFile) {
+      const storageRef = ref(storage, 'Lectures/' + data.topic+"/"+"Lecture"+index+'.mp4');
 
-  const uploadVideo = () => {
+      try {
+        setUploadProgress(0);
+        setUploadError(null);
+
+        const uploadTask = uploadBytesResumable(storageRef, selectedFile);
+
+        uploadTask.on(
+          'state_changed',
+          (snapshot) => {
+            const progress = Math.round(
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+            );
+            setUploadProgress(progress);
+          },
+          (error) => {
+            setUploadError(error.message);
+          },
+          async () => {
+            console.log('Video uploaded successfully!');
+            setUploadProgress(100);
+            const url = await getDownloadURL(uploadTask.snapshot.ref);
+            setDownloadURL(url);
+          }
+        );
+      } catch (error) {
+        console.error('Error uploading video:', error);
+        setUploadError(error.message);
+      }
+    }
+  };
+  const uploadVideo =async  () => {
     // Implementation of the upload video function
     console.log('Uploading video...');
     console.log('Course Name:', courseName);
     console.log('Number of Lectures:', numOfLectures);
     console.log('Lecture Descriptions:', lectureDescriptions);
     console.log('Lecture Files:', lectureFiles);
-    // Add your logic to save the files here
+    let formData={
+      number:numOfLectures,
+      topic:courseName,
+      Description:lectureDescriptions
+    }
+    fetch('http://localhost:8080/uploadlectures', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(async (response)=>
+    {
+        let fres=await response.json();
+        console.log(fres)
+    })
+    for(let i=0;i<formData.number;i++)
+    {
+        Uploadavideo(lectureFiles[i],formData,i+1);
+    }
+
+
+
   };
 
   const handleGoButtonClick = () => {

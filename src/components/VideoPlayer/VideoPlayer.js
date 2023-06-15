@@ -18,7 +18,7 @@ const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
 
 const VideoPlayer = () => {
-  const [topic,settopic]=useState('Google');
+  const [topic,settopic]=useState('Gold Man');
   const [videoUrl, setVideoUrl] = useState('');
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [currentlecture,setcurrentlecture]=useState('Lecture1')
@@ -38,10 +38,10 @@ const VideoPlayer = () => {
       )
 
 
-    const videoRef = ref(storage, '/Letures/'+topic+'/'+currentlecture+'.mp4');
+    const videoRef = ref(storage, '/Lectures/'+topic+'/'+currentlecture+'.mp4');
 
     // Replace 'YOUR_TOKEN_HERE' with the actual token provided by Firebase
-    const token = '53cf5819-b785-4989-8727-e62a6b993c42';
+    const token = '88c3d072-9109-4956-ab89-b77a2afc18a4';
 
     getDownloadURL(videoRef, {
       'Authorization': `Bearer ${token}`
@@ -84,7 +84,8 @@ const VideoPlayer = () => {
 
   const changeLecture=(tolecture)=>
   {
-    const videoRef = ref(storage, '/Letures/'+topic+'/'+tolecture+'.mp4');
+    console.log(tolecture)
+    const videoRef = ref(storage, '/Lectures/'+topic+'/'+tolecture+'.mp4');
 
     // Replace 'YOUR_TOKEN_HERE' with the actual token provided by Firebase
     const token = '53cf5819-b785-4989-8727-e62a6b993c42';
