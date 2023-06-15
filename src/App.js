@@ -16,7 +16,7 @@ import Userinfo from './components/UserInfo/UserInfo.js';
 const App = () => {
 
   return (
-    <div>
+    <div> 
       <Router>
         <Routes>
           <Route exact path="/" element={
@@ -32,9 +32,9 @@ const App = () => {
           }/> 
           <Route exact path='/userinfo' element={<Userinfo/>}/>
         </Routes>
-      </Router> */}
+      </Router>
 
-      <VideoPlayer/>
+      {/* <VideoUploader/> */}
 
       
 
