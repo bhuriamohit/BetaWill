@@ -155,6 +155,9 @@ const LecturePage = () => {
     <Gap/>
     <Gap/>
     <div className='list-container'>
+    <h2 className="course-header">Course Name: {topic}
+    <Gap/>
+       No. of Lecture:{lectureCount}</h2>
         {lectureList.map((lecture,index) => (
           <div className='videolist' key={lecture} onClick={() => changeLecture(lecture)}>
             <h2>{`${lecture}: ${descriptionarr[index]}`}</h2>

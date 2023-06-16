@@ -26,18 +26,53 @@
   }
   
   .list-container {
-    background-color: white;
+    background-color: rgb(225, 183, 183);
     width: auto;
     height: 50%;
     overflow: auto;
     padding: 20px;
   }
   
-.videolist
-{
+  .videolist {
     height: 10vh;
-    width: auto;
-    border: 2px solid black;
+    width: 90vh;
+    border: 20px solid blueviolet;
     margin: 1vh;
-}
+    background-color: blueviolet;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+  }
   
+  .videolist h3 {
+    margin: 0;
+    color: white;
+  }
+  
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: antiquewhite;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.course-name {
+  font-weight: bold;
+}
+
+.lecture-count {
+  font-style: italic;
+}
+
+  .fullscreen-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: rgb(174, 131, 214);
+  }
