@@ -13,11 +13,13 @@ import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 import VideoUploader from './components/VideoPlayer/VideoUploader.js';
 import LecturePage from './components/Lectures/LecturePage.js';
 import Userinfo from './components/UserInfo/UserInfo.js';
+import PdfUploader from './components/StudyMaterial/PdfUploader.js';
+import PdfViewer from './components/StudyMaterial/PdfViewer.js';
 const App = () => {
 
   return (
     <div> 
-      <Router>
+      {/* <Router>
         <Routes>
           <Route exact path="/" element={
 
@@ -33,9 +35,9 @@ const App = () => {
           <Route exact path='/userinfo' element={<Userinfo/>}/>
           <Route exact path="/lecturepage" element={<LecturePage/>}/>
         </Routes>
-      </Router>
+      </Router> */}
 
-      {/* <VideoUploader/> */}
+      <PdfViewer/>
 
       
 
