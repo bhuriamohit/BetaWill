@@ -29,6 +29,7 @@ body {
     justify-content: center; /* Updated: Center align items */
     padding: 20px;
     background-color: rgb(60, 155, 167);
+    border-radius: 20px;
   }
   
   .course-item {
@@ -133,3 +134,14 @@ body {
       margin-right: 0;
     }
   }
+  .myc {
+    display: flex;
+    justify-content:left;
+    padding-bottom: 4px;
+    margin-bottom: 0;
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+    zoom: 130%;
+  }
+  
