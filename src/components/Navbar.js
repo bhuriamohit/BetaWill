@@ -43,7 +43,7 @@ const Navbar = () => {
     setPopupOpen(!isPopupOpen);
     if(issignupPopupOpen==true)
     {
-      setPopupOpen(false)
+      setPopupOpen(true)
     }
     setissignupPopupOpen(false);
     
