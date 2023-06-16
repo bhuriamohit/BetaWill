@@ -336,6 +336,7 @@ const Navbar = () => {
               <a href="#">Contact Us</a>
             </li>
           </ul>
+          
           {
             username == null && isMobileMenuOpen=='' ?
               <div className="auth-buttons">
