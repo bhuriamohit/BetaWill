@@ -5,6 +5,8 @@ import ReactPlayer from 'react-player';
 import { useLocation ,useNavigate } from 'react-router-dom';
 import './LecturePage.css'
 import Gap from '../../Gap';
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyClCN3-iXsY3sR_t_p723eXdz-fZr1WV-g",
     authDomain: "friend-website-45257.firebaseapp.com",
