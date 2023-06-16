@@ -61,6 +61,8 @@ const LecturePage = () => {
     
 
 
+
+    
     const videoRef = ref(storage, '/Lectures/'+topic+'/'+currentlecture+'.mp4');
 
     // Replace 'YOUR_TOKEN_HERE' with the actual token provided by Firebase
