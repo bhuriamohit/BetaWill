@@ -66,10 +66,11 @@ const Mycourses=  (props) => {
   };
   
   return (
+    
     <section id='courses' className="section">
 
     <div>
-      {/* <h1 className="courses-heading">Courses</h1> */}
+      <div className="myc">My Courses</div>
       <div className="courses-container">
         {courses.map((course, index) => (
           <div
