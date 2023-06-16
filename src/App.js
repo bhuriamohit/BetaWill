@@ -19,7 +19,7 @@ const App = () => {
 
   return (
     <div> 
-      {/* <Router>
+      <Router>
         <Routes>
           <Route exact path="/" element={
 
@@ -35,9 +35,9 @@ const App = () => {
           <Route exact path='/userinfo' element={<Userinfo/>}/>
           <Route exact path="/lecturepage" element={<LecturePage/>}/>
         </Routes>
-      </Router> */}
+      </Router>
 
-      <PdfViewer/>
+      {/* <PdfViewer/> */}
 
       
 

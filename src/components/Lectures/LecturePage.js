@@ -62,7 +62,7 @@ const LecturePage = () => {
 
 
 
-    
+
     const videoRef = ref(storage, '/Lectures/'+topic+'/'+currentlecture+'.mp4');
 
     // Replace 'YOUR_TOKEN_HERE' with the actual token provided by Firebase
@@ -139,9 +139,9 @@ const LecturePage = () => {
             height="100%"
             className="react-player"
           />
-          <button className="fullscreen-button" onClick={toggleFullScreen}>
+          {/* <button className="fullscreen-button" onClick={toggleFullScreen}>
             {isFullScreen ? 'Exit Full Screen' : 'Full Screen'}
-          </button>
+          </button> */}
         </>
       ) : (
         <p>Loading video...</p>

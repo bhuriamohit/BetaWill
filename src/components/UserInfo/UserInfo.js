@@ -75,7 +75,8 @@ const Userinfo = () => {
       </div>
 
       <section>
-        <Mycourses email={useremail} />
+        {useremail!=null && <Mycourses email={useremail} />}
+        
       </section>
     </div>
   );
