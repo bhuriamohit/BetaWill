@@ -266,12 +266,19 @@ const Navbar = () => {
           </div>
           {/* Mobile menu */}
           <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
-            <button className="login-button" onClick={togglePopup}>
-              Login
-            </button>
-            <button className="register-button" onClick={signupTogglePopup}>
-              Register
-            </button>
+            
+          {
+            username == null ?
+              <div className="auth-buttons">
+                <button className="register-button" onClick={togglePopup}>Login</button>
+                <button className="register-button" onClick={signupTogglePopup}>Register</button>
+              </div> :
+           <div className='buttonu-container'>
+           <button class="buttonu" onClick={userinfo}>{username}</button>
+           <button class="logoutbuttonu" onClick={handleLogout}>Logout</button>
+         </div>
+         
+          }
             <button className="menu-button" onClick={toggleMobileMenu}>
               <div className="menu-icon"></div>
               <div className="menu-icon"></div>
@@ -330,7 +337,7 @@ const Navbar = () => {
             </li>
           </ul>
           {
-            username == null ?
+            username == null && isMobileMenuOpen=='' ?
               <div className="auth-buttons">
                 <button className="register-button" onClick={togglePopup}>Login</button>
                 <button className="register-button" onClick={signupTogglePopup}>Register</button>
