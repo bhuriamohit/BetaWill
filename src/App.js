@@ -11,7 +11,7 @@ import StudyMaterial from './components/StudyMaterial/StudyMaterial';
 import Navbar from './components/Navbar';
 import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 import VideoUploader from './components/VideoPlayer/VideoUploader.js';
-
+import LecturePage from './components/Lectures/LecturePage.js';
 import Userinfo from './components/UserInfo/UserInfo.js';
 const App = () => {
 
@@ -31,6 +31,7 @@ const App = () => {
             
           }/> 
           <Route exact path='/userinfo' element={<Userinfo/>}/>
+          <Route exact path="/LecturePage" element={<LecturePage/>}/>
         </Routes>
       </Router>
 
