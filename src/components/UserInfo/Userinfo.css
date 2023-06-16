@@ -20,7 +20,7 @@
   .title {
     font-family: 'Roboto', sans-serif;
     font-size: 8vh;
-    color: #ff0000;
+    /* color: #ff0000; */
     margin-bottom: 20px;
     max-width: 40vh;
     text-align: center;
