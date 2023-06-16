@@ -75,7 +75,7 @@ const Userinfo = () => {
       </div>
 
       <section>
-        <Mycourses />
+        <Mycourses email={useremail} />
       </section>
     </div>
   );
