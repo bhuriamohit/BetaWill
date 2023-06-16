@@ -34,10 +34,7 @@ const App = () => {
         </Routes>
       </Router>
 
-<<<<<<< HEAD
-=======
       {/* <VideoUploader/> */}
->>>>>>> f2bee976ede758d765e68501c276a816364b2b42
 
       
 
