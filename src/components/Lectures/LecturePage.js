@@ -5,6 +5,8 @@ import ReactPlayer from 'react-player';
 import { useLocation ,useNavigate } from 'react-router-dom';
 import './LecturePage.css'
 import Gap from '../../Gap';
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyClCN3-iXsY3sR_t_p723eXdz-fZr1WV-g",
     authDomain: "friend-website-45257.firebaseapp.com",
@@ -59,6 +61,8 @@ const LecturePage = () => {
     
 
 
+
+    
     const videoRef = ref(storage, '/Lectures/'+topic+'/'+currentlecture+'.mp4');
 
     // Replace 'YOUR_TOKEN_HERE' with the actual token provided by Firebase
