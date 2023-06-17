@@ -1,7 +1,7 @@
 import React, { useState ,useEffect } from "react";
 import "./courses.css";
 import { useNavigate } from "react-router-dom";
-const Courses =  () => {
+const Courses =  (prop) => {
 
   const navigate=useNavigate();
   const [showForm, setShowForm] = useState(false);
