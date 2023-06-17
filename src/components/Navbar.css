@@ -227,8 +227,8 @@ height: 10vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 75vh;
-  padding: 44px;
+  width: 95vh;
+  padding: 74px;
   border-radius: 8px;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -246,11 +246,13 @@ height: 10vh;
 .popup2 {
   margin-top:10vh;
   position: fixed;
-  top: 50%;
+  top: 44%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70vh;
-  padding: 10px;
+   padding-top: 80px;
+
+ 
   border-radius: 8px;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -267,7 +269,7 @@ height: 10vh;
   outline: none;
   border: none;
   background: none;
-  color: rgb(255, 238, 238); /* Adjust the text color as needed */
+  color: rgb(0, 17, 61); /* Adjust the text color as needed */
   margin-bottom: 20px;
   font-size: large;
   padding-bottom: 2px; /* Decrease the space between text and border */
@@ -282,10 +284,13 @@ height: 10vh;
   margin-bottom: 20px;
   font-size: large;
   padding-bottom: 2px; /* Decrease the space between text and border */
-  border-bottom: 4px solid white; /* Adjust the underline style as needed */
+  border-bottom: 4px solid rgba(255, 255, 255, 0.8); /* Adjust the underline style and opacity as needed */
 }
+
 .popup label {
   color: white;
+  display: flex;
+  width: auto;
 }
 .popup2 label {
   color: white;
