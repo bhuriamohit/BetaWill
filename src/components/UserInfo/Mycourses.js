@@ -24,7 +24,11 @@ const Mycourses=  (props) => {
         .then(async (response)=>
         {
             result=await response.json();
-            setCourses(result.mycourses)
+            if(result.mycourses.length>0)
+            {
+              setCourses(result.mycourses)
+
+            }
             
         })
   }

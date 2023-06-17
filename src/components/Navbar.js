@@ -269,7 +269,7 @@ const Navbar = () => {
               }
               else {
                 alert("User signed up successfully now you can login :)\n")
-                otpSent(false)
+                setOtpSent(false)
               }
               setissignupPopupOpen(false)
               setPopupOpen(true)
