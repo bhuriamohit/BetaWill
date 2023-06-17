@@ -194,7 +194,8 @@ const Navbar = () => {
 
       let otpdata = {
         receiver: registerForm.email,
-        otp: otpn
+        otp: otpn,
+        mobNo:registerForm.mobileNumber
       }
 
       fetch('http://localhost:8080/verifyotp', {

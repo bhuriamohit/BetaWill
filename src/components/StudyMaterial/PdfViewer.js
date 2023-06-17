@@ -1,49 +1,26 @@
-import React, { useState } from 'react';
-import { Document, Page } from 'react-pdf';
+import React from 'react';
+import { Viewer } from '@react-pdf-viewer/core';
+import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
+
+// Import styles
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 const PdfViewer = () => {
-  const [numPages, setNumPages] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const pdfUrl = 'https://example.com/path-to-pdf.pdf';
-
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    setNumPages(numPages);
-  };
-
-  const goToPreviousPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
-
-  const goToNextPage = () => {
-    if (currentPage < numPages) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
+  // Create new plugin instance
+  const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
   return (
-    <div className="pdf-viewer">
-      <div className="pdf-container">
-        <Document
-          file={pdfUrl}
-          onLoadSuccess={onDocumentLoadSuccess}
-          className="pdf-document"
-        >
-          <Page pageNumber={currentPage} className="pdf-page" />
-        </Document>
-      </div>
-      <div className="pdf-controls">
-        <button onClick={goToPreviousPage} disabled={currentPage <= 1}>
-          Previous
-        </button>
-        <p>
-          Page {currentPage} of {numPages}
-        </p>
-        <button onClick={goToNextPage} disabled={currentPage >= numPages}>
-          Next
-        </button>
-      </div>
+    <div>
+      <h1>PDF Viewer</h1>
+      <Viewer
+        fileUrl="/assets/pdf-open-parameters.pdf"
+        plugins={[
+          // Register plugins
+          defaultLayoutPluginInstance,
+          // Add more plugins if needed
+        ]}
+      />
     </div>
   );
 };
