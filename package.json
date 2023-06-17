@@ -13,6 +13,7 @@
     "countries": "^1.0.2",
     "countries-list": "^2.6.1",
     "firebase": "^9.22.2",
+    "google-libphonenumber": "^3.2.32",
     "pdfjs-dist": "^2.15.349",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
