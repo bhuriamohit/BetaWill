@@ -228,7 +228,7 @@ height: 10vh;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 75vh;
-  padding: 40px;
+  padding: 44px;
   border-radius: 8px;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -241,7 +241,7 @@ height: 10vh;
   height: 83vh;
   margin-left: 15vh;
 
-  zoom: 80%;
+  zoom: 75%;
 }
 .popup2 {
   margin-top:10vh;
