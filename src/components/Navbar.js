@@ -129,8 +129,6 @@ const Navbar = () => {
   const [useremail, setuseremail] = useState(null)
 
 
-
-
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -285,10 +283,6 @@ const Navbar = () => {
       course: ''
     });
   };
-  const forgotpass=()=>{
-
-
-  }
   const handleSignup = () => {
     // Perform validation and other necessary checks
 
@@ -396,7 +390,7 @@ const Navbar = () => {
               }
               else {
                 alert("User signed up successfully now you can login :)\n")
-                setOtpSent(false)
+                otpSent(false)
               }
               setissignupPopupOpen(false)
               setPopupOpen(true)
@@ -540,7 +534,7 @@ const Navbar = () => {
               <input type="password" value={password} onChange={handlePasswordChange} required />
             </div>
             <button onClick={handleLogin} className='submit'>Login</button>
-            <button onClick={forgotpass} className='forgot'>Forgot password?</button>
+            <button onClick={()=>navigate('/passwordreset')}   className='forgot'>Forgot Password</button>
           </div>
 
         )}
