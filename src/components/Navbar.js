@@ -129,6 +129,8 @@ const Navbar = () => {
   const [useremail, setuseremail] = useState(null)
 
 
+
+
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -283,6 +285,10 @@ const Navbar = () => {
       course: ''
     });
   };
+  const forgotpass=()=>{
+
+
+  }
   const handleSignup = () => {
     // Perform validation and other necessary checks
 
@@ -534,6 +540,7 @@ const Navbar = () => {
               <input type="password" value={password} onChange={handlePasswordChange} required />
             </div>
             <button onClick={handleLogin} className='submit'>Login</button>
+            <button onClick={forgotpass} className='forgot'>Forgot password?</button>
           </div>
 
         )}
