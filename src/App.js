@@ -15,6 +15,9 @@ import LecturePage from './components/Lectures/LecturePage.js';
 import Userinfo from './components/UserInfo/UserInfo.js';
 import PdfUploader from './components/StudyMaterial/PdfUploader.js';
 import PdfViewer from './components/StudyMaterial/PdfViewer.js';
+
+import CourseDescription from './components/Courses/CourseDescription.js';
+
 const App = () => {
 
   return (
@@ -34,8 +37,12 @@ const App = () => {
           }/> 
           <Route exact path='/userinfo' element={<Userinfo/>}/>
           <Route exact path="/lecturepage" element={<LecturePage/>}/>
+          <Route exact path='/coursedescription' element={<CourseDescription/>}/>
         </Routes>
       </Router>
+
+      
+      
 
      
 
