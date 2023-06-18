@@ -6,7 +6,7 @@ import Userinfo from './UserInfo/UserInfo';
 import { Router, Routes, Route } from "react-router-dom"
 import countries from './CountryNames.js';
 import WebFont from 'webfontloader';
-const Navbar = () => {
+const Navbar = ({useremailtosend}) => {
   const countries = [
     { name: 'India', code: '+91' },
     // ...other countries
@@ -170,9 +170,11 @@ const Navbar = () => {
   };
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
+    
   };
   useEffect(() => {
     // Retrieve the username from localStorage
+    
     WebFont.load({
       google: {
         families: ['Droid Sans', 'Chilanka']
@@ -180,6 +182,7 @@ const Navbar = () => {
     });
     const storedUsername = localStorage.getItem('username');
     const storedemail = localStorage.getItem('useremail')
+    useremailtosend(storedemail)
     console.log(storedUsername)
     setuseremail(storedemail)
     if (storedUsername) {
@@ -192,6 +195,7 @@ const Navbar = () => {
     setPassword(event.target.value);
   };
   const handleLogin = () => {
+    useremailtosend(email)
     let formData = {
       email: email,
       password: password
@@ -212,6 +216,7 @@ const Navbar = () => {
               console.log(fres)
               setuseremail(fres.email)
               setusername(fres.username);
+              useremailtosend(fres.email)
               localStorage.setItem('username', fres.username);
               localStorage.setItem('useremail', fres.email);
               setPopupOpen(!isPopupOpen);
@@ -305,6 +310,7 @@ const Navbar = () => {
       alert("Both Password doesn;t match , please Enter same password in both fields")
       return;
     }
+    
     if (!otpSent) {
 
       const randomNumber = Math.floor(Math.random() * 10000);
@@ -316,7 +322,7 @@ const Navbar = () => {
       let otpdata = {
         receiver: registerForm.email,
         otp: otpn,
-        mobNo:registerForm.mobileNumber
+        mobNo:selectedCountry+registerForm.mobileNumber
       }
 
       fetch('http://localhost:8080/verifyotp', {

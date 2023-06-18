@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch,Routes ,Route} from 'react-router-dom';
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -19,17 +19,26 @@ import PdfViewer from './components/StudyMaterial/PdfViewer.js';
 import CourseDescription from './components/Courses/CourseDescription.js';
 
 const App = () => {
-
+    const [useremail,setuseremail]=useState(null)
+    useEffect(()=>
+    {
+      
+      console.log(useremail)
+    })
+    
+    
   return (
     <div> 
+      
       <Router>
         <Routes>
           <Route exact path="/" element={
 
             <div>
-              <Navbar/>
+              <Navbar useremailtosend={setuseremail}/>
               <Home/>
-              <Courses/>
+              <Courses data={useremail}/>
+              
               <StudyMaterial/>
 
             </div>
