@@ -58,4 +58,15 @@
     height: 1px;
     background-color: #ffffff;
   }
+  .toggle-button {
+    padding: 8px 16px;
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
   
+  .toggle-button:hover {
+    background-color: #23527c;
+  }

@@ -396,7 +396,7 @@ const Navbar = ({useremailtosend}) => {
               }
               else {
                 alert("User signed up successfully now you can login :)\n")
-                setOtpSent(false)
+                otpSent(false)
               }
               setissignupPopupOpen(false)
               setPopupOpen(true)
@@ -540,6 +540,7 @@ const Navbar = ({useremailtosend}) => {
               <input type="password" value={password} onChange={handlePasswordChange} required />
             </div>
             <button onClick={handleLogin} className='submit'>Login</button>
+            <button onClick={()=>navigate('/passwordreset')}   className='forgot'>Forgot Password</button>
           </div>
 
         )}

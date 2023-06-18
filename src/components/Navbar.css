@@ -409,3 +409,14 @@ border-radius:30px ;
   border-color: red;
   transform: scale(1.05);
 }
+.forgot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fe0404;
+  font-weight: bold;
+  text-decoration: underline;
+}
