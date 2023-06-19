@@ -17,7 +17,7 @@ const Userinfo = () => {
   const [country, setcountry] = useState("Fetching Data......");
   const [state, setstate] = useState("Fetching Data.......");
   const [pincode, setpincode] = useState("Fetching Data..........");
-  const [showProfile, setShowProfile] = useState(false  );
+  const [showProfile, setShowProfile] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -63,27 +63,44 @@ const Userinfo = () => {
           </div>
           <div className="info">
             <span className="label">Full Name:</span>
-            <span className="value">{fullname}</span>
+            <span className="value">
+              {fullname}
+              <button className="useredit">Edit</button>
+            </span>
           </div>
           <div className="info">
             <span className="label">Date of Birth:</span>
-            <span className="value">{dob}</span>
+            <span className="value">
+              {dob}
+              <button className="useredit">Edit</button>
+            </span>
           </div>
           <div className="info">
             <span className="label">Gender:</span>
-            <span className="value">{gender}</span>
+            <span className="value">
+              {gender}
+              <button className="useredit">Edit</button>
+            </span>
           </div>
           <div className="info">
             <span className="label">Country:</span>
-            <span className="value">{country}</span>
+            <span className="value">
+              {country}
+              <button className="useredit">Edit</button>
+            </span>
           </div>
           <div className="info">
             <span className="label">State:</span>
-            <span className="value">{state}</span>
+            <span className="value">
+              {state}
+              <button className="useredit">Edit</button>
+            </span>
           </div>
           <div className="info">
             <span className="label">Pincode:</span>
-            <span className="value">{pincode}</span>
+            <span className="value">{pincode}
+            <button className="useredit">Edit</button></span>
+            
           </div>
         </div>
       )}
