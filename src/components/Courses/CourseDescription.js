@@ -75,7 +75,8 @@ const CourseDescription = () => {
         let formData = {
             course: title,
             email: email,
-            password: password
+            password: password,
+            price:information.price
         }
         await fetch('http://localhost:8080/payment', {
             method: 'POST',
@@ -98,6 +99,9 @@ const CourseDescription = () => {
 
         }
         else {
+
+
+
             if (fres.coursepresence == false) {
                 alert("You have already bought this course")
             }

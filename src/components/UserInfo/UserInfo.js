@@ -17,7 +17,7 @@ const Userinfo = () => {
   const [country, setcountry] = useState("Fetching Data......");
   const [state, setstate] = useState("Fetching Data.......");
   const [pincode, setpincode] = useState("Fetching Data..........");
-  const [showProfile, setShowProfile] = useState(true);
+  const [showProfile, setShowProfile] = useState(false  );
 
   useEffect(() => {
     fetchData();
