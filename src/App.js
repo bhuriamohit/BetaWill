@@ -16,8 +16,9 @@ import Userinfo from './components/UserInfo/UserInfo.js';
 import PdfUploader from './components/StudyMaterial/PdfUploader.js';
 import PdfViewer from './components/StudyMaterial/PdfViewer.js';
 import PasswordReset from './components/PasswordReset.js';
-
+import PaymentPage from './components/Payments/PaymentPage.js';
 import CourseDescription from './components/Courses/CourseDescription.js';
+import PaymentReceipt from './components/Payments/PaymentReceipt.js';
 
 const App = () => {
     const [useremail,setuseremail]=useState(null)
@@ -49,18 +50,13 @@ const App = () => {
           <Route exact path="/lecturepage" element={<LecturePage/>}/>
           <Route exact path='/coursedescription' element={<CourseDescription/>}/>
           <Route exact path='/passwordreset' element={<PasswordReset/>}/>
+          <Route exact path='/paymentreceipt' element={<PaymentReceipt/>}/>
         </Routes>
       </Router>
 
-      
-      
+      {/* <PaymentPage/> */}
 
-     
-
-      
-
-    
-      
+  
     </div>
   );
 };

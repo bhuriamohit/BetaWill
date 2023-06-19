@@ -6,6 +6,7 @@ import "./CourseDescription.css"; // Import CSS file for styling
 const CourseDescription = () => {
     const location = useLocation();
     let title;
+    const [courselink,setcourselink]=useState(null)
     if (location.state != null) {
         title = location.state.coursedescription;
         localStorage.setItem('title', title)
@@ -33,6 +34,7 @@ const CourseDescription = () => {
     const [password, setPassword] = useState("");
     const [emailValue, setEmailValue] = useState("");
     const [passwordValue, setPasswordValue] = useState("");
+    const [paymentstatus,setpaymentstatus]=useState(null)
 
     const fetchdetails = (title) => {
         let s = "http://localhost:8080/coursedetail/" + title;
@@ -110,25 +112,35 @@ const CourseDescription = () => {
                     course:title,
                     email:email
                 }
-                await fetch('http://localhost:8080/addcoursetostudent', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                })
-                .then(async (response)=>
-                {
-                    response=await response.json();
-                    if(response.status==true)
-                    {
-                        alert("Course is added successfully")
-                    }
-                })
+                
+                setcourselink(fres.link)
+                
+
+
+                // await fetch('http://localhost:8080/addcoursetostudent', {
+                //     method: 'POST',
+                //     headers: {
+                //         'Content-Type': 'application/json'
+                //     },
+                //     body: JSON.stringify(formData)
+                // })
+                // .then(async (response)=>
+                // {
+                //     response=await response.json();
+                //     if(response.status==true)
+                //     {
+                //         alert("Course is added successfully")
+                //     }
+                // })
             }
         }
     };
-
+    const makepayment=(event)=>
+    {
+        event.preventDefault();
+        console.log(courselink)
+        window.location.href = courselink;
+    }
     return (
         <div className="course-description-container">
             <div className="content-container">
@@ -166,17 +178,15 @@ const CourseDescription = () => {
                             <button className="proceed-button" onClick={handleProceedToPay}>
                                 Proceed to Pay
                             </button>
+                            {courselink!=null &&
+                            <button className="proceed-button" onClick={makepayment}>Make Payment</button>}
                         </form>
                     </div>
+                    
                 )}
+                <h2>Payment Status :{paymentstatus}</h2>
             </div>
-            {emailValue && passwordValue && (
-                <div className="payment-details">
-                    <h4>Payment Details:</h4>
-                    <p>Email: {emailValue}</p>
-                    <p>Password: {passwordValue}</p>
-                </div>
-            )}
+            
         </div>
     );
 };
