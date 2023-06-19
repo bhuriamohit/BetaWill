@@ -70,3 +70,17 @@
   .toggle-button:hover {
     background-color: #23527c;
   }
+  .useredit {
+    background-color: #337ab7;
+    color: #fff;
+    float: right;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .useredit:hover {
+    background-color: #11416a;
+  }
+  
