@@ -244,13 +244,13 @@ height: 10vh;
   zoom: 75%;
 }
 .popup2 {
-  margin-top:10vh;
+  margin-top:1vh;
   position: fixed;
   top: 44%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70vh;
-   padding-top: 80px;
+  width: auto;
+   padding: 1px;
 
  
   border-radius: 8px;
@@ -419,4 +419,8 @@ border-radius:30px ;
   color: #fe0404;
   font-weight: bold;
   text-decoration: underline;
+}
+.strua{
+  display: flex;
+  justify-content: end;
 }
