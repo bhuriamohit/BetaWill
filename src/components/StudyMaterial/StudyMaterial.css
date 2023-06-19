@@ -1,4 +1,76 @@
-.gap
-{
-    height: 10vh;
-}
+/* StudyMaterial.css */
+
+.studySection {
+  
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .studySection-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .studyCourse-container {
+    background-color: #18c2c8;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  
+  }
+  
+  .studyCourse-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .studyCourse-title {
+    font-size: 20px;
+    color: #000000;
+    margin-right: 10px;
+  }
+  
+  .studyCourse-toggle {
+    background-color: transparent;
+    border: none;
+ 
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .studyCourse-toggle:hover {
+    color: #fd0606;
+  }
+  
+  .studyCourse-description {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .studyCourse-content {
+    margin-top: 10px;
+  }
+  
+  .studyMaterial-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .studyMaterial-item {
+    margin-bottom: 5px;
+  }
+  
+  .studyMaterial-link {
+    color: #00028d;
+    text-decoration: none;
+  }
+  
+  .studyMaterial-link:hover {
+    text-decoration: underline;
+  }
+  
