@@ -434,6 +434,7 @@ const Navbar = ({useremailtosend}) => {
 
 
   return (
+    
     <div>
 
       <div>
@@ -460,7 +461,10 @@ const Navbar = ({useremailtosend}) => {
               <div className='buttonu-container'>
                 <button class="buttonu" onClick={userinfo}>{username}</button>
                 <button class="logoutbuttonu" onClick={handleLogout}>Logout</button>
-              </div>} */}
+              </div>} */
+              
+              
+              }
 
             <button className="menu-button" onClick={toggleMobileMenu}>
               <div className="menu-icon"></div>
@@ -470,6 +474,7 @@ const Navbar = ({useremailtosend}) => {
             {isMobileMenuOpen && (
 
               <div className="mobile-menu-content">
+                <button className="close-button" onClick={toggleMobileMenu}>X</button>
                 <ul className="nav-links">
                   <li>
                     <a href="#" onClick={(e) => { e.preventDefault(); handleScrollToSection('home') }} >Home</a>
