@@ -29,7 +29,7 @@ const VideoPlayer = () => {
 
   useEffect(() => {
     const fetchLectureData = async () => {
-      const response = await fetch(`http://localhost:8080/Lecturesrecord/${topic}`);
+      const response = await fetch(`https://betawill-com.onrender.com/Lecturesrecord/${topic}`);
       const data = await response.json();
       setLectureCount(data.number);
       setDescriptionArr(data.description);

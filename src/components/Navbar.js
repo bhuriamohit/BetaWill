@@ -201,7 +201,7 @@ const Navbar = ({useremailtosend}) => {
       password: password
     }
     console.log(formData);
-    fetch('http://localhost:8080/students/login', {
+    fetch('https://betawill-com.onrender.com/students/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -325,7 +325,7 @@ const Navbar = ({useremailtosend}) => {
         mobNo:selectedCountry+registerForm.mobileNumber
       }
 
-      fetch('http://localhost:8080/verifyotp', {
+      fetch('https://betawill-com.onrender.com/verifyotp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -381,7 +381,7 @@ const Navbar = ({useremailtosend}) => {
       // Perform further processing or API call with the form data
       console.log(formData);
 
-      fetch('http://localhost:8080/students/signup', {
+      fetch('https://betawill-com.onrender.com/students/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

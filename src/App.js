@@ -19,6 +19,7 @@ import PasswordReset from './components/PasswordReset.js';
 import PaymentPage from './components/Payments/PaymentPage.js';
 import CourseDescription from './components/Courses/CourseDescription.js';
 import PaymentReceipt from './components/Payments/PaymentReceipt.js';
+import Test from './components/TestSeries/Test.js';
 
 const App = () => {
     const [useremail,setuseremail]=useState(null)
@@ -55,7 +56,7 @@ const App = () => {
       </Router>
 
       {/* <PaymentPage/> */}
-
+      {/* <Test/> */}
   
     </div>
   );

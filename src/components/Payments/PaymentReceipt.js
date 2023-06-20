@@ -12,7 +12,7 @@ const PaymentReceipt=()=>
     const navigate=useNavigate()
     useEffect(()=>
     {
-        fetch("http://localhost:8080/payment/status").then(async (response)=>
+        fetch("https://betawill-com.onrender.com/payment/status").then(async (response)=>
         {
             let fres=await response.json();
             fres=fres.data
@@ -30,7 +30,7 @@ const PaymentReceipt=()=>
                 course:title,
                 email:buyer
             }
-            fetch('http://localhost:8080/addcoursetostudent', {
+            fetch('https://betawill-com.onrender.com/addcoursetostudent', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

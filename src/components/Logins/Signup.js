@@ -32,7 +32,7 @@ function Signup() {
       designation: 'CSE'
     };
 
-    fetch('http://localhost:8080/students/signup', {
+    fetch('https://betawill-com.onrender.com/students/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

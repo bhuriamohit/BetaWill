@@ -37,7 +37,7 @@ const CourseDescription = () => {
     const [paymentstatus,setpaymentstatus]=useState(null)
 
     const fetchdetails = (title) => {
-        let s = "http://localhost:8080/coursedetail/" + title;
+        let s = "https://betawill-com.onrender.com/coursedetail/" + title;
         fetch(s)
             .then(async (resp) => {
                 let fres = await resp.json();
@@ -80,7 +80,7 @@ const CourseDescription = () => {
             password: password,
             price:information.price
         }
-        await fetch('http://localhost:8080/payment', {
+        await fetch('https://betawill-com.onrender.com/payment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -117,7 +117,7 @@ const CourseDescription = () => {
                 
 
 
-                // await fetch('http://localhost:8080/addcoursetostudent', {
+                // await fetch('https://betawill-com.onrender.com/addcoursetostudent', {
                 //     method: 'POST',
                 //     headers: {
                 //         'Content-Type': 'application/json'

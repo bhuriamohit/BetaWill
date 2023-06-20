@@ -8,7 +8,7 @@ const PaymentPage = () => {
   };
 
   const handlePayment = () => {
-    fetch('http://localhost:8080/payment1', {
+    fetch('https://betawill-com.onrender.com/payment1', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

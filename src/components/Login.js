@@ -22,7 +22,7 @@ const LoginPage = () => {
         password:password
     }
     console.log(formData);
-    fetch('http://localhost:8080/students/login', {
+    fetch('https://betawill-com.onrender.com/students/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

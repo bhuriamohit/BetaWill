@@ -20,7 +20,7 @@ const Mycourses=  (props) => {
  async function synccourses()
   {
     let result;
-        fetch("http://localhost:8080/mycourses/"+props.email)
+        fetch("https://betawill-com.onrender.com/mycourses/"+props.email)
         .then(async (response)=>
         {
             result=await response.json();
@@ -49,7 +49,7 @@ const Mycourses=  (props) => {
       description: courseDescription,
       enrollLink: "https://example.com",
     };
-    await fetch('http://localhost:8080/addcourses', {
+    await fetch('https://betawill-com.onrender.com/addcourses', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -27,7 +27,7 @@ const Userinfo = () => {
     if (location.state == null) {
       navigate('/');
     } else {
-      let s = "http://localhost:8080/getinfo/" + useremail;
+      let s = "https://betawill-com.onrender.com/getinfo/" + useremail;
       let response = await fetch(s);
       let fres = await response.json();
 
