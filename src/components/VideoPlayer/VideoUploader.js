@@ -136,7 +136,7 @@ const CourseForm = () => {
       topic:courseName,
       Description:lectureDescriptions
     }
-    fetch('http://localhost:8080/uploadlectures', {
+    fetch('https://betawill-com.onrender.com/uploadlectures', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

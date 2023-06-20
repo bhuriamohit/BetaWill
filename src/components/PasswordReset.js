@@ -37,7 +37,7 @@ const PasswordReset = () => {
       receiver: email,
       otp: randomNumber,
     };
-    fetch('http://localhost:8080/resetpasswordotp', {
+    fetch('https://betawill-com.onrender.com/resetpasswordotp', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ const PasswordReset = () => {
       email: email,
       newpassword: newpassword,
     };
-    fetch('http://localhost:8080/changepassword', {
+    fetch('https://betawill-com.onrender.com/changepassword', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

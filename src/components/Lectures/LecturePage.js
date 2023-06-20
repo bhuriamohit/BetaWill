@@ -48,7 +48,7 @@ const LecturePage = () => {
     else
     {
 
-      const s="http://localhost:8080/Lecturesrecord/"+topic;
+      const s="https://betawill-com.onrender.com/Lecturesrecord/"+topic;
       fetch(s).then(async (resp)=>
         {
           let fres=await resp.json();
