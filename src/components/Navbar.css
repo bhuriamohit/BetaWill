@@ -252,7 +252,7 @@ height: 10vh;
   left: 45%;
   transform: translate(-50%, -50%);
   width: 85vh;
-  padding: 15px;
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -276,6 +276,8 @@ height: 10vh;
   font-size: large;
   padding-bottom: 2px; /* Decrease the space between text and border */
   border-bottom: 4px solid white; /* Adjust the underline style as needed */
+  width: 100%; /* Add this line to set the width of the input to 100% */
+  box-sizing: border-box;
 }
 
 .popup2 input {
@@ -287,6 +289,8 @@ height: 10vh;
   font-size: large;
   padding-bottom: 2px; /* Decrease the space between text and border */
   border-bottom: 4px solid rgba(255, 255, 255, 0.8); /* Adjust the underline style and opacity as needed */
+  width: 90%; /* Add this line to set the width of the input to 100% */
+  box-sizing: border-box;
 }
 
 .popup label {
@@ -296,7 +300,7 @@ height: 10vh;
 }
 .popup2 label {
   color: white;
-  width: auto;
+  width: 80 vh;
 }
 
 .popup-content {
@@ -311,7 +315,7 @@ height: 10vh;
  
   display: flex;
   flex-wrap: wrap;
-  width:90vh;
+  width:50vh;
 }
 .form-field-pair {
   width: 40%;

@@ -549,7 +549,7 @@ const Navbar = ({useremailtosend}) => {
         {isPopupOpen && (
           <div className="popup2">
             <button className="close-button" onClick={togglePopup}>X</button>
-            <div className="popup-content">
+            <div className="popup2-content">
               <label className='label'>Email or phone number:</label>
               <input type="text" value={email} onChange={handleEmailChange} />
             </div>
