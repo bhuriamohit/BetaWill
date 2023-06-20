@@ -20,6 +20,7 @@ import PaymentPage from './components/Payments/PaymentPage.js';
 import CourseDescription from './components/Courses/CourseDescription.js';
 import PaymentReceipt from './components/Payments/PaymentReceipt.js';
 import Test from './components/TestSeries/Test.js';
+import MainTestPage from './components/TestSeries/MainTestPage.js';
 
 const App = () => {
     const [useremail,setuseremail]=useState(null)
@@ -33,7 +34,7 @@ const App = () => {
   return (
     <div> 
       
-      <Router>
+      {/* <Router>
         <Routes>
           <Route exact path="/" element={
 
@@ -53,10 +54,10 @@ const App = () => {
           <Route exact path='/passwordreset' element={<PasswordReset/>}/>
           <Route exact path='/paymentreceipt' element={<PaymentReceipt/>}/>
         </Routes>
-      </Router>
+      </Router> */}
 
       {/* <PaymentPage/> */}
-      {/* <Test/> */}
+      <MainTestPage/>
   
     </div>
   );

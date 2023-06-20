@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Test.css';
 
-function Test() {
+function Test({setpagestatus}) {
   const [questions, setQuestions] = useState(JSON.parse(localStorage.getItem('questions')) || [
     {
       id: 1,
@@ -10,35 +10,29 @@ function Test() {
       selectedOption: null,
     },
     {
-        id: 2,
-        question: 'Question 2',
-        options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-        selectedOption: null,
-      },
-      {
-        id: 3,
-        question: 'Question 3',
-        options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-        selectedOption: null,
-      },
-      {
-        id: 4,
-        question: 'Question 4',
-        options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-        selectedOption: null,
-      },
-      {
-        id: 5,
-        question: 'Question 5',
-        options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-        selectedOption: null,
-      }
-    
+      id: 2,
+      question: 'Question 2',
+      options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+      selectedOption: null,
+    },
+    {
+      id: 3,
+      question: 'Question 3',
+      options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+      selectedOption: null,
+    },
+    {
+      id: 4,
+      question: 'Question 4',
+      options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+      selectedOption: null,
+    },
     
   ]);
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [timer, setTimer] = useState(Number(localStorage.getItem('timer')) || 180);
+  const [userData, setUserData] = useState(JSON.parse(localStorage.getItem('userData')) || {});
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -55,8 +49,12 @@ function Test() {
   }, []);
 
   useEffect(() => {
-    // localStorage.setItem('questions', JSON.stringify(questions)) ;
+    localStorage.setItem('questions', JSON.stringify(questions));
   }, [questions]);
+
+  useEffect(() => {
+    localStorage.setItem('userData', JSON.stringify(userData));
+  }, [userData]);
 
   const handleOptionChange = (event) => {
     const selectedOption = event.target.value;
@@ -82,30 +80,22 @@ function Test() {
   };
 
   const handleFormSubmit = () => {
-    localStorage.clear();
-    // setQuestions([
-    //   {
-    //     id: 1,
-    //     question: 'Question 1',
-    //     options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-    //     selectedOption: null,
-    //   },
-    //   // Add more questions here
-    // ]);
+    const updatedUserData = { ...userData, [currentQuestionIndex]: questions[currentQuestionIndex].selectedOption };
+    setUserData(updatedUserData);
     setCurrentQuestionIndex(0);
     setTimer(180);
   };
 
   return (
-    <div className="app">
-      <div className="timer">Timer: {timer} seconds</div>
-      <div className="question-box">
-        <div className="question">
+    <div className="testpage-app">
+      <div className="testpage-timer">Timer: {timer} seconds</div>
+      <div className="testpage-question-box">
+        <div className="testpage-question">
           <h2>{questions[currentQuestionIndex].question}</h2>
         </div>
-        <div className="options">
+        <div className="testpage-options">
           {questions[currentQuestionIndex].options.map((option, index) => (
-            <div key={index} className="option">
+            <div key={index} className="testpage-option">
               <label>
                 <input
                   type="radio"
@@ -118,7 +108,7 @@ function Test() {
             </div>
           ))}
         </div>
-        <div className="navigation">
+        <div className="testpage-navigation">
           <button onClick={handlePrevQuestion} disabled={currentQuestionIndex === 0}>
             Prev
           </button>
@@ -126,15 +116,16 @@ function Test() {
             Next
           </button>
         </div>
-        <div className="submit">
+        <div className="testpage-submit">
           <button onClick={handleFormSubmit}>Submit</button>
+          <button onClick={()=>setpagestatus("DescriptionPage")}>Clear All</button>
         </div>
       </div>
-      <div className="question-navigation">
+      <div className="testpage-question-navigation">
         {questions.map((question, index) => (
           <div
             key={index}
-            className={`question-nav-item ${currentQuestionIndex === index ? 'active' : ''}`}
+            className={`testpage-question-nav-item ${currentQuestionIndex === index ? 'active' : ''}`}
             onClick={() => handleQuestionNavigation(index)}
           >
             {index + 1}
