@@ -434,6 +434,7 @@ const Navbar = ({useremailtosend}) => {
 
 
   return (
+    
     <div>
 
       <div>
@@ -443,11 +444,27 @@ const Navbar = ({useremailtosend}) => {
             {/* Add your logo here */}
             <img src={logo} alt="Logo" className="main-logo" />
           </div>
+          <div>
+            
+
+          </div>
           <div className="mobile-menu-buttons">
           </div>
           {/* Mobile menu */}
           <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
 
+         {/* { username == null ?
+              <div className="autho-buttons">
+                <button className="register-button" onClick={togglePopup}>Login</button>
+                <button className="register-button" onClick={signupTogglePopup}>Register</button>
+              </div> :
+              <div className='buttonu-container'>
+                <button class="buttonu" onClick={userinfo}>{username}</button>
+                <button class="logoutbuttonu" onClick={handleLogout}>Logout</button>
+              </div>} */
+              
+              
+              }
 
             <button className="menu-button" onClick={toggleMobileMenu}>
               <div className="menu-icon"></div>
@@ -457,6 +474,7 @@ const Navbar = ({useremailtosend}) => {
             {isMobileMenuOpen && (
 
               <div className="mobile-menu-content">
+                <button className="close-button" onClick={toggleMobileMenu}>X</button>
                 <ul className="nav-links">
                   <li>
                     <a href="#" onClick={(e) => { e.preventDefault(); handleScrollToSection('home') }} >Home</a>
@@ -477,10 +495,7 @@ const Navbar = ({useremailtosend}) => {
                     <a href="#">Contact Us</a>
                   </li>
                 </ul>
-                {/* <div className="auth-buttons">
-              <button className="login-button"  onClick={()=>navigate('/login')}>Login</button>
-              <button className="register-button" onClick={()=>navigate('/signup')}>Register</button>
-            </div> */}
+               
               </div>
             )}
           </div>
@@ -506,9 +521,10 @@ const Navbar = ({useremailtosend}) => {
               <a href="#">Contact Us</a>
             </li>
           </ul>
+
           {
-            username == null && isMobileMenuOpen == '' ?
-              <div className="auth-buttons">
+            username == null  ?
+              <div className="strua">
                 <button className="register-button" onClick={togglePopup}>Login</button>
                 <button className="register-button" onClick={signupTogglePopup}>Register</button>
               </div> :
@@ -517,7 +533,9 @@ const Navbar = ({useremailtosend}) => {
                 <button class="logoutbuttonu" onClick={handleLogout}>Logout</button>
               </div>
 
-          }
+           }
+
+           
         </nav>
       </div>
       <div className='gap'>
