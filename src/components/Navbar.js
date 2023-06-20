@@ -567,6 +567,7 @@ const Navbar = ({useremailtosend}) => {
             <button className="close-button" onClick={togglePopup}>X</button>
             {/* Form fields */}
             <div className="popup-content">
+            <button className="close-button" onClick={togglePopup}>X</button>
               <div className="form-field-pair">
                 <label className="label">Full Name:</label>
                 <input type="text" value={registerForm.fullName} onChange={(e) => setRegisterForm({ ...registerForm, fullName: e.target.value })}  required/>
