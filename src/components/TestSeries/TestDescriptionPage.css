@@ -1,0 +1,81 @@
+.test-description-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .test-description-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .test-description-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .test-description-checkbox-label {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  .test-description-checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .test-description-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #eee;
+    border-radius: 3px;
+  }
+  
+  .test-description-checkmark:after {
+    content: '';
+    position: absolute;
+    display: none;
+  }
+  
+  .test-description-checkbox-label input:checked ~ .test-description-checkmark:after {
+    display: block;
+  }
+  
+  .test-description-checkbox-label .test-description-checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  .test-description-checkbox-text {
+    margin-left: 25px;
+    font-size: 14px;
+  }
+  
+  .test-description-submit-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: grey;
+    cursor: not-allowed;
+  }
+  
+  .test-description-submit-button.active {
+    background-color: green;
+    cursor: pointer;
+  }
+  

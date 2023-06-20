@@ -1,0 +1,39 @@
+import React, { useState } from 'react';
+import './TestDescriptionPage.css'; // Import the CSS file for styling
+
+const TestDescriptionPage = ({setpagestatus}) => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
+  const handleSubmit = () => {
+    setpagestatus("TestPage")
+  };
+
+  return (
+    <div className="test-description-container">
+      <h1 className="test-description-title">Test Description</h1>
+      <p className="test-description-description">This is a sample test description.</p>
+      <label className="test-description-checkbox-label">
+        <input
+          type="checkbox"
+          checked={isChecked}
+          onChange={handleCheckboxChange}
+        />
+        <span className="test-description-checkmark"></span>
+        <span className="test-description-checkbox-text">I agree to all terms and conditions</span>
+      </label>
+      <button
+        onClick={handleSubmit}
+        disabled={!isChecked}
+        className={`test-description-submit-button ${isChecked ? 'active' : ''}`}
+      >
+        Submit
+      </button>
+    </div>
+  );
+};
+
+export default TestDescriptionPage;
