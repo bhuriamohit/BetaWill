@@ -392,7 +392,7 @@ const Navbar = ({useremailtosend}) => {
               }
               else {
                 alert("User signed up successfully now you can login :)\n")
-                otpSent(false)
+                setOtpSent(false)
               }
               setissignupPopupOpen(false)
               setPopupOpen(true)
@@ -544,12 +544,13 @@ const Navbar = ({useremailtosend}) => {
         {/* Popup */}
         {isPopupOpen && (
           <div className="popup2">
-            <button className="close-button" onClick={togglePopup}>X</button>
-            <div className="popup2-content">
-              <label className='label'>Email or phone number:</label>
-              <input type="text" value={email} onChange={handleEmailChange} />
+            <button className='closeButton' onClick={togglePopup}>X</button> 
+            <div >
+            
+               <label className='label'>Email or phone number:</label>
+              <input type="text" value={email} onChange={handleEmailChange} style={{ width: '300px' }} />
             </div>
-            <div className='popup2-content'>
+            <div>
               <label className='label'>Password:</label>
               <input type="password" value={password} onChange={handlePasswordChange}  style={{ width: '300px' }} required />
             </div>
@@ -562,9 +563,8 @@ const Navbar = ({useremailtosend}) => {
           <div className="popup2">
             <button className='closeButton' onClick={togglePopup}>X</button>
             {/* Form fields */}
-            <div className="popup-content">
-            <button className="close-button" onClick={togglePopup}>X</button>
-              <div className="form-field-pair">
+            <div >
+              <div >
                 <label className="label">Full Name:</label>
                 <input type="text" value={registerForm.fullName} onChange={(e) => setRegisterForm({ ...registerForm, fullName: e.target.value })}  style={{ width: '300px' }} required/>
               </div>
