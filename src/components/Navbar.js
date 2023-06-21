@@ -291,21 +291,17 @@ const Navbar = ({useremailtosend}) => {
   const handleSignup = () => {
     // Perform validation and other necessary checks
 
-    if(registerForm.email=='' || registerForm.fullName=='' || registerForm.mobileNumber=='' || registerForm.dob=='' )
+    if(registerForm.email=='' || registerForm.fullName==''  )
     {
       alert("Please fill all the fields")
       return
     }
-    if(registerForm.password=='' || registerForm.confirmPassword=='' || registerForm.gender=='' || registerForm.country=='' )
+    if(registerForm.password=='' || registerForm.confirmPassword=='' )
     {
       alert("Please fill all the fields")
       return
     }
-    if(registerForm.state=='' || registerForm.pincode=='')
-    {
-      alert("Please fill all the fields")
-      return
-    }
+
     if (registerForm.password != registerForm.confirmPassword) {
       alert("Both Password doesn;t match , please Enter same password in both fields")
       return;
@@ -474,7 +470,7 @@ const Navbar = ({useremailtosend}) => {
             {isMobileMenuOpen && (
 
               <div className="mobile-menu-content">
-                <button className="close-button" onClick={toggleMobileMenu}>X</button>
+                <button className="closeButton" onClick={toggleMobileMenu}>X</button>
                 <ul className="nav-links">
                   <li>
                     <a href="#" onClick={(e) => { e.preventDefault(); handleScrollToSection('home') }} >Home</a>
@@ -548,14 +544,15 @@ const Navbar = ({useremailtosend}) => {
         {/* Popup */}
         {isPopupOpen && (
           <div className="popup2">
-            <button className="close-button" onClick={togglePopup}>X</button>
-            <div className="popup2-content">
-              <label className='label'>Email or phone number:</label>
-              <input type="text" value={email} onChange={handleEmailChange} />
+            <button className='closeButton' onClick={togglePopup}>X</button> 
+            <div >
+            
+               <label className='label'>Email or phone number:</label>
+              <input type="text" value={email} onChange={handleEmailChange} style={{ width: '300px' }} />
             </div>
             <div>
               <label className='label'>Password:</label>
-              <input type="password" value={password} onChange={handlePasswordChange} required />
+              <input type="password" value={password} onChange={handlePasswordChange}  style={{ width: '300px' }} required />
             </div>
             <button onClick={handleLogin} className='submit'>Login</button>
             <button onClick={()=>navigate('/passwordreset')}   className='forgot'>Forgot Password</button>
@@ -563,20 +560,19 @@ const Navbar = ({useremailtosend}) => {
 
         )}
         {issignupPopupOpen && (
-          <div className="popup">
-            <button className="close-button" onClick={togglePopup}>X</button>
+          <div className="popup2">
+            <button className='closeButton' onClick={togglePopup}>X</button>
             {/* Form fields */}
-            <div className="popup-content">
-            <button className="close-button" onClick={togglePopup}>X</button>
-              <div className="form-field-pair">
+            <div >
+              <div >
                 <label className="label">Full Name:</label>
-                <input type="text" value={registerForm.fullName} onChange={(e) => setRegisterForm({ ...registerForm, fullName: e.target.value })}  required/>
+                <input type="text" value={registerForm.fullName} onChange={(e) => setRegisterForm({ ...registerForm, fullName: e.target.value })}  style={{ width: '300px' }} required/>
               </div>
-              <div className="form-field-pair">
+              <div >
                 <label className="label">Email:</label>
-                <input type="email" value={registerForm.email} onChange={(e) => setRegisterForm({ ...registerForm, email: e.target.value })}  required/>
+                <input type="email" value={registerForm.email} onChange={(e) => setRegisterForm({ ...registerForm, email: e.target.value })}  style={{ width: '300px' }} required/>
               </div>
-              <div className="form-field-pair">
+              {/* <div className="form-field-pair">
   <label className="label">Mobile Number:</label>
   <div className="mobile-number-container">
     <select
@@ -600,27 +596,29 @@ const Navbar = ({useremailtosend}) => {
       required
     />
   </div>
-</div>
+</div> */}
 
-    <div className="form-field-pair">
+   
   <label className="label">Password:</label>
   <input
     type="password"
     value={registerForm.password}
     onChange={(e) => setRegisterForm({ ...registerForm, password: e.target.value })}
+    style={{ width: '300px' }}
     required
   />
-</div>
-<div className="form-field-pair">
+
+
   <label className="label">Confirm Password:</label>
   <input
     type="password"
     value={registerForm.confirmPassword}
     onChange={(e) => setRegisterForm({ ...registerForm, confirmPassword: e.target.value })}
+    style={{ width: '300px' }}
     required
   />
-</div>
 
+{/* 
               <div className="form-field-pair">
                 <label className="label">Date of Birth:</label>
                 <input type="date" value={registerForm.dob} onChange={(e) => setRegisterForm({ ...registerForm, dob: e.target.value })}  required />
@@ -642,9 +640,9 @@ const Navbar = ({useremailtosend}) => {
       <option key={country.name} value={country.name} />
     ))}
   </datalist>
-</div>
+</div> */}
 
-              <div className="form-field-pair">
+              {/* <div className="form-field-pair">
       <label className="label">State:</label>
       <input
         type="text"
@@ -653,15 +651,15 @@ const Navbar = ({useremailtosend}) => {
         required
     
       />
-    </div>
-              <div className="form-field-pair">
+    </div> */}
+              {/* <div className="form-field-pair">
                 <label className="label">Pincode:</label>
                 <input type="text" value={registerForm.pincode} onChange={(e) => setRegisterForm({ ...registerForm, pincode: e.target.value })} />
               </div>
               <div className="form-field-pair">
                 <label className="label">Course:</label>
                 <input type="text" value={registerForm.course} onChange={(e) => setRegisterForm({ ...registerForm, course: e.target.value })} />
-              </div>
+              </div> */}
             </div>
 
             {!otpSent ? (
@@ -670,10 +668,10 @@ const Navbar = ({useremailtosend}) => {
               </button>
             ) : (
               <>
-                <div className="form-field-pair">
+               
                   <label className="label">OTP:</label>
-                  <input type="text" value={registerForm.otp} onChange={(e) => setotpfilled(e.target.value)} />
-                </div>
+                  <input type="text" value={registerForm.otp} onChange={(e) => setotpfilled(e.target.value)}  style={{ width: '300px' }}/>
+             
                 <button onClick={handleSignup} className="register-button">
                   Submit
                 </button>

@@ -222,118 +222,113 @@ left: 0; /* Slide to the center */
 .gap
 {
 height: 10vh;
-}.popup {
-  margin-top: 10vh;
+}
+
+
+.popup2 {
   position: fixed;
   top: 50%;
-  left: 45%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 95vh;
-  padding: 84px;
-  padding-top: 20vh;
-  border-radius: 8px;
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(60, 155, 167);
-  opacity: 90%;
-  justify-content: center;
-  align-items: center;
-  z-index: 5;
-  height: 83vh;
-  margin-left: 2.5vh;
-
-  zoom:70%;
-}
-.popup2 {
-  margin-top: 10vh;
-  position: fixed;
-  top: 45%;
-  left: 45%;
-  transform: translate(-50%, -50%);
-  width: 85vh;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(60, 155, 167);
-  opacity: 90%;
-  justify-content: center;
-  align-items: center;
-  z-index: 5;
-  height: 53vh;
-  margin-left: 7vh;
-
-  zoom: 90%;
-}
-.popup input {
-  outline: none;
-  border: none;
-  background: none;
-  color: rgb(0, 17, 61); /* Adjust the text color as needed */
-  margin-bottom: 20px;
-  font-size: large;
-  padding-bottom: 2px; /* Decrease the space between text and border */
-  border-bottom: 4px solid white; /* Adjust the underline style as needed */
-  width: 100%; /* Add this line to set the width of the input to 100% */
-  box-sizing: border-box;
+  background-color: #ffffff;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
 }
 
-.popup2 input {
-  outline: none;
-  border: none;
-  background: none;
-  color: rgb(255, 238, 238); /* Adjust the text color as needed */
-  margin-bottom: 20px;
-  font-size: large;
-  padding-bottom: 2px; /* Decrease the space between text and border */
-  border-bottom: 4px solid rgba(255, 255, 255, 0.8); /* Adjust the underline style and opacity as needed */
-  width: 90%; /* Add this line to set the width of the input to 100% */
-  box-sizing: border-box;
-}
 
-.popup label {
-  color: white;
-  display: flex;
-  width: auto;
-}
+
 .popup2 label {
-  color: white;
-  width: 80 vh;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left: 0px;
 }
 
-.popup-content {
- 
-  display: flex;
-  flex-wrap: wrap;
-  width:90vh;
-}
-
-
-.popup2-content {
- 
-  display: flex;
-  flex-wrap: wrap;
-  width:50vh;
-}
-.form-field-pair {
-  width: 40%;
-  padding: 15px;
-  margin-left: 5%;
+.popup2 input[type="text"],
+.popup2 input[type="email"],
+.popup2 input[type="password"] {
+  width: calc(100% - 40px);
+  max-width: 60vw;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
   box-sizing: border-box;
 }
 
-input[type="text"] {
-  border: none;
-  border-bottom: 4px solid white; /* Adjust the underline style as needed */
-  background: none;
-  margin-bottom: 20px;
+
+
+
+
+
+
+
+/* Add media queries for smaller screens */
+@media screen and (max-width: 600px) {
+  .popup2 {
+    width: 90%;
+    max-width: 300px;
+  }
 }
 
-.form-field-pair input[type="text"] {
-  margin-bottom: 0; /* Remove margin-bottom for input fields in form-field-pair class */
+@media screen and (max-width: 400px) {
+  .popup2 {
+    width: 90%;
+    max-width: 250px;
+  }
 }
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.closeButton::before,
+.closeButton::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 2px;
+  background-color: #333333;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.closeButton::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.closeButton::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.closeButton:hover::before,
+.closeButton:hover::after {
+  background-color: #ff0000;
+}
+
+.closeButton:focus {
+  outline: none;
+}
+
+.closeButton:hover {
+  transform: rotate(180deg);
+}
+
+
+
 
 .submit {
   color: rgb(220, 219, 222);
@@ -342,24 +337,7 @@ input[type="text"] {
   background-color: red;
   height: 6vh;
 }
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
-  background-color: transparent;
-  border: none;
-  color: #e36464;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  align-items: flex-end;
-}
 
-.close-button:hover {
-  color: #ff0000;
-}
 .username {
   display: flex;
   align-items: center;
@@ -442,47 +420,3 @@ border-radius:30px ;
   display: flex;
   justify-content: end;
 }
-
-@media (max-width: 767px) {
-  .popup {
-   
-  
-    width: 100vw;
-    height: 100vh;
-    padding: 30px;
- 
-   
-  }
-  .popup-content {
-    width: 100%;
-    max-width: 100vw;
-  }
-  .popup2 {
-   
-  
-    width: 80vw;
-  left: 35%;
-    height: 40vh;
-    padding: 30px;
- 
-   
-  }
-  .popup2-content {
-
-    width: 100%;
-    max-width: 100vw;
-  }
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
