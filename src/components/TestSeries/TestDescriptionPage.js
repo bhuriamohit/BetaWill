@@ -8,7 +8,23 @@ const TestDescriptionPage = ({setpagestatus}) => {
     setIsChecked(!isChecked);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+
+    let testdata={
+        testid:"Amazon"
+    }
+    let response=await fetch('http://localhost:8080/fetchtest', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(testdata)
+      })
+
+    response=await response.json();
+    localStorage.setItem('questions',JSON.stringify(response.questions))
+    let questions=localStorage.getItem('questions')
+    
     setpagestatus("TestPage")
   };
 

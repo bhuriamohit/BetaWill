@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TestDescriptionPage from "./TestDescriptionPage";
 import Test from "./Test";
-
+import TestResult from "./TestResult";
 const MainTestPage = () => {
   const [pageStatus, setPageStatus] = useState(localStorage.getItem("pageStatus") || "DescriptionPage");
 
@@ -13,13 +13,14 @@ const MainTestPage = () => {
     setPageStatus(newPageStatus);
     localStorage.setItem('timer', 180);
     localStorage.removeItem('userData');
-    localStorage.removeItem('questions')
+    // localStorage.removeItem('questions')
   };
 
   return (
     <div>
       {pageStatus === "DescriptionPage" && <TestDescriptionPage setpagestatus={handleSetPageStatus} />}
       {pageStatus === "TestPage" && <Test setpagestatus={setPageStatus} />}
+      {pageStatus=="TestResult" && <TestResult setpagestatus={setPageStatus}/>}
     </div>
   );
 };

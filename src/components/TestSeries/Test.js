@@ -1,38 +1,46 @@
 import React, { useState, useEffect } from 'react';
 import './Test.css';
 
-function Test({setpagestatus}) {
-  const [questions, setQuestions] = useState(JSON.parse(localStorage.getItem('questions')) || [
-    {
-      id: 1,
-      question: 'Question 1',
-      options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-      selectedOption: null,
-    },
-    {
-      id: 2,
-      question: 'Question 2',
-      options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-      selectedOption: null,
-    },
-    {
-      id: 3,
-      question: 'Question 3',
-      options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-      selectedOption: null,
-    },
-    {
-      id: 4,
-      question: 'Question 4',
-      options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-      selectedOption: null,
-    },
+function Test({setpagestatus},) {
+  // const [questions, setQuestions] = useState([
+  //   {
+  //     id: 1,
+  //     question: 'Question 1',
+  //     options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+  //     selectedOption: null,
+  //   },
+  //   {
+  //     id: 2,
+  //     question: 'Question 2',
+  //     options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+  //     selectedOption: null,
+  //   },
+  //   {
+  //     id: 3,
+  //     question: 'Question 3',
+  //     options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+  //     selectedOption: null,
+  //   },
+  //   {
+  //     id: 4,
+  //     question: 'Question ',
+  //     options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+  //     selectedOption: null,
+  //   },
     
-  ]);
+  // ]);
+
+  const [questions,setQuestions]=useState(JSON.parse(localStorage.getItem('questions')));
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [timer, setTimer] = useState(Number(localStorage.getItem('timer')) || 180);
-  const [userData, setUserData] = useState(JSON.parse(localStorage.getItem('userData')) || {});
+  const [userData, setUserData] = useState(() => {
+    const initialUserData = {};
+    questions.forEach((question, index) => {
+      initialUserData[index ] = null;
+    });
+    return initialUserData;
+  });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -61,6 +69,8 @@ function Test({setpagestatus}) {
     const updatedQuestions = [...questions];
     updatedQuestions[currentQuestionIndex].selectedOption = selectedOption;
     setQuestions(updatedQuestions);
+    const updatedUserData = { ...userData, [currentQuestionIndex]: selectedOption };
+    setUserData(updatedUserData);
   };
 
   const handlePrevQuestion = () => {
@@ -84,6 +94,9 @@ function Test({setpagestatus}) {
     setUserData(updatedUserData);
     setCurrentQuestionIndex(0);
     setTimer(180);
+
+    localStorage.setItem('usertestdata',JSON.stringify(userData))
+    setpagestatus("TestResult")
   };
 
   return (

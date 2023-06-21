@@ -56,7 +56,7 @@ const App = () => {
         </Routes>
       </Router>
 
-      <PaymentPage/>
+      {/* <PaymentPage/> */}
       {/* <MainTestPage/> */}
   
     </div>

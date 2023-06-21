@@ -548,12 +548,13 @@ const Navbar = ({useremailtosend}) => {
         {/* Popup */}
         {isPopupOpen && (
           <div className="popup2">
-            <button className="close-button" onClick={togglePopup}>X</button>
+            <button className="close-button" onClick={togglePopup}>X</button> 
             <div className="popup2-content">
-              <label className='label'>Email or phone number:</label>
+            
+               <label className='label'>Email or phone number:</label>
               <input type="text" value={email} onChange={handleEmailChange} />
             </div>
-            <div>
+            <div className='popup2-content'>
               <label className='label'>Password:</label>
               <input type="password" value={password} onChange={handlePasswordChange} required />
             </div>
@@ -567,7 +568,6 @@ const Navbar = ({useremailtosend}) => {
             <button className="close-button" onClick={togglePopup}>X</button>
             {/* Form fields */}
             <div className="popup-content">
-            <button className="close-button" onClick={togglePopup}>X</button>
               <div className="form-field-pair">
                 <label className="label">Full Name:</label>
                 <input type="text" value={registerForm.fullName} onChange={(e) => setRegisterForm({ ...registerForm, fullName: e.target.value })}  required/>
