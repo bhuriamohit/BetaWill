@@ -1,10 +1,10 @@
 .navbar {
   position: fixed;
-  height: 8vh;
+  height: 10vh;
   top: 0;
   left: 0;
   margin-bottom: 1vh;
-  width: 98%;
+  width: 99%;
   z-index: 9999;
   display: flex;
   justify-content: space-between;
@@ -12,8 +12,8 @@
   padding: 1rem;
   background-color:whitesmoke;
   color: rgb(60, 155, 167);
-  font-family: 'Chilanka';
-  border-radius: 12px;
+  
+ 
 }
 
 .logo {
@@ -22,7 +22,7 @@
 }
 
 .main-logo {
-  height: 40px;
+  height:10vh;
   width: auto;
   margin-right: 0.5rem;
 }
@@ -54,7 +54,7 @@
 .navbut{
   text-decoration: none;
   color: #367590;
-  font-family: 'Grosella';
+  font-family: 'Montserrat';
   font-weight: bold;
   text-transform: uppercase;
   padding: 0.5rem 1rem;
@@ -84,7 +84,7 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  font-family: cursive;
+  font-family: 'Montserrat';
   margin: 2vh;
 }
 
@@ -112,7 +112,7 @@
 .mobile-menu {
   display: flex;
   align-items: center;
-  font-family: cursive;
+  font-family: 'Montserrat';
   
   
 }
@@ -127,7 +127,7 @@
   height: 20px;
   background-color: transparent;
   border: none;
-  font-family: cursive;
+  font-family: 'Montserrat';
   cursor: pointer;
 }
 
@@ -193,7 +193,7 @@ left: 0; /* Slide to the center */
   width:60%;
   display:flex;
   justify-content: center;
-  font-family: cursive;
+  font-family: 'Montserrat';
 }
 
 @media (min-width: 768px) {
@@ -216,7 +216,7 @@ left: 0; /* Slide to the center */
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-    font-family: cursive;
+    font-family: 'Montserrat';
   }
   .nav-links li a:hover {
     color: black;
@@ -368,7 +368,7 @@ padding: 12px;
 border-radius:30px ;
   font-size: 16px;
   color: #fff;
-  font-family: 'Chilanka';
+  font-family: 'Montserrat';
   background-color:#ff0000;
   cursor: pointer;
   margin-bottom: 10px;
