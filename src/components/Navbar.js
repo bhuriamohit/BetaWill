@@ -499,16 +499,16 @@ const Navbar = ({useremailtosend}) => {
           {/* Desktop menu */}
           <ul className="nav-links">
             <li>
-              <a href="#" onClick={(e) => { e.preventDefault(); handleScrollToSection('home') }} >Home</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); handleScrollToSection('home') }} >HOME</a>
             </li>
             <li>
-              <a href="#" onClick={(e) => { e.preventDefault(); handleScrollToSection('courses') }}>Courses</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); handleScrollToSection('courses') }}>COURSES</a>
             </li>
             <li>
-              <a href="#" onClick={(e) => { e.preventDefault(); handleScrollToSection('StudyMaterial') }}>Study Material</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); handleScrollToSection('StudyMaterial') }}>STUDY MATERIAL</a>
             </li>
             <li>
-              <a href="#">Resources</a>
+              <a href="#">RESOURCES</a>
             </li>
             <li>
               <a href="#">About Us</a>

@@ -39,12 +39,12 @@
   font-family: 'Montserrat';
   color: #374957;
   font-weight: bold;
-  font-size: 16px;
-  width: fit-content;
- 
+  font-size: 18px;
+  width: auto;
+ letter-spacing: 3px;
   padding: 0.5rem 1rem;
   border-radius: 4px;
- 
+ font-weight: 600;
   transition: background-color 0.3s ease;
   
 }
@@ -220,7 +220,7 @@ left: 0; /* Slide to the center */
   }
   .nav-links li a:hover {
     color: black;
-   border-bottom:2px solid yellow ;
+   border-bottom:2px solid rgb(255, 255, 0) ;
     border-radius: 0px;
   }
  
@@ -375,7 +375,7 @@ border-radius:30px ;
   display: flex;
 
   
-  
+  margin-right: 15px;
   
   
  
@@ -405,6 +405,7 @@ border-radius:30px ;
   border-bottom: 1px solid #0b0000;
   transform: scale(1);
   transition: border-color 0.3s ease, transform 0.3s ease;
+  margin-right: 15px;
 }
 
 .logoutbuttonu:hover {
