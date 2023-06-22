@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   margin-bottom: 1vh;
-  width: 98%;
+  width: 99%;
   z-index: 9999;
   display: flex;
   justify-content: space-between;
@@ -12,8 +12,8 @@
   padding: 1rem;
   background-color:whitesmoke;
   color: rgb(60, 155, 167);
-  font-family: 'Chilanka';
-  border-radius: 12px;
+  
+ 
 }
 
 .logo {
@@ -22,7 +22,7 @@
 }
 
 .main-logo {
-  height: 40px;
+  height:10vh;
   width: auto;
   margin-right: 0.5rem;
 }
@@ -36,18 +36,25 @@
 
 .nav-links li a {
   text-decoration: none;
-  color: #367590;
+  font-family: 'Montserrat';
+  color: #374957;
   font-weight: bold;
-  text-transform: uppercase;
+  font-size: 18px;
+  width: auto;
+ letter-spacing: 3px;
   padding: 0.5rem 1rem;
   border-radius: 4px;
- 
+ font-weight: 600;
   transition: background-color 0.3s ease;
   
+}
+.nav-links li a.active{
+  font-weight: 700;
 }
 .navbut{
   text-decoration: none;
   color: #367590;
+  font-family: 'Montserrat';
   font-weight: bold;
   text-transform: uppercase;
   padding: 0.5rem 1rem;
@@ -77,7 +84,7 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  font-family: cursive;
+  font-family: 'Montserrat';
   margin: 2vh;
 }
 
@@ -105,7 +112,7 @@
 .mobile-menu {
   display: flex;
   align-items: center;
-  font-family: cursive;
+  font-family: 'Montserrat';
   
   
 }
@@ -120,7 +127,7 @@
   height: 20px;
   background-color: transparent;
   border: none;
-  font-family: cursive;
+  font-family: 'Montserrat';
   cursor: pointer;
 }
 
@@ -186,7 +193,7 @@ left: 0; /* Slide to the center */
   width:60%;
   display:flex;
   justify-content: center;
-  font-family: cursive;
+  font-family: 'Montserrat';
 }
 
 @media (min-width: 768px) {
@@ -209,12 +216,12 @@ left: 0; /* Slide to the center */
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-    font-family: cursive;
+    font-family: 'Montserrat';
   }
   .nav-links li a:hover {
     color: black;
-    background-color: rgb(135, 204, 233);
-    border-radius: 6px;
+   border-bottom:2px solid rgb(255, 255, 0) ;
+    border-radius: 0px;
   }
  
 }
@@ -361,14 +368,14 @@ padding: 12px;
 border-radius:30px ;
   font-size: 16px;
   color: #fff;
-  font-family: 'Chilanka';
+  font-family: 'Montserrat';
   background-color:#ff0000;
   cursor: pointer;
   margin-bottom: 10px;
   display: flex;
 
   
-  
+  margin-right: 15px;
   
   
  
@@ -398,6 +405,7 @@ border-radius:30px ;
   border-bottom: 1px solid #0b0000;
   transform: scale(1);
   transition: border-color 0.3s ease, transform 0.3s ease;
+  margin-right: 15px;
 }
 
 .logoutbuttonu:hover {

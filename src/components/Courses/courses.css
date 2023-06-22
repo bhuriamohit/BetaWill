@@ -1,7 +1,12 @@
 /* Global Styles */
+@font-face {
+  font-family: 'Grosella';
+  src: url('C:\Users\bhuri\OneDrive\Desktop\projectmeta\BetaWill\public\Grosella.ttf') format('truetype');
+}
+
 body {
     background-color: #ffffff;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat';
   }
   
   .add-course-button {

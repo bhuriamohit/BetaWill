@@ -12,9 +12,10 @@
 
 .whyus
 {
-    color: black;
-    font-size: 8vh;
-    font-family: Arial, Helvetica, sans-serif;
+    color: #264092;
+    margin-bottom: 0;
+    margin-left: 0.8rem;
+    font-size: 15vh;
 }
 
 .whyusinnercontainer
@@ -27,7 +28,8 @@
 .whyuspara
 {
     font-size: 3vh;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat';
+    font-weight: 600;
 }
 
 .whyuspoints
@@ -35,6 +37,7 @@
     height: 100%;
     width: 60%;
     /* background-color: white; */
+    font-family: 'Montserrat';
 }
 
 .whyuslogo
