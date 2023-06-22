@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch,Routes ,Route} from 'react-router-dom';
 import { useNavigate, useLocation } from "react-router-dom";
+import { FaPlay } from 'react-icons/fa';
 
 
 import Home from './components/Home/Home.js';
@@ -21,7 +22,7 @@ import CourseDescription from './components/Courses/CourseDescription.js';
 import PaymentReceipt from './components/Payments/PaymentReceipt.js';
 import Test from './components/TestSeries/Test.js';
 import MainTestPage from './components/TestSeries/MainTestPage.js';
-
+import Featuredcourses from './components/Home/Featuredcourses.js'
 const App = () => {
     const [useremail,setuseremail]=useState(null)
     useEffect(()=>
@@ -58,7 +59,7 @@ const App = () => {
 
       {/* <PaymentPage/> */}
       {/* <MainTestPage/> */}
-  
+  <Featuredcourses/>
     </div>
   );
 };
