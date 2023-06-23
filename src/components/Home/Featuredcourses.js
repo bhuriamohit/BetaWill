@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Featuredcourses.css';
 import imoImage from './imo.png';
 import { FaPlay } from 'react-icons/fa';
-
+import visionlmg from './VisionImage.png'; 
+import success from './success copy.png'
 const Featuredcourses = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [numVisibleTiles, setNumVisibleTiles] = useState(3);
@@ -59,6 +60,9 @@ const Featuredcourses = () => {
 
   return (
     <div>
+          <div className="column">
+      <img className="full-width-img" src={visionlmg} alt="Your Image" />
+    </div>
       <h1 className="fc-heading">Featured Courses</h1>
 
       <div className="fc-container">
@@ -84,9 +88,14 @@ const Featuredcourses = () => {
         ))}
 
         <button className="fc-arrow-button" onClick={handleNext}>{'>'}</button>
-
+    
       </div>
+      <div className="column">
+      <img className="full-width-img" src={success} alt="Your Image" />
     </div>
+
+    </div>
+    
   );
 };
 
