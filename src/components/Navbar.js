@@ -261,15 +261,15 @@ const Navbar = ({useremailtosend}) => {
   const [registerForm, setRegisterForm] = useState({
     fullName: '',
     email: '',
-    mobileNumber: '',
-    dob: '',
+    mobileNumber: 'Notfilled',
+    dob: 'Notfilled',
     password: '',
     confirmPassword: '',
-    gender: '',
-    country: '',
-    state: '',
-    pincode: '',
-    course: ''
+    gender: 'Notfilled',
+    country: 'Notfilled',
+    state: 'Notfilled',
+    pincode: 'Notfilled',
+    course: 'Notfilled'
   });
   const signupTogglePopup = () => {
     setPopupOpen(false);
