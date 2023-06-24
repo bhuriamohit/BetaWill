@@ -11,6 +11,7 @@
 {
   flex-direction: column;
   height: auto;
+  margin-left: 2vw;
   /* background-color: blue; */
   width: 60%;
 }
@@ -32,6 +33,7 @@
 {
   color: white;
   font-size: 3vh;
+  
 }
 
 @media (max-width:445px) {
