@@ -36,12 +36,15 @@
 
 .nav-links li a {
   text-decoration: none;
-  font-family: 'Montserrat';
+
   color: #374957;
-  font-weight: bold;
-  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  
+  text-transform: uppercase;
   width: auto;
- letter-spacing: 3px;
+ letter-spacing: 1px;
   padding: 0.5rem 1rem;
   border-radius: 4px;
  font-weight: 600;
