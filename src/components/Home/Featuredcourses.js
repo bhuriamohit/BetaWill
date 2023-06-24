@@ -3,7 +3,8 @@ import './Featuredcourses.css';
 import imoImage from './imo.png';
 import { FaPlay } from 'react-icons/fa';
 import visionlmg from './VisionImage.png'; 
-import success from './success copy.png'
+import success from './success copy.png';
+import mobileImage from './mobilesuccess.png'
 const Featuredcourses = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [numVisibleTiles, setNumVisibleTiles] = useState(3);
@@ -91,9 +92,11 @@ const Featuredcourses = () => {
     
       </div>
       <div className="column">
-      <img className="full-width-img" src={success} alt="Your Image" />
-      <button className='enquiry'>enquiry</button>
-    </div>
+  <img id="desktop-img" className="full-width-img" src={success} alt="Your Image" />
+  <img id="mobile-img" className="full-width-img" src={mobileImage} alt="Your Mobile Image" />
+  <button className="enquiry">enquiry</button>
+</div>
+
 
     </div>
     
