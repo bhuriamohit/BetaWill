@@ -111,8 +111,40 @@
     margin: 4px;
   }
   .full-width-img {
-    width: 100%;
+    width: 110%;
     margin-top: 8vh;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .full-width-img {
+      width: 80%;
+    }
+  }
+  .enquiry {
+    position: absolute;
+margin-top: 35%;
+font-family: 'Montserrat', sans-serif;
+font-weight: 900;
+font-size: 1.2rem;
+
+text-transform: uppercase;
+    margin-left: 28%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #264092;
+    padding-left: 6vh;
+    padding-right: 6vh;
+ 
+    border: none;
+    cursor: pointer;
+    z-index: 99999;
+    border-radius: 6px;
+    height: 8vh;
+  }
+  .enquiry:hover{
+   color: #ffffff;
+   background-color: #264092;
   }
   
   .column {

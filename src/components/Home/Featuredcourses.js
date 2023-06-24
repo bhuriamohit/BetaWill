@@ -92,6 +92,7 @@ const Featuredcourses = () => {
       </div>
       <div className="column">
       <img className="full-width-img" src={success} alt="Your Image" />
+      <button className='enquiry'>enquiry</button>
     </div>
 
     </div>
