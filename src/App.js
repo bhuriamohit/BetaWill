@@ -36,7 +36,7 @@ const App = () => {
   return (
     <div> 
       
-      {/* <Router>
+      <Router>
         <Routes>
           <Route exact path="/" element={
 
@@ -45,7 +45,7 @@ const App = () => {
               <Home/>
               <Courses data={useremail}/>
               
-              <StudyMaterial/>
+              <Featuredcourses/> 
 
             </div>
             
@@ -57,11 +57,12 @@ const App = () => {
           <Route exact path='/paymentreceipt' element={<PaymentReceipt/>}/>
           <Route exact path='/studymaterial' element={<StudyMaterial/>}/>
         </Routes>
-      </Router> */}
+      </Router> 
 
-      {/* <PaymentPage/> */}
-      <MainTestPage/>
-    {/* <Featuredcourses/> */}
+     {/* <PaymentPage/> */}
+     
+ 
+    {/* <MainTestPage/>  */}
     </div>
   );
 };
