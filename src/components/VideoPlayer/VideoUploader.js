@@ -5,13 +5,13 @@ import React, { useState } from 'react';
 import './VideoUploader.css';
 // Initialize Firebase app
 const firebaseConfig = {
-    apiKey: "AIzaSyClCN3-iXsY3sR_t_p723eXdz-fZr1WV-g",
-    authDomain: "friend-website-45257.firebaseapp.com",
-    projectId: "friend-website-45257",
-    storageBucket: "friend-website-45257.appspot.com",
-    messagingSenderId: "387813290760",
-    appId: "1:387813290760:web:638da9a8a110d99395f2bd",
-    measurementId: "G-MNSPGVSE1F"
+  apiKey: "AIzaSyClCN3-iXsY3sR_t_p723eXdz-fZr1WV-g",
+  authDomain: "friend-website-45257.firebaseapp.com",
+  projectId: "friend-website-45257",
+  storageBucket: "friend-website-45257.appspot.com",
+  messagingSenderId: "387813290760",
+  appId: "1:387813290760:web:638da9a8a110d99395f2bd",
+  measurementId: "G-MNSPGVSE1F"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -19,12 +19,12 @@ const storage = getStorage(app);
 
 // const VideoUploader = () => {
 //   const [selectedFile, setSelectedFile] = useState(null);
-  
+
 //   const handleFileChange = (event) => {
 //     setSelectedFile(event.target.files[0]);
 //   };
 
-  
+
 
 //   return (
 //     <div>
@@ -85,14 +85,28 @@ const CourseForm = () => {
     setLectureFiles(files);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Perform upload video function with the form data
+    let coursedata = {
+      heading: courseName,
+      description:courseDescription,
+      about:aboutCourse,
+      price:coursePrice,
+
+
+    }
+    await fetch('http://localhost:8080/addcourses', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(coursedata)
+    })
     uploadVideo();
   };
-  const Uploadavideo = async (selectedFile,data,index) => {
+  const Uploadavideo = async (selectedFile, data, index) => {
     if (selectedFile) {
-      const storageRef = ref(storage, 'Lectures/' + data.topic+"/"+"Lecture"+index+'.mp4');
+      const storageRef = ref(storage, 'Lectures/' + data.topic + "/" + "Lecture" + index + '.mp4');
 
       try {
         setUploadProgress(0);
@@ -124,17 +138,17 @@ const CourseForm = () => {
       }
     }
   };
-  const uploadVideo =async  () => {
+  const uploadVideo = async () => {
     // Implementation of the upload video function
     console.log('Uploading video...');
     console.log('Course Name:', courseName);
     console.log('Number of Lectures:', numOfLectures);
     console.log('Lecture Descriptions:', lectureDescriptions);
     console.log('Lecture Files:', lectureFiles);
-    let formData={
-      number:numOfLectures,
-      topic:courseName,
-      Description:lectureDescriptions
+    let formData = {
+      number: numOfLectures,
+      topic: courseName,
+      Description: lectureDescriptions
     }
     fetch('https://betawill-com.onrender.com/uploadlectures', {
       method: 'POST',
@@ -143,17 +157,15 @@ const CourseForm = () => {
       },
       body: JSON.stringify(formData)
     })
-    .then(async (response)=>
-    {
-        let fres=await response.json();
+      .then(async (response) => {
+        let fres = await response.json();
         console.log(fres)
-    })
-    for(let i=0;i<formData.number;i++)
-    {
-        Uploadavideo(lectureFiles[i],formData,i+1);
+      })
+    for (let i = 0; i < formData.number; i++) {
+      Uploadavideo(lectureFiles[i], formData, i + 1);
     }
 
-    
+
 
 
 
@@ -163,6 +175,24 @@ const CourseForm = () => {
     setLectureDescriptions(Array.from({ length: numOfLectures }, (_, index) => ''));
     setLectureFiles(Array.from({ length: numOfLectures }, () => null));
   };
+
+
+  const [courseDescription, setCourseDescription] = useState("");
+  const [aboutCourse, setAboutCourse] = useState("");
+  const [coursePrice, setCoursePrice] = useState("");
+
+  const handleCourseDescriptionChange = (e) => {
+    setCourseDescription(e.target.value);
+  };
+
+  const handleAboutCourseChange = (e) => {
+    setAboutCourse(e.target.value);
+  };
+
+  const handleCoursePriceChange = (e) => {
+    setCoursePrice(e.target.value);
+  };
+
 
   return (
     <form className="course-form" onSubmit={handleSubmit}>
@@ -176,6 +206,41 @@ const CourseForm = () => {
       />
 
       <br />
+      <label className="form-label" htmlFor="courseDescription">Enter Course Description:</label>
+      <input
+        id="courseDescription"
+        type="text"
+        value={courseDescription}
+        onChange={handleCourseDescriptionChange}
+        required
+      />
+
+      <br />
+
+      {/* New about course field */}
+      <label className="form-label" htmlFor="aboutCourse">About Course:</label>
+      <textarea
+        id="aboutCourse"
+        value={aboutCourse}
+        onChange={handleAboutCourseChange}
+        required
+      ></textarea>
+
+      <br />
+
+      {/* New course price field */}
+      <label className="form-label" htmlFor="coursePrice">Course Price:</label>
+      <input
+        id="coursePrice"
+        type="number"
+        min="0"
+        value={coursePrice}
+        onChange={handleCoursePriceChange}
+        required
+      />
+
+      <br />
+
 
       <label className="form-label" htmlFor="numOfLectures">Enter Number of Lectures:</label>
       <input
@@ -216,13 +281,14 @@ const CourseForm = () => {
         </>
       )}
 
+
       <br />
 
       {numOfLectures > 0 && (
         <button type="submit" className="submit-button">
           Submit
         </button>
-        
+
       )}
       {uploadProgress > 0 && <p>Upload progress: {uploadProgress}%</p>}
     </form>

@@ -23,6 +23,7 @@ import PaymentReceipt from './components/Payments/PaymentReceipt.js';
 import Test from './components/TestSeries/Test.js';
 import MainTestPage from './components/TestSeries/MainTestPage.js';
 import Featuredcourses from './components/Home/Featuredcourses.js';
+import Superadmin from './components/Superadmin/Superadmin.js';
 
 const App = () => {
     const [useremail,setuseremail]=useState(null)
@@ -36,7 +37,7 @@ const App = () => {
   return (
     <div> 
       
-      <Router>
+      {/* <Router>
         <Routes>
           <Route exact path="/" element={
 
@@ -57,9 +58,10 @@ const App = () => {
           <Route exact path='/paymentreceipt' element={<PaymentReceipt/>}/>
           <Route exact path='/studymaterial' element={<StudyMaterial/>}/>
         </Routes>
-      </Router> 
+      </Router>  */}
 
      {/* <PaymentPage/> */}
+     <Superadmin/>
      
  
     {/* <MainTestPage/>  */}
