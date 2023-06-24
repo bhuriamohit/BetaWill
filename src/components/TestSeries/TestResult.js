@@ -14,6 +14,7 @@ const TestResult = ({ setpagestatus }) => {
     const data = {
       testid: "Amazon",
       userdata: userData,
+      useremail:localStorage.getItem('useremail')
     };
 
     try {
