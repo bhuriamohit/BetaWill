@@ -111,7 +111,7 @@ const Test1 = ({ setpagestatus }) => {
     setCurrentQuestionIndex(0);
     setTimer(180);
 
-    localStorage.setItem('usertestdata', JSON.stringify(userData));
+    localStorage.setItem('UserTestData', JSON.stringify(userData));
     setpagestatus("TestResult");
   };
 
