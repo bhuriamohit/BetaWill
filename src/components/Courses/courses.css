@@ -1,9 +1,6 @@
 
 
-body {
-    background-color: #ffffff;
-    font-family: 'Montserrat';
-  }
+
   
   .add-course-button {
     background-color: #ffffff;
@@ -29,7 +26,7 @@ body {
     flex-wrap: wrap;
     justify-content: center; /* Updated: Center align items */
     padding: 20px;
-    background-color: rgb(60, 155, 167);
+background-color: rgb(255, 255, 255);
     border-radius: 20px;
   }
   
