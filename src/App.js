@@ -22,7 +22,8 @@ import CourseDescription from './components/Courses/CourseDescription.js';
 import PaymentReceipt from './components/Payments/PaymentReceipt.js';
 import Test from './components/TestSeries/Test.js';
 import MainTestPage from './components/TestSeries/MainTestPage.js';
-import Featuredcourses from './components/Home/Featuredcourses.js'
+import Featuredcourses from './components/Home/Featuredcourses.js';
+
 const App = () => {
     const [useremail,setuseremail]=useState(null)
     useEffect(()=>
@@ -35,7 +36,7 @@ const App = () => {
   return (
     <div> 
       
-      <Router>
+      {/* <Router>
         <Routes>
           <Route exact path="/" element={
 
@@ -54,12 +55,13 @@ const App = () => {
           <Route exact path='/coursedescription' element={<CourseDescription/>}/>
           <Route exact path='/passwordreset' element={<PasswordReset/>}/>
           <Route exact path='/paymentreceipt' element={<PaymentReceipt/>}/>
+          <Route exact path='/studymaterial' element={<StudyMaterial/>}/>
         </Routes>
-      </Router>
+      </Router> */}
 
       {/* <PaymentPage/> */}
-      {/* <MainTestPage/> */}
-  <Featuredcourses/>
+      <MainTestPage/>
+    {/* <Featuredcourses/> */}
     </div>
   );
 };
