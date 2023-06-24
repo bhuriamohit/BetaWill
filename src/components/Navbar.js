@@ -479,10 +479,10 @@ const Navbar = ({useremailtosend}) => {
                     <a href="#" onClick={(e) => { e.preventDefault(); handleScrollToSection('courses') }} >Courses</a>
                   </li>
                   <li>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleScrollToSection('StudyMaterial') }}>Study Material</a>
+                    <a href="#" onClick={(e) => { e.preventDefault(); navigate('/studymaterial') }}>Study Material</a>
                   </li>
                   <li>
-                    <a href="#">Resources</a>
+                    <a href="#">Test Series</a>
                   </li>
                   <li>
                     <a href="#">About Us</a>
@@ -505,10 +505,10 @@ const Navbar = ({useremailtosend}) => {
               <a href="#" onClick={(e) => { e.preventDefault(); handleScrollToSection('courses') }}>COURSES</a>
             </li>
             <li>
-              <a href="#" onClick={(e) => { e.preventDefault(); handleScrollToSection('StudyMaterial') }}>STUDY MATERIAL</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); navigate('/studymaterial') }}>STUDY MATERIAL</a>
             </li>
             <li>
-              <a href="#">RESOURCES</a>
+              <a href="#" >Test Series</a>
             </li>
             <li>
               <a href="#">About Us</a>

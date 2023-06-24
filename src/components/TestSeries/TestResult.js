@@ -10,7 +10,7 @@ const TestResult = ({ setpagestatus }) => {
 
   const getresult = async () => {
     setViewResult(true);
-    const userData = JSON.parse(localStorage.getItem("usertestdata"));
+    const userData = JSON.parse(localStorage.getItem("UserTestData"));
     const data = {
       testid: "Amazon",
       userdata: userData,

@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Mycourses from "./Mycourses";
 import "./Userinfo.css";
 
+
 const Userinfo = () => {
   const navigate = useNavigate();
   const location = useLocation();

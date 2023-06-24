@@ -23,7 +23,9 @@ const TestDescriptionPage = ({setpagestatus}) => {
 
     response=await response.json();
     localStorage.setItem('questions',JSON.stringify(response.questions))
-    let questions=localStorage.getItem('questions')
+    let questions=JSON.parse(localStorage.getItem('questions'))
+    console.log(questions)
+    localStorage.setItem('totalquestions',questions.length);
     
     setpagestatus("TestPage")
   };
