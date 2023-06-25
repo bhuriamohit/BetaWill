@@ -58,8 +58,8 @@ const App = () => {
           <Route exact path='/paymentreceipt' element={<PaymentReceipt/>}/>
           <Route exact path='/studymaterial' element={<StudyMaterial/>}/>
           <Route exact path='/superadmin' element={<Superadmin/>}/>
-          <Route exact path="/pdflist" elements={<PdfList/>}/>
-          <Route exact path='/testtopics' element={<TestTopics/>}/>
+          <Route exact path="/pdflist" element={<PdfList/>}/>
+          <Route exact path="/testtopics" element={<TestTopics/>}/>
           <Route exact path='/testpage' element={<MainTestPage/>}/>
         </Routes>
       </Router> 
@@ -67,7 +67,7 @@ const App = () => {
       {/* <TestTopics/> */}
       {/* <PdfList/> */}
 
-      <TestTopics/>
+      
     </div>
   );
 };

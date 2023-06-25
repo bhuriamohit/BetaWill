@@ -513,7 +513,7 @@ const Navbar = ({useremailtosend}) => {
               <a href="#" onClick={(e) => { e.preventDefault(); navigate('/studymaterial') }}>STUDY MATERIAL</a>
             </li>
             <li>
-              <a href="#" >Test Series</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); navigate('/testtopics') }}>Test Series</a>
             </li>
             <li>
               <a href="#">About Us</a>
