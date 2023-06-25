@@ -1,18 +1,26 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const TestResult = ({ setpagestatus }) => {
   const [viewResult, setViewResult] = useState(false);
   const [resultData, setResultData] = useState(null);
-
+  const navigate =useNavigate()
   const pagestatus = (page) => {
     setpagestatus(page);
+    localStorage.removeItem('UserTestData')
+    localStorage.removeItem('questions')
+    localStorage.removeItem('currentquestion')
+    localStorage.removeItem('pageStatus')
+    localStorage.removeItem('questionscolor')
+    navigate('/');
+    
   };
 
   const getresult = async () => {
     setViewResult(true);
     const userData = JSON.parse(localStorage.getItem("UserTestData"));
     const data = {
-      testid: "Amazon",
+      testid: localStorage.getItem('testtopic'),
       userdata: userData,
       useremail:localStorage.getItem('useremail')
     };
@@ -44,7 +52,7 @@ const TestResult = ({ setpagestatus }) => {
         </>
       )}
       <button onClick={getresult}>View Result</button>
-      <button onClick={() => pagestatus("TestPage")}>TestPage</button>
+      <button onClick={() => pagestatus("TestPage")}>Home</button>
     </div>
   );
 };

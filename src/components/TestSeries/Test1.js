@@ -10,7 +10,7 @@ const Test1 = ({ setpagestatus }) => {
   };
 
   const [questions, setQuestions] = useState(JSON.parse(localStorage.getItem('questions')) || []);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(localStorage.getItem('currentquestion') || 0);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(parseInt(localStorage.getItem('currentquestion')) || 0);
   const [timer, setTimer] = useState(Number(localStorage.getItem('timer')) || 180);
   const [userData, setUserData] = useState(() => {
     const initialUserData = JSON.parse(localStorage.getItem('UserTestData')) || {};
@@ -53,9 +53,24 @@ const Test1 = ({ setpagestatus }) => {
     localStorage.setItem('UserTestData', JSON.stringify(userData));
   }, [userData]);
 
+  useEffect(()=>
+  {
+   
+   
+    console.log(questions)
+    // console.log(questioncolor)
+    // console.log(currentQuestion)
+    // console.log(currentQuestionIndex)
+    // // console.log(totalquestion)
+    // console.log(userData)
+
+  })
   useEffect(() => {
     localStorage.setItem('currentquestion', currentQuestionIndex)
   }, [currentQuestionIndex])
+  useEffect(() => {
+    localStorage.setItem('totalquestion', totalquestion)
+  }, [totalquestion])
 
   useEffect(() => {
     localStorage.setItem('questionscolor', JSON.stringify(questioncolor));
@@ -81,8 +96,12 @@ const Test1 = ({ setpagestatus }) => {
     }
   };
 
-  const handleNextQuestion = () => {
-    console.log(currentQuestionIndex)
+  const handleNextQuestion =async  () => {
+    setCurrentQuestionIndex(currentQuestionIndex)
+    // if(currentQuestionIndex==null)
+    // {
+    //   setCurrentQuestionIndex(localStorage.getItem('currentquestion'))
+    // }
     if (questions[currentQuestionIndex].selectedOption != null) {
       const updatedcolor = { ...questioncolor, [currentQuestionIndex]: "green", [currentQuestionIndex + 1]: "yellow" }
       setquestioncolor(updatedcolor)
@@ -100,7 +119,8 @@ const Test1 = ({ setpagestatus }) => {
 
     localStorage.setItem('UserTestData', JSON.stringify(userData));
     if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+      // setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+      setCurrentQuestionIndex(currentQuestionIndex+1)
     }
     console.log(currentQuestionIndex)
 
@@ -212,6 +232,7 @@ const Test1 = ({ setpagestatus }) => {
   const SubmitTest=()=>
   {
       setpagestatus("TestResult")
+      
   }
 
   const Userdata=()=>
@@ -232,7 +253,7 @@ const Test1 = ({ setpagestatus }) => {
         <div className="menu-icon"></div>
       </button>
       
-      <h2 className="question-heading">Question {currentQuestion.id}</h2>
+      <h2 className="question-heading">Question {questions[currentQuestionIndex].id}</h2>
       <p className="question-text">{currentQuestion.question}</p>
       
       {currentQuestion.options.map((option, index) => (
