@@ -20,7 +20,7 @@ import PasswordReset from './components/PasswordReset.js';
 import PaymentPage from './components/Payments/PaymentPage.js';
 import CourseDescription from './components/Courses/CourseDescription.js';
 import PaymentReceipt from './components/Payments/PaymentReceipt.js';
-import Test from './components/TestSeries/Test.js';
+import Test from './components/TestSeries/Test1.js';
 import MainTestPage from './components/TestSeries/MainTestPage.js';
 import Featuredcourses from './components/Home/Featuredcourses.js';
 import Superadmin from './components/Superadmin/Superadmin.js';
@@ -63,7 +63,7 @@ const App = () => {
         </Routes>
       </Router>  */}
 
-      <TestTopics/>
+      <MainTestPage/>
     </div>
   );
 };

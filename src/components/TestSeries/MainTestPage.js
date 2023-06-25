@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TestDescriptionPage from "./TestDescriptionPage";
-import Test from "./Test";
+
 import TestResult from "./TestResult";
 import Test1 from "./Test1";
 const MainTestPage = () => {
