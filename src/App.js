@@ -37,7 +37,7 @@ const App = () => {
   return (
     <div> 
       
-      {/* <Router>
+      <Router>
         <Routes>
           <Route exact path="/" element={
 
@@ -57,11 +57,12 @@ const App = () => {
           <Route exact path='/passwordreset' element={<PasswordReset/>}/>
           <Route exact path='/paymentreceipt' element={<PaymentReceipt/>}/>
           <Route exact path='/studymaterial' element={<StudyMaterial/>}/>
+          <Route exact path='/superadmin' element={<Superadmin/>}/>
         </Routes>
-      </Router>  */}
+      </Router> 
 
      {/* <PaymentPage/> */}
-     <Superadmin/>
+     {/* <Superadmin/> */}
      
  
     {/* <MainTestPage/>  */}
