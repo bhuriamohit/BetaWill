@@ -60,6 +60,8 @@ const App = () => {
           <Route exact path='/studymaterial' element={<StudyMaterial/>}/>
           <Route exact path='/superadmin' element={<Superadmin/>}/>
           <Route exact path="/pdflist" elements={<PdfList/>}/>
+          <Route exact path="/testtopics" elements={<TestTopics/>}/>
+          <Route exact path="/testtopics" elements={<TestTopics/>}/>
         </Routes>
       </Router>  */}
 

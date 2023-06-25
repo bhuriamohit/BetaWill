@@ -6,7 +6,7 @@ const TestTopics=()=>
 {
     const [Testtopics,setTestTopics]=useState(["Fetching........"])
     const [number,setnumber]=useState(0);
-    const navigate=useNavigate()
+    // const navigate=useNavigate()
     useEffect(()=>
     {
         fetch("http://localhost:8080/fetchtestlist")
@@ -22,7 +22,7 @@ const TestTopics=()=>
     const gototest=(index)=>
     {
       let topic=Testtopics[index]
-        navigate('/')
+      
     }
     return(
         <div className="test-topic-container">
