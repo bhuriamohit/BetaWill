@@ -2,6 +2,13 @@ import React, { useEffect, useState } from "react";
 import './Test1.css';
 
 const Test1 = ({ setpagestatus }) => {
+  const [isQuestionNumberVisible, setQuestionNumberVisible] = useState(window.innerWidth > 768);
+
+
+  const toggleQuestionNumber = () => {
+    setQuestionNumberVisible(!isQuestionNumberVisible);
+  };
+
   const [questions, setQuestions] = useState(JSON.parse(localStorage.getItem('questions')) || []);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(localStorage.getItem('currentquestion') || 0);
   const [timer, setTimer] = useState(Number(localStorage.getItem('timer')) || 180);
@@ -216,30 +223,44 @@ const Test1 = ({ setpagestatus }) => {
 
   return (
     <div className="testmainbox">
-      <div className="testquestionbox">
-        <h2>Question {currentQuestion.id}</h2>
-        <p>{currentQuestion.question}</p>
-        {currentQuestion.options.map((option, index) => (
-          <div key={index}>
-            <label>
-              <input
-                type="radio"
-                value={option}
-                checked={option === currentQuestion.selectedOption}
-                onChange={handleOptionChange}
-              />
-              {option}
-            </label>
-          </div>
-        ))}
-        <button onClick={handleNextQuestion} disabled={currentQuestionIndex === questions.length - 1}>
-          Save and Next
-        </button>
-        <button onClick={cleareverything}>Clear All</button>
-        <button onClick={() => clearoption()}>Clear </button>
-        <button onClick={() => submitpopup()}>Submit</button>
-        <button onClick={() => Userdata()}>Userdata</button>
-      </div>
+
+    <div className="testquestionbox">
+    
+      <button className="menu-button" onClick={toggleQuestionNumber}>
+        <div className="menu-icon"></div>
+        <div className="menu-icon"></div>
+        <div className="menu-icon"></div>
+      </button>
+      
+      <h2 className="question-heading">Question {currentQuestion.id}</h2>
+      <p className="question-text">{currentQuestion.question}</p>
+      
+      {currentQuestion.options.map((option, index) => (
+        <div key={index} className="option">
+          <label className="option-label">
+            <input
+              type="radio"
+              value={option}
+              checked={option === currentQuestion.selectedOption}
+              onChange={handleOptionChange}
+              className="option-input"
+            />
+            <span className="option-text">{option}</span>
+          </label>
+        </div>
+      ))}
+      
+      <button className="next-button" onClick={handleNextQuestion} disabled={currentQuestionIndex === questions.length - 1}>
+        Save and Next
+      </button>
+      <button className="clear-button" onClick={cleareverything}>Clear All</button>
+      <button className="clear-option-button" onClick={() => clearoption()}>Clear</button>
+      <button className="submit-button" onClick={() => submitpopup()}>Submit</button>
+      <button className="userdata-button" onClick={() => Userdata()}>Userdata</button>
+    
+    </div>
+    
+    {isQuestionNumberVisible && (
       <div className="questionnumberbox">
         {Array.from({ length: totalquestion }, (_, index) => (
           <div
@@ -251,18 +272,22 @@ const Test1 = ({ setpagestatus }) => {
           </div>
         ))}
       </div>
-      {isPopupVisible && (
-        <div className="popup">
-          <h3>Pop-up Title</h3>
-          <p>Attempted Questions: {attemptedquestions}</p>
-          <p>Visited Questions: {visitedquestions}</p>
-          <p>Non-Visited Questions: {nonvisitedquestions}</p>
-          <p>Non-Attempted Questions: {nonattemptedquestions}</p>
-          <button onClick={SubmitTest}>Submit Test</button>
-          <button onClick={() => setPopupVisible(false)}>Close</button>
-        </div>
-      )}
-    </div>
+    )}
+    
+    {isPopupVisible && (
+      <div className="popup">
+        <h3>Pop-up Title</h3>
+        <p>Attempted Questions: {attemptedquestions}</p>
+        <p>Visited Questions: {visitedquestions}</p>
+        <p>Non-Visited Questions: {nonvisitedquestions}</p>
+        <p>Non-Attempted Questions: {nonattemptedquestions}</p>
+        <button className="submit-test-button" onClick={SubmitTest}>Submit Test</button>
+        <button className="close-button" onClick={() => setPopupVisible(false)}>Close</button>
+      </div>
+    )}
+    
+  </div>
+  
   );
 }
 
