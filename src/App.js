@@ -38,7 +38,7 @@ const App = () => {
   return (
     <div> 
       
-      {/* <Router>
+      <Router>
         <Routes>
           <Route exact path="/" element={
 
@@ -46,7 +46,6 @@ const App = () => {
               <Navbar useremailtosend={setuseremail}/>
               <Home/>
               <Courses data={useremail}/>
-              
               <Featuredcourses/> 
 
             </div>
@@ -60,16 +59,21 @@ const App = () => {
           <Route exact path='/studymaterial' element={<StudyMaterial/>}/>
           <Route exact path='/superadmin' element={<Superadmin/>}/>
           <Route exact path="/pdflist" elements={<PdfList/>}/>
-          <Route exact path="/testtopics" elements={<TestTopics/>}/>
-          <Route exact path="/testtopics" elements={<TestTopics/>}/>
+          <Route exact path='/testtopics' element={<TestTopics/>}/>
+          <Route exact path='/testpage' element={<MainTestPage/>}/>
         </Routes>
-      </Router>  */}
+      </Router> 
 
-      <TestTopics/>
+      {/* <TestTopics/> */}
+      {/* <PdfList/> */}
+
+      
+      
+
+      
     </div>
   );
 };
 
 export default App;
 
-/* Testing push */

@@ -3,15 +3,16 @@ import './TestDescriptionPage.css'; // Import the CSS file for styling
 
 const TestDescriptionPage = ({setpagestatus}) => {
   const [isChecked, setIsChecked] = useState(false);
+  const [topic,settopic]=useState(localStorage.getItem('testtopic'))
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
 
   const handleSubmit = async () => {
-
+    console.log(topic)
     let testdata={
-        testid:"Amazon"
+        testid:topic
     }
     let response=await fetch('http://localhost:8080/fetchtest', {
         method: 'POST',
