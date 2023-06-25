@@ -212,6 +212,11 @@ const Navbar = ({useremailtosend}) => {
         response.json()
           .then((fres) => {
             console.log(fres)
+            if(fres.superadmin==true)
+            {
+              navigate('/superadmin')
+              return
+            }
             if (fres.presence == true && fres.password == true) {
               console.log(fres)
               setuseremail(fres.email)
