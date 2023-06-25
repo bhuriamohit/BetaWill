@@ -1,0 +1,20 @@
+.pdf-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pdf-button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pdf-button:hover {
+    background-color: #45a049;
+  }
+  

@@ -48,7 +48,10 @@ const TestUploadForm = () => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(questions)
+        body: JSON.stringify({
+          id:testId,
+          questions:questions
+        })
       })
   }
   return (

@@ -419,6 +419,7 @@ border-radius:30px ;
   transform: scale(1.05);
 }
 .forgot {
+  width: auto;
   position: fixed;
   bottom: 20px;
   right: 20px;

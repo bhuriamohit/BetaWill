@@ -24,7 +24,8 @@ import Test from './components/TestSeries/Test.js';
 import MainTestPage from './components/TestSeries/MainTestPage.js';
 import Featuredcourses from './components/Home/Featuredcourses.js';
 import Superadmin from './components/Superadmin/Superadmin.js';
-
+import PdfList from './components/StudyMaterial/PdfList.js';
+import TestTopics from './components/TestSeries/TestTopics.js';
 const App = () => {
     const [useremail,setuseremail]=useState(null)
     useEffect(()=>
@@ -37,7 +38,7 @@ const App = () => {
   return (
     <div> 
       
-      <Router>
+      {/* <Router>
         <Routes>
           <Route exact path="/" element={
 
@@ -58,14 +59,11 @@ const App = () => {
           <Route exact path='/paymentreceipt' element={<PaymentReceipt/>}/>
           <Route exact path='/studymaterial' element={<StudyMaterial/>}/>
           <Route exact path='/superadmin' element={<Superadmin/>}/>
+          <Route exact path="/pdflist" elements={<PdfList/>}/>
         </Routes>
-      </Router> 
+      </Router>  */}
 
-     {/* <PaymentPage/> */}
-     {/* <Superadmin/> */}
-     
- 
-    {/* <MainTestPage/>  */}
+      <TestTopics/>
     </div>
   );
 };

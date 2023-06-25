@@ -1,0 +1,16 @@
+.test-topic-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    height: auto;
+  }
+  
+  .test-topic-item {
+    background-color: grey;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    height: 15vh;
+  }
+  
