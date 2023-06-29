@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   margin-bottom: 1vh;
-  width: 99%;
+  width: 97%;
   z-index: 9999;
   display: flex;
   justify-content: space-between;
@@ -19,18 +19,20 @@
 .logo {
   display: flex;
   align-items: center;
+  border-radius: 50px;
 }
 
 .main-logo {
   height:10vh;
   width: auto;
   margin-right: 0.5rem;
+  border-radius: 10px;
 }
 
 .nav-links {
   display: none;
   list-style-type: none;
-  gap: 1rem;
+  gap: 2rem;
   
 }
 
@@ -44,8 +46,8 @@
   
   text-transform: uppercase;
   width: auto;
- letter-spacing: 1px;
-  padding: 0.5rem 1rem;
+
+
   border-radius: 4px;
  font-weight: 600;
   transition: background-color 0.3s ease;
@@ -200,6 +202,9 @@ left: 0; /* Slide to the center */
 }
 
 @media (min-width: 768px) {
+  .navbar{
+    width:99%;
+  }
   .mobile-menu {
     display: none;
   }
