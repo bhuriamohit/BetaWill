@@ -1,10 +1,10 @@
 .navbar {
   position: fixed;
-  height: 8vh;
+  height: 6vh;
   top: 0;
   left: 0;
   margin-bottom: 1vh;
-  width: 97%;
+  width:99%;
   z-index: 9999;
   display: flex;
   justify-content: space-between;
@@ -23,7 +23,7 @@
 }
 
 .main-logo {
-  height:10vh;
+  height:6vh;
   width: auto;
   margin-right: 0.5rem;
   border-radius: 10px;
@@ -204,11 +204,17 @@ left: 0; /* Slide to the center */
 @media (min-width: 768px) {
   .navbar{
     width:99%;
+    height:8vh;
+  }
+  .strua{
+    margin-right: 0px;
   }
   .mobile-menu {
     display: none;
   }
-
+.main-logo{
+  height: 10vh;
+}
   .auth-buttons {
     display: flex;
   }
@@ -225,6 +231,7 @@ left: 0; /* Slide to the center */
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     font-family: 'Montserrat';
+   
   }
   .nav-links li a:hover {
     color: black;
@@ -422,6 +429,7 @@ border-radius:30px ;
  
   border-color: red;
   transform: scale(1.05);
+  
 }
 .forgot {
   width: auto;
@@ -438,4 +446,10 @@ border-radius:30px ;
 .strua{
   display: flex;
   justify-content: end;
+  margin-right: 8vw;
+}
+@media (min-width:767px) {
+  .strua{
+    margin-right: 0vw;
+  }
 }
