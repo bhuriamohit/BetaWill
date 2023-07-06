@@ -516,11 +516,9 @@ const Navbar = ({useremailtosend}) => {
               <a href="#" onClick={(e) => { e.preventDefault(); navigate('/testtopics') }}>Test Series</a>
             </li>
             <li>
-              <a href="#">About Us</a>
+              <a href="#">About</a>
             </li>
-            <li>
-              <a href="#">Contact Us</a>
-            </li>
+         
           </ul>
 
           {

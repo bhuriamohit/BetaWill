@@ -26,6 +26,8 @@ import Featuredcourses from './components/Home/Featuredcourses.js';
 import Superadmin from './components/Superadmin/Superadmin.js';
 import PdfList from './components/StudyMaterial/PdfList.js';
 import TestTopics from './components/TestSeries/TestTopics.js';
+import Footer from './components/Home/Footer.js';
+import Testimonial from './components/Home/Testimonial.js';
 const App = () => {
     const [useremail,setuseremail]=useState(null)
     useEffect(()=>
@@ -66,7 +68,8 @@ const App = () => {
 
       {/* <TestTopics/> */}
       {/* <PdfList/> */}
-
+      <Testimonial/>
+<Footer/>
       
     </div>
   );

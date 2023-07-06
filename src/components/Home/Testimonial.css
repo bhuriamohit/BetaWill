@@ -1,0 +1,150 @@
+/* Custom CSS for the testimonials */
+@import 'owl.carousel/dist/assets/owl.carousel.css';
+@import 'owl.carousel/dist/assets/owl.theme.default.css';
+@import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
+/* Your custom CSS styles for testimonials */
+
+/* Your custom CSS styles for testimonials */
+
+.testimonial-wrap {
+  padding: 50px 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial-container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Add this to center items vertically */
+}
+.testimonial-container {
+  
+    margin-bottom: 30px; /* Adjust the margin as needed */
+  }
+  
+  .testimonial-carousel-arrow-prev,
+  .testimonial-carousel-arrow-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    border-radius: 50%;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    visibility: hidden;
+  }
+  
+  .testimonial-carousel-arrow-prev {
+    left: 0;
+  }
+  
+  .testimonial-carousel-arrow-next {
+    right: 0;
+  }
+  
+
+.testimonial-heading-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.testimonial-sub-heading {
+  display: block;
+  font-size: 16px;
+  color: #666;
+}
+
+.testimonial-heading {
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.testimonial-container .testimonial-item {
+  margin: 0 15px;
+}
+
+.testimonial-inner {
+  background: #f5f5f5;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 30%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; /* Center the testimonials within the container */
+}
+
+.testimonial-inner .testimonial-image {
+    width: 100px;
+    height: 200px;
+    margin: 0 auto 15px;
+    border-radius: 50%; /* Update to create a circular shape */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  
+.testimonial-inner .testimonial-quote {
+  font-size: 24px;
+  color: #ff5e63;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.testimonial-inner .testimonial-content p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.testimonial-inner .testimonial-content .testimonial-quote-icon {
+  width: 20px; /* Adjust the size as needed */
+  height: 20px; /* Adjust the size as needed */
+  margin-right: 10px;
+}
+
+/* Owl Carousel navigation buttons */
+.testimonial-container .owl-carousel .owl-nav {
+    position: absolute;
+    bottom: -30px; /* Adjust the distance from the bottom */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .testimonial-container .owl-carousel .owl-prev,
+  .testimonial-container .owl-carousel .owl-next {
+    /* Remove the 'position: relative' property */
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #ff5e63;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
