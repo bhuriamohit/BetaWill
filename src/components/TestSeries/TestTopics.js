@@ -7,7 +7,7 @@ const TestTopics=()=>
     // const [Testtopics,setTestTopics]=useState(async ()=>
     // {
     //   let farr=[]
-    //   await fetch("http://localhost:8080/fetchtestlist")
+    //   await fetch("https://betawill-com.onrender.com/fetchtestlist")
     //   .then(async (resp)=>
     //   {
     //       resp=await resp.json();
@@ -23,7 +23,7 @@ const TestTopics=()=>
     const navigate=useNavigate()
     useEffect(()=>
     {
-        fetch("http://localhost:8080/fetchtestlist")
+        fetch("https://betawill-com.onrender.com/fetchtestlist")
         .then(async (resp)=>
         {
             resp=await resp.json();

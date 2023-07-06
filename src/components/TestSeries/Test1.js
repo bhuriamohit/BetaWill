@@ -277,7 +277,7 @@ const Test1 = ({ setpagestatus }) => {
       <button className="clear-button" onClick={cleareverything}>Clear All</button>
       <button className="clear-option-button" onClick={() => clearoption()}>Clear</button>
       <button className="submit-button" onClick={() => submitpopup()}>Submit</button>
-      <button className="userdata-button" onClick={() => Userdata()}>Userdata</button>
+      <button className="userdata-button" onClick={() => Userdata()}>Userdata</button>  
     
     </div>
     

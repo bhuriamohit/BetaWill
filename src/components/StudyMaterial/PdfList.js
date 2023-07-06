@@ -21,7 +21,7 @@ const firebaseConfig = {
       const [number, setNumber] = useState(0);
     useEffect(()=>
     {
-        fetch("http://localhost:8080/lecturesrecord/"+topic)
+        fetch("https://betawill-com.onrender.com/lecturesrecord/"+topic)
         .then(async (response)=>
         {
             response=await response.json();

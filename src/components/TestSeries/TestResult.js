@@ -26,7 +26,7 @@ const TestResult = ({ setpagestatus }) => {
     };
 
     try {
-      const response = await fetch("http://localhost:8080/checktest", {
+      const response = await fetch("https://betawill-com.onrender.com/checktest", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
