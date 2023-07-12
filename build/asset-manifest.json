@@ -1,20 +1,36 @@
 {
   "files": {
-    "main.css": "/static/css/main.f8a10a3b.css",
-    "main.js": "/static/js/main.ecc1283d.js",
+    "main.css": "/static/css/main.d4dfda8e.css",
+    "main.js": "/static/js/main.ac56e0e1.js",
     "static/js/787.21d17fcb.chunk.js": "/static/js/787.21d17fcb.chunk.js",
     "static/media/video.mp4": "/static/media/video.fe2f7c8d0c13c8aa5f6e.mp4",
+    "static/media/laptop video.mp4": "/static/media/laptop video.d00133d3c9fc02e4fd57.mp4",
+    "static/media/faqgif.gif": "/static/media/faqgif.305b6df4ae5e9101553a.gif",
+    "static/media/whygif.gif": "/static/media/whygif.e7257dc1169797780479.gif",
+    "static/media/infogif.gif": "/static/media/infogif.aea56d3c7ba88a0c9ef3.gif",
+    "static/media/profilebusi.jpeg": "/static/media/profilebusi.5d4502fe44bb21a035bd.jpeg",
     "static/media/success copy.png": "/static/media/success copy.037cbba050b3ce1642c3.png",
-    "static/media/VisionImage.png": "/static/media/VisionImage.c919b8ecb524440e081c.png",
+    "static/media/VisionImage.png": "/static/media/VisionImage.1f5c56a5c5b42dc0137f.png",
+    "static/media/teacher4.jpeg": "/static/media/teacher4.a996b6a6b64a8a5d9618.jpeg",
+    "static/media/teacher3.jpeg": "/static/media/teacher3.a375db58fb2a47047224.jpeg",
     "static/media/imo.png": "/static/media/imo.a0859ef805da70159371.png",
+    "static/media/teacher2.jpeg": "/static/media/teacher2.ccfedb236a80c2cf45b8.jpeg",
+    "static/media/teacher1.jpeg": "/static/media/teacher1.fe8ec6eeb21f66ec2a1a.jpeg",
+    "static/media/logo.png": "/static/media/logo.340ac76f084366771e26.png",
+    "static/media/laptop.png": "/static/media/laptop.413ad7c45bed6dc402ec.png",
     "static/media/logo.jpeg": "/static/media/logo.0db2a84b683c7c7df14c.jpeg",
+    "static/media/testimonial1.jpeg": "/static/media/testimonial1.f05f88eb95f02d5f473b.jpeg",
+    "static/media/testimonial3.jpeg": "/static/media/testimonial3.c62d59155a0f5f96bac4.jpeg",
+    "static/media/testimonial2.jpeg": "/static/media/testimonial2.610aa7b034cbe6b272db.jpeg",
+    "static/media/google logo.svg": "/static/media/google logo.9a7800d06783d80a1c12249a8ca58e9d.svg",
     "index.html": "/index.html",
-    "main.f8a10a3b.css.map": "/static/css/main.f8a10a3b.css.map",
-    "main.ecc1283d.js.map": "/static/js/main.ecc1283d.js.map",
+    "static/media/microsoft logo.svg": "/static/media/microsoft logo.c63dc619752ec3508cf87a55756dd96c.svg",
+    "main.d4dfda8e.css.map": "/static/css/main.d4dfda8e.css.map",
+    "main.ac56e0e1.js.map": "/static/js/main.ac56e0e1.js.map",
     "787.21d17fcb.chunk.js.map": "/static/js/787.21d17fcb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8a10a3b.css",
-    "static/js/main.ecc1283d.js"
+    "static/css/main.d4dfda8e.css",
+    "static/js/main.ac56e0e1.js"
   ]
 }

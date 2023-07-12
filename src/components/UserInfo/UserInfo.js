@@ -29,16 +29,14 @@ const Userinfo = () => {
   }, []);
 
   const fetchData = async () => {
-    if (location.state == null) {
-      navigate("/");
-    } else {
+    
       let s = "https://betawill-com.onrender.com/getinfo/" + useremail;
       let response = await fetch(s);
       let fres = await response.json();
 
       console.log(fres.userinfo);
       setUserinfo(fres.userinfo);
-    }
+    
   };
 
   const toggleProfile = () => {
@@ -64,7 +62,7 @@ const Userinfo = () => {
       field:editedField,
       value:editedValue
     }
-    fetch('http://localhost:8080/changefield', {
+    fetch('https://betawill-com.onrender.com/changefield', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

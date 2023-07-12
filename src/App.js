@@ -28,6 +28,7 @@ import PdfList from './components/StudyMaterial/PdfList.js';
 import TestTopics from './components/TestSeries/TestTopics.js';
 import Footer from './components/Home/Footer.js';
 import Testimonial from './components/Home/Testimonial.js';
+import HomePage from './components/HomePage/HomePage.js';
 const App = () => {
     const [useremail,setuseremail]=useState(null)
     useEffect(()=>
@@ -45,10 +46,13 @@ const App = () => {
           <Route exact path="/" element={
 
             <div>
-              <Navbar useremailtosend={setuseremail}/>
-              <Home/>
-              <Courses data={useremail}/>
-              <Featuredcourses/> 
+              {/* <Navbar useremailtosend={setuseremail}/> */}
+              <HomePage useremailtosend={setuseremail}/>
+              {/* <Home/> */}
+              {/* <Courses data={useremail}/> */}
+              {/* <Featuredcourses/>  */}
+               {/* <Testimonial/> */}
+                {/* <Footer/> */}
 
             </div>
             
@@ -68,8 +72,6 @@ const App = () => {
 
       {/* <TestTopics/> */}
       {/* <PdfList/> */}
-      <Testimonial/>
-<Footer/>
       
     </div>
   );
