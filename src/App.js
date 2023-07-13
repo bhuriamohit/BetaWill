@@ -28,6 +28,9 @@ import PdfList from './components/StudyMaterial/PdfList.js';
 import TestTopics from './components/TestSeries/TestTopics.js';
 import Footer from './components/Home/Footer.js';
 import Testimonial from './components/Home/Testimonial.js';
+import Chatbot from './components/Home/Chatbot.js'
+import ChatbotComponent from './components/Home/Chatbot.js';
+import Buycourse from './components/Courses/BuyCourse.js'
 const App = () => {
     const [useremail,setuseremail]=useState(null)
     useEffect(()=>
@@ -40,7 +43,7 @@ const App = () => {
   return (
     <div> 
       
-      <Router>
+      {/* <Router>
         <Routes>
           <Route exact path="/" element={
 
@@ -64,13 +67,14 @@ const App = () => {
           <Route exact path="/testtopics" element={<TestTopics/>}/>
           <Route exact path='/testpage' element={<MainTestPage/>}/>
         </Routes>
-      </Router> 
+      </Router>  */}
 
       {/* <TestTopics/> */}
       {/* <PdfList/> */}
-      <Testimonial/>
-<Footer/>
-      
+    {/* <Testimonial/>
+<Footer/> */}
+{/* <ChatbotComponent/> */}
+      <Buycourse/>
     </div>
   );
 };
