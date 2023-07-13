@@ -30,6 +30,7 @@ import whyGif from "../images/whygif.gif"
 import { useNavigate } from 'react-router-dom';
 import { Router, Routes, Route } from "react-router-dom"
 import WebFont from 'webfontloader';
+import contactImg from "../images/councellingImg.png"
 import { useState, useEffect } from 'react'
 
 export default function HomePage({ useremailtosend }) {
@@ -911,6 +912,47 @@ export default function HomePage({ useremailtosend }) {
                 <h4>Book a free council session</h4>
                 <a href="https://wa.me/9310035620" className="btn-black">Book Now</a>
             </div>
+
+
+            <div className="free-form-section">
+        <div className="free-form-section-left">
+            <h3>Get Free Counselling</h3>
+            <form action="#" className="free-form">
+            <h4>Book Free Counselling</h4>
+            <div className="input-box">
+                    <p>Your Name</p>
+                    <input type="text" className="input-field"/>
+                </div>
+                <div className="input-box">
+                    <p>Your Email</p>
+                    <input type="email" className="input-field"/>
+                </div>
+                <div className="input-box">
+                    <p>Your Phone number</p>
+                    <input type="number" className="input-field"/>
+                </div>
+                <div className="input-box">
+                    <p>Select Course</p>
+                    <select name="select-course" className="input-field">
+                        <option value="emrs computer science pgt">EMRS Computer Science PGT</option>
+                        <option value="patent officer">Patent Officer</option>
+                        <option value="computer science pgt">Computer Science PGT</option>
+                        <option value="haryana science pgt">Haryana Science PGT</option>
+                    </select>
+                </div>
+                <input type="submit" value="Book Now" className="btn-filled"/>
+            </form>
+        </div>
+        <div className="free-form-section-right">
+            <img src={contactImg} alt="" className="gif"/>
+        </div>
+      </div>
+
+
+
+
+
+
 
             <div className="faq-section" id='faq-link'>
                 <div className="faq-section-left">
