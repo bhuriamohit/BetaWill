@@ -57,9 +57,11 @@ const App = () => {
                {/* <Testimonial/> */}
                 {/* <Footer/> */}
 
-            </div>
+            {/* </div> */}
             
-          }/> 
+          {/* } */}
+          <Router>
+          <Routes> 
           <Route exact path='/userinfo' element={<Userinfo/>}/>
           <Route exact path="/lecturepage" element={<LecturePage/>}/>
           <Route exact path='/coursedescription' element={<CourseDescription/>}/>
@@ -71,7 +73,7 @@ const App = () => {
           <Route exact path="/testtopics" element={<TestTopics/>}/>
           <Route exact path='/testpage' element={<MainTestPage/>}/>
         </Routes>
-      </Router>  */}
+      </Router>  
 
       {/* <TestTopics/> */}
       {/* <PdfList/> */}
