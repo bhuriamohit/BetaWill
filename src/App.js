@@ -28,8 +28,6 @@ import PdfList from './components/StudyMaterial/PdfList.js';
 import TestTopics from './components/TestSeries/TestTopics.js';
 import Footer from './components/Home/Footer.js';
 import Testimonial from './components/Home/Testimonial.js';
-import Chatbot from './components/Home/Chatbot.js'
-import ChatbotComponent from './components/Home/Chatbot.js';
 import Buycourse from './components/Courses/BuyCourse.js'
 import HomePage from './components/HomePage/HomePage.js';
 const App = () => {
@@ -44,22 +42,7 @@ const App = () => {
   return (
     <div> 
       
-      {/* <Router>
-        <Routes>
-          <Route exact path="/" element={
-
-            <div>
-              {/* <Navbar useremailtosend={setuseremail}/> */}
-              <HomePage useremailtosend={setuseremail}/>
-              {/* <Home/> */}
-              {/* <Courses data={useremail}/> */}
-              {/* <Featuredcourses/>  */}
-               {/* <Testimonial/> */}
-                {/* <Footer/> */}
-
-            {/* </div> */}
-            
-          {/* } */}
+      
           <Router>
           <Routes> 
           <Route exact path='/'
