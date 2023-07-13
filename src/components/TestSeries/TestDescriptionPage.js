@@ -14,7 +14,7 @@ const TestDescriptionPage = ({setpagestatus}) => {
     let testdata={
         testid:topic
     }
-    let response=await fetch('http://localhost:8080/fetchtest', {
+    let response=await fetch('https://betawill-com.onrender.com/fetchtest', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -31,6 +31,7 @@ import Testimonial from './components/Home/Testimonial.js';
 import Chatbot from './components/Home/Chatbot.js'
 import ChatbotComponent from './components/Home/Chatbot.js';
 import Buycourse from './components/Courses/BuyCourse.js'
+import HomePage from './components/HomePage/HomePage.js';
 const App = () => {
     const [useremail,setuseremail]=useState(null)
     useEffect(()=>
@@ -48,10 +49,13 @@ const App = () => {
           <Route exact path="/" element={
 
             <div>
-              <Navbar useremailtosend={setuseremail}/>
-              <Home/>
-              <Courses data={useremail}/>
-              <Featuredcourses/> 
+              {/* <Navbar useremailtosend={setuseremail}/> */}
+              <HomePage useremailtosend={setuseremail}/>
+              {/* <Home/> */}
+              {/* <Courses data={useremail}/> */}
+              {/* <Featuredcourses/>  */}
+               {/* <Testimonial/> */}
+                {/* <Footer/> */}
 
             </div>
             
@@ -71,10 +75,7 @@ const App = () => {
 
       {/* <TestTopics/> */}
       {/* <PdfList/> */}
-    {/* <Testimonial/>
-<Footer/> */}
-{/* <ChatbotComponent/> */}
-      <Buycourse/>
+      
     </div>
   );
 };
