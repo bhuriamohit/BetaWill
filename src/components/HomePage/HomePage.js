@@ -535,7 +535,7 @@ export default function HomePage({ useremailtosend }) {
                 <div className="landing-upper-part">
                     <div className="landing-upper-part-text">
                         <p>Welcome To</p>
-                        <h1>
+                        <h1 className='bigbetawill'>
                             Beta<span>Will</span>
                         </h1>
                         <p>Unlock your potential and achieve your dreams with Betawill , Your Gateway To Success!</p>

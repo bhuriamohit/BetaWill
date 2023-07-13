@@ -174,14 +174,20 @@ body{
     margin-top: 5rem;
     background-color: var(--gray);
 }
+.bigbetawill
+{
+    color: black;
+}
 .landing-upper-part{
+    
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(1,1fr);
     gap: 7rem;
+    
 }
 .landing-upper-part-text{
- color:#6674CC;
+/* color:#6674CC; */
     display: flex;
     flex-direction: column;
     gap: 1rem;
