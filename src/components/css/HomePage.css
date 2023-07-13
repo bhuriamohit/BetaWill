@@ -1000,4 +1000,25 @@ body{
 }
 .free-form-section-right .gif{
     width: 400px;
+}.fixed-bar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+  }
+  
+.fixed-bar .social-links{
+    padding: 10px;
+    background-color: rgb(230, 247, 255);
+    border-radius: 20px;
+    padding-top: 18px;
+}
+.btn-chat{
+    background-color: #1885d3;
+    color:white;
+    border:none;
+    padding:10px;
+    border-radius: 20px;
 }
