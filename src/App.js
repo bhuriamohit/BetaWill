@@ -62,6 +62,12 @@ const App = () => {
           {/* } */}
           <Router>
           <Routes> 
+          <Route exact path='/'
+          element={
+            <div>
+              <HomePage useremailtosend={setuseremail}/>
+            </div>
+          }/>
           <Route exact path='/userinfo' element={<Userinfo/>}/>
           <Route exact path="/lecturepage" element={<LecturePage/>}/>
           <Route exact path='/coursedescription' element={<CourseDescription/>}/>
