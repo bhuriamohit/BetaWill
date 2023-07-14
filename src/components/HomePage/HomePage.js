@@ -445,8 +445,68 @@ export default function HomePage({ useremailtosend }) {
     }
     const openMenu=()=>
     {
-        
+
     }
+    
+
+    // Councelling Section 
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        course: ''
+      });
+    
+      const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          [name]: value
+        }));
+      };
+    
+      const councellingformSubmit = (event) => {
+        event.preventDefault();
+        bookcouncelling(formData);
+        
+      };
+    
+      const bookcouncelling = async (formData) => {
+        let response =await fetch("http://localhost:8080/bookcounselling", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          })
+
+          response=await response.json();
+          if(response.status=="successful")
+          {
+            alert("Counselling booked successfully!!");
+          }
+          else
+          {
+            alert("Error in booking councelling")
+          }
+
+          setFormData({
+            name:"",
+            email:"",
+            phone:"",
+            course:""
+          })
+      };
+    
+    
+
+
+
+
+
+
+
+
     return (
 
         <>
@@ -971,31 +1031,54 @@ export default function HomePage({ useremailtosend }) {
            
         <div className="free-form-section-left">
             <h3>Get Free Counselling</h3>
-            <form action="#" className="free-form">
-            <h4>Book Free Counselling</h4>
-            <div className="input-box">
-                    <p>Your Name</p>
-                    <input type="text" className="input-field"/>
-                </div>
-                <div className="input-box">
-                    <p>Your Email</p>
-                    <input type="email" className="input-field"/>
-                </div>
-                <div className="input-box">
-                    <p>Your Phone number</p>
-                    <input type="number" className="input-field"/>
-                </div>
-                <div className="input-box">
-                    <p>Select Course</p>
-                    <select name="select-course" className="input-field">
-                        <option value="emrs computer science pgt">EMRS Computer Science PGT</option>
-                        <option value="patent officer">Patent Officer</option>
-                        <option value="computer science pgt">Computer Science PGT</option>
-                        <option value="haryana science pgt">Haryana Science PGT</option>
-                    </select>
-                </div>
-                <input type="submit" value="Book Now" className="btn-filled"/>
-            </form>
+            <form onSubmit={councellingformSubmit} className='free-form'>
+      <h4>Book Free Counselling</h4>
+      <div className="input-box">
+        <p>Your Name</p>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          className="input-field"
+        />
+      </div>
+      <div className="input-box">
+        <p>Your Email</p>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          className="input-field"
+        />
+      </div>
+      <div className="input-box">
+        <p>Your Phone number</p>
+        <input
+          type="number"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          className="input-field"
+        />
+      </div>
+      <div className="input-box">
+        <p>Select Course</p>
+        <select
+          name="course"
+          value={formData.course}
+          onChange={handleChange}
+          className="input-field"
+        >
+          <option value="emrs computer science pgt">EMRS Computer Science PGT</option>
+          <option value="patent officer">Patent Officer</option>
+          <option value="computer science pgt">Computer Science PGT</option>
+          <option value="haryana science pgt">Haryana Science PGT</option>
+        </select>
+      </div>
+      <input type="submit" value="Book Now" className="btn-filled" />
+    </form>
         </div>
         <div className="free-form-section-right">
             <img src={contactImg} alt="" className="gif"/>
