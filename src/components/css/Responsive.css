@@ -48,6 +48,9 @@
     .nav-right ul{
         display: none;
     }
+    .nav-right{
+       margin-right: 0rem;
+    }
     #navbar img{
         display: block;
     }

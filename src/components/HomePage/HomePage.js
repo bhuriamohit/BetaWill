@@ -439,13 +439,12 @@ export default function HomePage({ useremailtosend }) {
             })
     }
 
-    const closeMenu=()=>
-    {
-
+    const closeMenu = () => {
+        document.getElementById("responsiveMenu").style.right = "-90vw";
     }
     const openMenu=()=>
     {
-
+        
     }
     
 
@@ -1093,7 +1092,7 @@ export default function HomePage({ useremailtosend }) {
 
             <div className="faq-section" id='faq-link'>
                 <div className="faq-section-left">
-                    <h1>FAQ's</h1>
+                    <h1 className='bigbetawill'>FAQ's</h1>
                     <details className="faq-box">
                         <summary>Which is the best online platform for the teaching exam ?</summary>
                         <p className="faq-answer">According to user opinions and the features provides, Betawill is considered one of the best teaching exam online coaching</p>
