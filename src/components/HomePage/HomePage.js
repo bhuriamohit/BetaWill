@@ -438,6 +438,15 @@ export default function HomePage({ useremailtosend }) {
                 }
             })
     }
+
+    const closeMenu=()=>
+    {
+
+    }
+    const openMenu=()=>
+    {
+        
+    }
     return (
 
         <>
