@@ -19,6 +19,7 @@ import greaterThan from "../images/greaterthan.png"
 import mail from "../images/mail.png"
 import twitter from "../images/twitter.png"
 import whatsapp from "../images/whatsapp.png"
+import phone from "../images/phone.png"
 import instagram from "../images/instagram.png"
 import youtube from "../images/youtube.png"
 import testimonial1 from "../images/testimonial1.jpeg"
@@ -32,6 +33,10 @@ import { Router, Routes, Route } from "react-router-dom"
 import WebFont from 'webfontloader';
 import contactImg from "../images/councellingImg.png"
 import { useState, useEffect } from 'react'
+import { animateScroll as scroll } from 'react-scroll';
+import { Element } from 'react-scroll';
+import hamburgerMenu from "../images/hamburger-menu.png"
+import close from "../images/close.png"
 
 export default function HomePage({ useremailtosend }) {
     const countries = [
@@ -156,6 +161,10 @@ export default function HomePage({ useremailtosend }) {
     const [useremail, setuseremail] = useState('')
     const [isPopupOpen, setPopupOpen] = useState(false);
 
+
+  
+
+    
     const togglePopup = () => {
         setPopupOpen(!isPopupOpen);
         if (issignupPopupOpen == true) {
@@ -429,21 +438,19 @@ export default function HomePage({ useremailtosend }) {
                 }
             })
     }
-
-
-
-
-
-    //Councelling Sections 
-
-
-        
-
-
-
     return (
 
         <>
+    <div className="responsive-menu" id='responsiveMenu'>
+                <h1>BETA<span>WILL</span></h1>
+                <a href="#home-link">Home</a>
+                <a href="#about-link">About</a>
+                <a href="#course-link">Courses</a>
+                <a href="#course-link">Test Series</a>
+                <a href="#faq-link">FAQ's</a>
+                <img src={close} alt="" onClick={closeMenu}/>
+        </div>
+
             <nav id="navbar">
                 <div className="nav-left">
                     <h3>BETA<span>WILL</span></h3>
@@ -453,9 +460,10 @@ export default function HomePage({ useremailtosend }) {
                         <li><a href="#home-link">Home</a></li>
                         <li><a href="#about-link">About</a></li>
                         <li><a href="#course-link">Courses</a></li>
+                        <li><a href="#test">Test Series</a></li>
                         <li><a href="#faq-link">FAQ's</a></li>
                     </ul>
-
+                   
                     {username ?
                         <a href="#" className="btn-filled" onClick={userinfo}><p>{username}</p></a>
                         :
@@ -466,7 +474,7 @@ export default function HomePage({ useremailtosend }) {
                         :
                         <a href="#" className="btn-outlined" onClick={signupTogglePopup}><p>Sign Up</p></a>
                     }
-                    
+                     <img src={hamburgerMenu} alt="" onClick={openMenu}/>
                     <div>
                         {isPopupOpen && (
                             <div className="popup2">
@@ -542,7 +550,7 @@ export default function HomePage({ useremailtosend }) {
                     </div>
                 </div>
             </nav>
-
+            
             <div className="landing-section" id='home-link'>
                 <div className="landing-upper-part">
                     <div className="landing-upper-part-text">
@@ -561,6 +569,7 @@ export default function HomePage({ useremailtosend }) {
                         <img src={laptop} alt="" />
                     </div>
                 </div>
+                
                 <div className="landing-lower-part">
                     <div className="landing-lower-part-element">
                         <img src={laptopIcon} alt="" />
@@ -620,54 +629,69 @@ export default function HomePage({ useremailtosend }) {
                     </div>
                 </div>
             </div>
-
+      
 
             <div className="our-service-section">
-                <h1>More Information</h1>
-                <div className="service-section-bottom">
-                    <div className="service-card" id="service-card-1">
-                        <img src={teacherIcon} alt="" />
-                        <h4>Lectures</h4>
-                        <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
-                    </div>
-                    <div className="service-card" id="service-card-2">
-                        <img src={teacherIcon} alt="" />
-                        <h4>Lectures</h4>
-                        <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
-                    </div>
-                    <div className="service-card" id="service-card-3">
-                        <img src={teacherIcon} alt="" />
-                        <h4>Lectures</h4>
-                        <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
-                    </div>
-                    <div className="service-card" id="service-card-4">
-                        <img src={teacherIcon} alt="" />
-                        <h4>Lectures</h4>
-                        <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
-                    </div>
-                    <div className="service-card" id="service-card-5">
-                        <img src={teacherIcon} alt="" />
-                        <h4>Lectures</h4>
-                        <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
-                    </div>
-                    <div className="service-card" id="service-card-6">
-                        <img src={teacherIcon} alt="" />
-                        <h4>Lectures</h4>
-                        <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
-                    </div>
-                    <div className="service-card" id="service-card-7">
-                        <img src={teacherIcon} alt="" />
-                        <h4>Lectures</h4>
-                        <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
-                    </div>
-                    <div className="service-card" id="service-card-8">
-                        <img src={teacherIcon} alt="" />
-                        <h4>Lectures</h4>
-                        <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
-                    </div>
-                </div>
+        <h1 style={{ color: 'black', fontWeight: '200', fontsize:'1.3 rem',}}> More Information</h1>
+        <div className="service-section-bottom">
+            <div className="service-card" id="service-card-1">
+                {/* <img src={teacherIcon} alt="" /> */}
+                <h4>Lectures</h4>
+                <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
+                <a href='#' className="btn-filled"><p>More Details</p></a>
+                <a href='#' className="btn-filled"><p>Download Brochure</p></a>
             </div>
-
+            <div className="service-card" id="service-card-2">
+                 {/* <img src={teacherIcon} alt="" /> */}
+                <h4>Lectures</h4>
+                <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
+                <a href='#' className="btn-filled"><p>More Details</p></a>
+                <a href='#' className="btn-filled"><p>Download Brochure</p></a>
+            </div>
+            <div className="service-card" id="service-card-3">
+                 {/* <img src={teacherIcon} alt="" /> */}
+                <h4>Lectures</h4>
+                <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
+                <a href='#' className="btn-filled"><p>More Details</p></a>
+                <a href='#' className="btn-filled"><p>Download Brochure</p></a>
+            </div>
+            <div className="service-card" id="service-card-4">
+                 {/* <img src={teacherIcon} alt="" /> */}
+                <h4>Lectures</h4>
+                <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
+                <a href='#' className="btn-filled"><p>More Details</p></a>
+                <a href='#' className="btn-filled"><p>Download Brochure</p></a>
+            </div>
+            <div className="service-card" id="service-card-5">
+                 {/* <img src={teacherIcon} alt="" /> */}
+                <h4>Lectures</h4>
+                <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
+                <a href='#' className="btn-filled"><p>More Details</p></a>
+                <a href='#' className="btn-filled"><p>Download Brochure</p></a>
+            </div>
+            <div className="service-card" id="service-card-6">
+                 {/* <img src={teacherIcon} alt="" /> */}
+                <h4>Lectures</h4>
+                <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
+                <a href='#' className="btn-filled"><p>More Details</p></a>
+                <a href='#' className="btn-filled"><p>Download Brochure</p></a>
+            </div>
+            <div className="service-card" id="service-card-7">
+                 {/* <img src={teacherIcon} alt="" /> */}
+                <h4>Lectures</h4>
+                <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
+                <a href='#' className="btn-filled"><p>More Details</p></a>
+                <a href='#' className="btn-filled"><p>Download Brochure</p></a>
+            </div>
+            <div className="service-card" id="service-card-8">
+                 {/* <img src={teacherIcon} alt="" /> */}
+                <h4>Lectures</h4>
+                <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
+                <a href='#' className="btn-filled"><p>More Details</p></a>
+                <a href='#' className="btn-filled"><p>Download Brochure</p></a>
+            </div>
+        </div>
+    </div>
             <div className="whats-new-section" id='about-link'>
                 <div className="whats-new-section-overlay">
                     <div className="blue-circle"></div>
@@ -675,6 +699,7 @@ export default function HomePage({ useremailtosend }) {
                 </div>
                 <div className="whats-new-section-left">
                     <h1>Who We Are?</h1>
+                 
                     <p>We, at Betawill have established through scientific teaching and assessment techniques to assist students to discover their potential and grasp the topic</p>
                     <p>Betawill provides sutdents with the advanced study material which help them outshine their competitros. Betawill is not only the most experiences institute among its competitors but it also boasts a team of leading educationsists and a panel of experiences faculty to guide the students.</p>
                     <a href="#" className="btn-filled"><p>Know More</p></a>
@@ -694,6 +719,7 @@ export default function HomePage({ useremailtosend }) {
                         <div className="card-col2-card col-card">
                             <h3>400+</h3>
                             <p>Students are currently joined with us</p>
+                            
                         </div>
                     </div>
                 </div>
@@ -701,114 +727,119 @@ export default function HomePage({ useremailtosend }) {
 
 
             <div className="our-course-section" id='course-link'>
-                <h1>Our Courses</h1>
-                <p>We, At Betawill offers you the best course for your bright features. Choose the best course among the following that is suitable for you</p>
-                <div className="course-section-bottom">
-                    <div className="course-card">
-                        <img src={microsoft} alt="" />
-                        <h5>EMRS Computers Science PGT</h5>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Daily Practice Question</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Live Lectures</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Study Material</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Subject Experts</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Recorded Videos</p>
-                        </div>
-                        <a className="btn-filled" onClick={() => gotocoursedescription('Google')}><p onClick={() => gotocoursedescription('Google')}>Enroll Now</p></a>
-                    </div>
-                    <div className="course-card">
-                        <img src={google} alt="" />
-                        <h5>PATENT OFFICER</h5>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Daily Practice Question</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Live Lectures</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Study Material</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Subject Experts</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Recorded Videos</p>
-                        </div>
-                        <a className="btn-filled" onClick={() => gotocoursedescription('Google')}><p onClick={() => gotocoursedescription('Google')}>Enroll Now</p></a>
-                    </div>
-                    <div className="course-card">
-                        <img src={microsoft} alt="" />
-                        <h5>COMPUTER SCIENCE PGT</h5>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Daily Practice Question</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Live Lectures</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Study Material</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Subject Experts</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Recorded Videos</p>
-                        </div>
-                        <a className="btn-filled" onClick={() => gotocoursedescription('Google')}><p onClick={() => gotocoursedescription('Google')}>Enroll Now</p></a>
-                    </div>
-                    <div className="course-card">
-                        <img src={google} alt="" />
-                        <h5>HARYANA COMPUTER SCIENCE PGT</h5>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Daily Practice Question</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Live Lectures</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Study Material</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Subject Experts</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Recorded Videos</p>
-                        </div>
-                        <a href="#" className="btn-filled" onClick={() => gotocoursedescription('Google')}><p onClick={() => gotocoursedescription('Google')}>Enroll Now</p></a>
-                    </div>
+            <h1 style={{ color: 'black', fontWeight: '900', fontsize:'3 rem',}}>Our Courses</h1>
+
+            <p>We, At Betawill offers you the best course for your bright features. Choose the best course among the following that is suitable for you</p>
+        <div className="course-section-bottom">
+            <div className="course-card">
+                <img src={microsoft} alt="" />
+                <h5>EMRS Computers Science PGT</h5>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Daily Practice Question</p>
                 </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Live Lectures</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Study Material</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Subject Experts</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Recorded Videos</p>
+                </div>
+                <h5>Rs. 5999/-</h5>
+                <a href="#" className="btn-filled"><p>Enroll Now</p></a>
+            </div>
+            <div className="course-card">
+                <img src={google} alt="" />
+                <h5>PATENT OFFICER</h5>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Daily Practice Question</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Live Lectures</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Study Material</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Subject Experts</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Recorded Videos</p>
+                </div>
+                <h5>Rs. 5999/-</h5>
+                <a href="#" className="btn-filled"><p>Enroll Now</p></a>
+            </div>
+            <div className="course-card">
+                <img src={microsoft} alt="" />
+                <h5>COMPUTER SCIENCE PGT</h5>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Daily Practice Question</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Live Lectures</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Study Material</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Subject Experts</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Recorded Videos</p>
+                </div>
+                <h5>Rs. 5999/-</h5>
+                <a href="#" className="btn-filled"><p>Enroll Now</p></a>
+            </div>
+            <div className="course-card">
+                <img src={google} alt="" />
+                <h5>HARYANA COMPUTER SCIENCE PGT</h5>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Daily Practice Question</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Live Lectures</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Study Material</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Subject Experts</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Recorded Videos</p>
+                </div>
+                <h5>Rs. 5999/-</h5>
+                <a href="#" className="btn-filled"><p>Enroll Now</p></a>
+            </div>
+        </div>
             </div>
 
             <div className="shradha-dii-section">
-                <h1>Meet Experts</h1>
+                <h1 className='bigbetawill'>Meet Experts</h1>
                 <div className="teacher-flex-section">
                     <div className="shradha-dii-upper-section">
                         <div className="img-portion" id="teacher-image-1"></div>
@@ -866,7 +897,7 @@ export default function HomePage({ useremailtosend }) {
 
             <div className='testimonial-section'>
                 <div className="testimonial-section-top">
-                    <h1><span>Our</span> Testimonial</h1>
+                    <h1 className='bigbetawill'><span>Our</span> Testimonial</h1>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint porro fugit nisi laudantium facere ut?</p>
                 </div>
                 <div className="testimonial-section-bottom">
@@ -916,9 +947,9 @@ export default function HomePage({ useremailtosend }) {
                 </div>
                 {/* <p className='slide-to-scroll'>Slide To Scroll</p> */}
             </div>
+       
 
-
-            <div className="offer-section">
+            <div className="offer-section" >
                 <h4>Get Free Counselling!</h4>
                 <h1>Want to start your career in coding ?</h1>
                 <h4>Book a free council session</h4>
@@ -926,7 +957,9 @@ export default function HomePage({ useremailtosend }) {
             </div>
 
 
-            <div className="free-form-section">
+         
+            <Element name="free-form-section" className="free-form-section" id="free-counselling">
+           
         <div className="free-form-section-left">
             <h3>Get Free Counselling</h3>
             <form action="#" className="free-form">
@@ -958,9 +991,9 @@ export default function HomePage({ useremailtosend }) {
         <div className="free-form-section-right">
             <img src={contactImg} alt="" className="gif"/>
         </div>
-      </div>
+     
 
-
+      </Element>
 
 
 
@@ -995,7 +1028,15 @@ export default function HomePage({ useremailtosend }) {
                 </div>
             </div>
 
-
+            <div className="fixed-bar">
+             
+     <div className="social-links">
+                    <a href="https://twitter.com/betawill07"><img src={phone} alt="" /></a>
+                    <a href="https://wa.me/9310035620"><img src={whatsapp} alt="" /></a>
+                    <a href="#free-counselling" className="btn-chat"><p>JOIN NOW!</p></a>
+                </div>
+    
+    </div>
             <div className="connect-section">
                 <h1>Connect <span>With Us</span></h1>
                 <p>Want to know more about us , Connect will us at our social media platform and lets open the door of success for your bright future</p>
@@ -1052,7 +1093,7 @@ export default function HomePage({ useremailtosend }) {
                     </div>
                 </div>
                 <div className="footer-lower-section">
-                    <p>"© BetaWill. All rights reserved."</p>
+                    <p>© BetaWill. All rights reserved.</p>
                 </div>
             </footer>
         </>

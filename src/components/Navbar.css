@@ -265,7 +265,7 @@ height: 10vh;
 
 .popup2 label {
   display: block;
-  font-weight: bold;
+ font-size:small;
   margin-bottom: 5px;
   margin-left: 0px;
 }
@@ -274,7 +274,7 @@ height: 10vh;
 .popup2 input[type="email"],
 .popup2 input[type="password"] {
   width: calc(100% - 40px);
-  max-width: 60vw;
+ max-width: 60vw;
   padding: 10px;
   border: 1px solid #cccccc;
   border-radius: 5px;
@@ -293,14 +293,14 @@ height: 10vh;
 @media screen and (max-width: 600px) {
   .popup2 {
     width: 90%;
-    max-width: 300px;
+   
   }
 }
 
 @media screen and (max-width: 400px) {
   .popup2 {
     width: 90%;
-    max-width: 250px;
+   
   }
 }
 .closeButton {
