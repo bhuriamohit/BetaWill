@@ -439,13 +439,11 @@ export default function HomePage({ useremailtosend }) {
             })
     }
 
-    const closeMenu=()=>
-    {
-
+    const closeMenu = () => {
+        document.getElementById("responsiveMenu").style.right = "-90vw";
     }
-    const openMenu=()=>
-    {
-        
+    const openMenu = () => {
+        document.getElementById("responsiveMenu").style.right = "0vw";
     }
     return (
 
