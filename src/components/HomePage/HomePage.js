@@ -640,51 +640,66 @@ const openMenu = () => {
       
 
             <div className="our-service-section">
-                <h1>More Information</h1>
-                <div className="service-section-bottom">
-                    <div className="service-card" id="service-card-1">
-                        <img src={teacherIcon} alt="" />
-                        <h4>Lectures</h4>
-                        <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
-                    </div>
-                    <div className="service-card" id="service-card-2">
-                        <img src={teacherIcon} alt="" />
-                        <h4>Lectures</h4>
-                        <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
-                    </div>
-                    <div className="service-card" id="service-card-3">
-                        <img src={teacherIcon} alt="" />
-                        <h4>Lectures</h4>
-                        <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
-                    </div>
-                    <div className="service-card" id="service-card-4">
-                        <img src={teacherIcon} alt="" />
-                        <h4>Lectures</h4>
-                        <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
-                    </div>
-                    <div className="service-card" id="service-card-5">
-                        <img src={teacherIcon} alt="" />
-                        <h4>Lectures</h4>
-                        <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
-                    </div>
-                    <div className="service-card" id="service-card-6">
-                        <img src={teacherIcon} alt="" />
-                        <h4>Lectures</h4>
-                        <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
-                    </div>
-                    <div className="service-card" id="service-card-7">
-                        <img src={teacherIcon} alt="" />
-                        <h4>Lectures</h4>
-                        <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
-                    </div>
-                    <div className="service-card" id="service-card-8">
-                        <img src={teacherIcon} alt="" />
-                        <h4>Lectures</h4>
-                        <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
-                    </div>
-                </div>
+        <h1 style={{ color: 'black', fontWeight: '200', fontsize:'1.3 rem',}}> More Information</h1>
+        <div className="service-section-bottom">
+            <div className="service-card" id="service-card-1">
+                {/* <img src={teacherIcon} alt="" /> */}
+                <h4>Lectures</h4>
+                <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
+                <a href='#' className="btn-filled"><p>More Details</p></a>
+                <a href='#' className="btn-filled"><p>Download Brochure</p></a>
             </div>
-
+            <div className="service-card" id="service-card-2">
+                 {/* <img src={teacherIcon} alt="" /> */}
+                <h4>Lectures</h4>
+                <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
+                <a href='#' className="btn-filled"><p>More Details</p></a>
+                <a href='#' className="btn-filled"><p>Download Brochure</p></a>
+            </div>
+            <div className="service-card" id="service-card-3">
+                 {/* <img src={teacherIcon} alt="" /> */}
+                <h4>Lectures</h4>
+                <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
+                <a href='#' className="btn-filled"><p>More Details</p></a>
+                <a href='#' className="btn-filled"><p>Download Brochure</p></a>
+            </div>
+            <div className="service-card" id="service-card-4">
+                 {/* <img src={teacherIcon} alt="" /> */}
+                <h4>Lectures</h4>
+                <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
+                <a href='#' className="btn-filled"><p>More Details</p></a>
+                <a href='#' className="btn-filled"><p>Download Brochure</p></a>
+            </div>
+            <div className="service-card" id="service-card-5">
+                 {/* <img src={teacherIcon} alt="" /> */}
+                <h4>Lectures</h4>
+                <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
+                <a href='#' className="btn-filled"><p>More Details</p></a>
+                <a href='#' className="btn-filled"><p>Download Brochure</p></a>
+            </div>
+            <div className="service-card" id="service-card-6">
+                 {/* <img src={teacherIcon} alt="" /> */}
+                <h4>Lectures</h4>
+                <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
+                <a href='#' className="btn-filled"><p>More Details</p></a>
+                <a href='#' className="btn-filled"><p>Download Brochure</p></a>
+            </div>
+            <div className="service-card" id="service-card-7">
+                 {/* <img src={teacherIcon} alt="" /> */}
+                <h4>Lectures</h4>
+                <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
+                <a href='#' className="btn-filled"><p>More Details</p></a>
+                <a href='#' className="btn-filled"><p>Download Brochure</p></a>
+            </div>
+            <div className="service-card" id="service-card-8">
+                 {/* <img src={teacherIcon} alt="" /> */}
+                <h4>Lectures</h4>
+                <p>400+ Video Lectures that cover all important DSA for internships/placements</p>
+                <a href='#' className="btn-filled"><p>More Details</p></a>
+                <a href='#' className="btn-filled"><p>Download Brochure</p></a>
+            </div>
+        </div>
+    </div>
             <div className="whats-new-section" id='about-link'>
                 <div className="whats-new-section-overlay">
                     <div className="blue-circle"></div>
@@ -720,110 +735,115 @@ const openMenu = () => {
 
 
             <div className="our-course-section" id='course-link'>
-                <h1>Our Courses</h1>
-                <p>We, At Betawill offers you the best course for your bright features. Choose the best course among the following that is suitable for you</p>
-                <div className="course-section-bottom">
-                    <div className="course-card">
-                        <img src={microsoft} alt="" />
-                        <h5>EMRS Computers Science PGT</h5>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Daily Practice Question</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Live Lectures</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Study Material</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Subject Experts</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Recorded Videos</p>
-                        </div>
-                        <a className="btn-filled" onClick={() => gotocoursedescription('Google')}><p onClick={() => gotocoursedescription('Google')}>Enroll Now</p></a>
-                    </div>
-                    <div className="course-card">
-                        <img src={google} alt="" />
-                        <h5>PATENT OFFICER</h5>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Daily Practice Question</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Live Lectures</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Study Material</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Subject Experts</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Recorded Videos</p>
-                        </div>
-                        <a className="btn-filled" onClick={() => gotocoursedescription('Google')}><p onClick={() => gotocoursedescription('Google')}>Enroll Now</p></a>
-                    </div>
-                    <div className="course-card">
-                        <img src={microsoft} alt="" />
-                        <h5>COMPUTER SCIENCE PGT</h5>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Daily Practice Question</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Live Lectures</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Study Material</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Subject Experts</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Recorded Videos</p>
-                        </div>
-                        <a className="btn-filled" onClick={() => gotocoursedescription('Google')}><p onClick={() => gotocoursedescription('Google')}>Enroll Now</p></a>
-                    </div>
-                    <div className="course-card">
-                        <img src={google} alt="" />
-                        <h5>HARYANA COMPUTER SCIENCE PGT</h5>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Daily Practice Question</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Live Lectures</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Study Material</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Subject Experts</p>
-                        </div>
-                        <div className="course-feature">
-                            <img src={tick} alt="" />
-                            <p>Recorded Videos</p>
-                        </div>
-                        <a href="#" className="btn-filled" onClick={() => gotocoursedescription('Google')}><p onClick={() => gotocoursedescription('Google')}>Enroll Now</p></a>
-                    </div>
+            <h1 style={{ color: 'black', fontWeight: '900', fontsize:'3 rem',}}>Our Courses</h1>
+
+            <p>We, At Betawill offers you the best course for your bright features. Choose the best course among the following that is suitable for you</p>
+        <div className="course-section-bottom">
+            <div className="course-card">
+                <img src={microsoft} alt="" />
+                <h5>EMRS Computers Science PGT</h5>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Daily Practice Question</p>
                 </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Live Lectures</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Study Material</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Subject Experts</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Recorded Videos</p>
+                </div>
+                <h5>Rs. 5999/-</h5>
+                <a href="#" className="btn-filled"><p>Enroll Now</p></a>
+            </div>
+            <div className="course-card">
+                <img src={google} alt="" />
+                <h5>PATENT OFFICER</h5>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Daily Practice Question</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Live Lectures</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Study Material</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Subject Experts</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Recorded Videos</p>
+                </div>
+                <h5>Rs. 5999/-</h5>
+                <a href="#" className="btn-filled"><p>Enroll Now</p></a>
+            </div>
+            <div className="course-card">
+                <img src={microsoft} alt="" />
+                <h5>COMPUTER SCIENCE PGT</h5>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Daily Practice Question</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Live Lectures</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Study Material</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Subject Experts</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Recorded Videos</p>
+                </div>
+                <h5>Rs. 5999/-</h5>
+                <a href="#" className="btn-filled"><p>Enroll Now</p></a>
+            </div>
+            <div className="course-card">
+                <img src={google} alt="" />
+                <h5>HARYANA COMPUTER SCIENCE PGT</h5>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Daily Practice Question</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Live Lectures</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Study Material</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Subject Experts</p>
+                </div>
+                <div className="course-feature">
+                    <img src={tick} alt="" />
+                    <p>Recorded Videos</p>
+                </div>
+                <h5>Rs. 5999/-</h5>
+                <a href="#" className="btn-filled"><p>Enroll Now</p></a>
+            </div>
+        </div>
             </div>
 
             <div className="shradha-dii-section">
