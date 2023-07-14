@@ -847,7 +847,7 @@ const openMenu = () => {
             </div>
 
             <div className="shradha-dii-section">
-                <h1>Meet Experts</h1>
+                <h1 className='bigbetawill'>Meet Experts</h1>
                 <div className="teacher-flex-section">
                     <div className="shradha-dii-upper-section">
                         <div className="img-portion" id="teacher-image-1"></div>
