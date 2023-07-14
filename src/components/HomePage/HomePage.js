@@ -444,7 +444,7 @@ export default function HomePage({ useremailtosend }) {
     }
     const openMenu=()=>
     {
-        
+        document.getElementById("responsiveMenu").style.right = "0vw";
     }
     
 
