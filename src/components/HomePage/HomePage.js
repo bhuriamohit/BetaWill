@@ -444,7 +444,7 @@ export default function HomePage({ useremailtosend }) {
     }
     const openMenu=()=>
     {
-        
+        document.getElementById("responsiveMenu").style.right = "0vw";
     }
     
 
@@ -471,7 +471,7 @@ export default function HomePage({ useremailtosend }) {
       };
     
       const bookcouncelling = async (formData) => {
-        let response =await fetch("http://localhost:8080/bookcounselling", {
+        let response =await fetch("https://betawill-com.onrender.com/bookcounselling", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -528,7 +528,7 @@ export default function HomePage({ useremailtosend }) {
                         <li><a href="#home-link">Home</a></li>
                         <li><a href="#about-link">About</a></li>
                         <li><a href="#course-link">Courses</a></li>
-                        <li><a href="#test">Test Series</a></li>
+                        <li><a href="#test" onClick={()=>navigate('/test-series')}>Test Series</a></li>
                         <li><a href="#faq-link">FAQ's</a></li>
                     </ul>
                    
@@ -823,7 +823,7 @@ export default function HomePage({ useremailtosend }) {
                     <p>Recorded Videos</p>
                 </div>
                 <h5>Rs. 5999/-</h5>
-                <a href="#" className="btn-filled"><p>Enroll Now</p></a>
+                <a href="#" className="btn-filled" ><p>Enroll Now</p></a>
             </div>
             <div className="course-card">
                 <img src={google} alt="" />

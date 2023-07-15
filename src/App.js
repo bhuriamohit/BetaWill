@@ -30,6 +30,7 @@ import Footer from './components/Home/Footer.js';
 import Testimonial from './components/Home/Testimonial.js';
 import Buycourse from './components/Courses/BuyCourse.js'
 import HomePage from './components/HomePage/HomePage.js';
+import TestSeries from './components/NewTestSeries/TestSeries.jsx'
 const App = () => {
     const [useremail,setuseremail]=useState(null)
     useEffect(()=>
@@ -61,6 +62,7 @@ const App = () => {
           <Route exact path="/pdflist" element={<PdfList/>}/>
           <Route exact path="/testtopics" element={<TestTopics/>}/>
           <Route exact path='/testpage' element={<MainTestPage/>}/>
+          <Route exact path="/test-series" element={<TestSeries/>}/>
         </Routes>
       </Router>  
 
