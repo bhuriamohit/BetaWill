@@ -36,7 +36,7 @@ export default function TestSeries() {
     <>
         <div className="responsive-menu" id='responsiveMenu'>
                 <h1>BETA<span>WILL</span></h1>
-                <a href="#home-link">Home</a>
+                <a href="#home-link" onClick={()=>navigate('/')}>Home</a>
                 <a href="#about-link">About</a>
                 <a href="#course-link">Courses</a>
                 <a href="#course-link">Test Series</a>
@@ -49,7 +49,7 @@ export default function TestSeries() {
         </div>
         <div className="nav-right">
             <ul>
-                <li><a href="#home-link">Home</a></li>
+                <li><a href="#home-link" onClick={()=>navigate('/')}>Home</a></li>
                 <li><a href="#about-link">About</a></li>
                 <li><a href="#course-link">Courses</a></li>
                 <li><a href="#course-link">Test Series</a></li>
@@ -158,7 +158,7 @@ export default function TestSeries() {
 
     <div className='testimonial-section'>
         <div className="testimonial-section-top">
-            <h1><span>Our</span> Students Love us</h1>
+            <h1 className='student'><span>Our</span> Students Love us</h1>
             {/* <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint porro fugit nisi laudantium facere ut?</p> */}
         </div>
         <div className="testimonial-section-bottom">
@@ -399,7 +399,7 @@ export default function TestSeries() {
             </div>
         </div>
         <div className="footer-lower-section">
-            <p>Developed By Sachin Jha</p>
+            <p>© BetaWill. All rights reserved.</p>
         </div>
         </footer>
 

@@ -514,7 +514,7 @@ export default function HomePage({ useremailtosend }) {
                 <a href="#home-link">Home</a>
                 <a href="#about-link">About</a>
                 <a href="#course-link">Courses</a>
-                <a href="#course-link">Test Series</a>
+                <a href="#course-link" onClick={()=>navigate('/test-series')}>Test Series</a>
                 <a href="#faq-link">FAQ's</a>
                 <img src={close} alt="" onClick={closeMenu}/>
         </div>
